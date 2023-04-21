@@ -49,9 +49,9 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.clientCardBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.clientCardDataGridView = new System.Windows.Forms.DataGridView();
+            this.discountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.discountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -249,6 +249,11 @@
             this.clientCardDataGridView.Size = new System.Drawing.Size(800, 425);
             this.clientCardDataGridView.TabIndex = 1;
             // 
+            // discountBindingSource
+            // 
+            this.discountBindingSource.DataMember = "Discount";
+            this.discountBindingSource.DataSource = this.MEGABYTDataSet;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IDClientCard";
@@ -268,15 +273,10 @@
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn2.ValueMember = "IDDiscount";
             // 
-            // discountBindingSource
-            // 
-            this.discountBindingSource.DataMember = "Discount";
-            this.discountBindingSource.DataSource = this.MEGABYTDataSet;
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "FullName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ФИО клиента";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
