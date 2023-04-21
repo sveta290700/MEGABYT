@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sale));
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -42,8 +43,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MEGABYTDataSet = new Store.MEGABYTDataSet();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.clientCardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -57,20 +61,17 @@
             this.клиентDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.суммаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.catalog_salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.MEGABYTDataSet = new Store.MEGABYTDataSet();
             this.catalog_salesTableAdapter = new Store.MEGABYTDataSetTableAdapters.catalog_salesTableAdapter();
             this.tableAdapterManager = new Store.MEGABYTDataSetTableAdapters.TableAdapterManager();
-            this.clientCardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientCardTableAdapter = new Store.MEGABYTDataSetTableAdapters.ClientCardTableAdapter();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeTableAdapter = new Store.MEGABYTDataSetTableAdapters.EmployeeTableAdapter();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCardBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.catalogDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.catalog_salesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientCardBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker2
@@ -178,7 +179,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(488, 101);
+            this.button2.Location = new System.Drawing.Point(488, 85);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(226, 37);
             this.button2.TabIndex = 15;
@@ -188,9 +189,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(488, 19);
+            this.button1.Location = new System.Drawing.Point(488, 41);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 72);
+            this.button1.Size = new System.Drawing.Size(226, 38);
             this.button1.TabIndex = 14;
             this.button1.Text = "Поиск";
             this.button1.UseVisualStyleBackColor = true;
@@ -206,6 +207,16 @@
             this.comboBox3.Size = new System.Drawing.Size(195, 21);
             this.comboBox3.TabIndex = 6;
             this.comboBox3.ValueMember = "IDEmployee";
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataMember = "Employee";
+            this.employeeBindingSource.DataSource = this.MEGABYTDataSet;
+            // 
+            // MEGABYTDataSet
+            // 
+            this.MEGABYTDataSet.DataSetName = "MEGABYTDataSet";
+            this.MEGABYTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -226,6 +237,11 @@
             this.comboBox2.Size = new System.Drawing.Size(195, 21);
             this.comboBox2.TabIndex = 4;
             this.comboBox2.ValueMember = "IDClientCard";
+            // 
+            // clientCardBindingSource
+            // 
+            this.clientCardBindingSource.DataMember = "ClientCard";
+            this.clientCardBindingSource.DataSource = this.MEGABYTDataSet;
             // 
             // label2
             // 
@@ -345,11 +361,6 @@
             this.catalog_salesBindingSource.DataMember = "catalog_sales";
             this.catalog_salesBindingSource.DataSource = this.MEGABYTDataSet;
             // 
-            // MEGABYTDataSet
-            // 
-            this.MEGABYTDataSet.DataSetName = "MEGABYTDataSet";
-            this.MEGABYTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // catalog_salesTableAdapter
             // 
             this.catalog_salesTableAdapter.ClearBeforeFill = true;
@@ -367,6 +378,7 @@
             this.tableAdapterManager.KategoryGoodsTableAdapter = null;
             this.tableAdapterManager.ManufacturerTableAdapter = null;
             this.tableAdapterManager.PostsTableAdapter = null;
+            this.tableAdapterManager.ProfileTableAdapter = null;
             this.tableAdapterManager.ReceiptTableAdapter = null;
             this.tableAdapterManager.SaleTableAdapter = null;
             this.tableAdapterManager.ScopeDeliveryTableAdapter = null;
@@ -377,19 +389,9 @@
             this.tableAdapterManager.UpdateOrder = Store.MEGABYTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.WarrantyServiceTableAdapter = null;
             // 
-            // clientCardBindingSource
-            // 
-            this.clientCardBindingSource.DataMember = "ClientCard";
-            this.clientCardBindingSource.DataSource = this.MEGABYTDataSet;
-            // 
             // clientCardTableAdapter
             // 
             this.clientCardTableAdapter.ClearBeforeFill = true;
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataMember = "Employee";
-            this.employeeBindingSource.DataSource = this.MEGABYTDataSet;
             // 
             // employeeTableAdapter
             // 
@@ -403,18 +405,19 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.catalogDataGridView);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sale";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Продажи";
             this.Load += new System.EventHandler(this.Sale_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCardBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.catalogDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.catalog_salesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientCardBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

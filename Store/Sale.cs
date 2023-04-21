@@ -21,15 +21,10 @@ namespace Store
 
         private void Sale_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Employee". При необходимости она может быть перемещена или удалена.
             this.employeeTableAdapter.Fill(this.MEGABYTDataSet.Employee);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.ClientCard". При необходимости она может быть перемещена или удалена.
             this.clientCardTableAdapter.Fill(this.MEGABYTDataSet.ClientCard);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.catalog_sales". При необходимости она может быть перемещена или удалена.
             this.catalog_salesTableAdapter.Fill(this.MEGABYTDataSet.catalog_sales);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.catalog_sales". При необходимости она может быть перемещена или удалена.
             this.catalog_salesTableAdapter.Fill(this.MEGABYTDataSet.catalog_sales);
-
         }
 
         private void catalogDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

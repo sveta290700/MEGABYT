@@ -22,14 +22,11 @@ namespace Store
             this.Validate();
             this.discountBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
-
         }
 
         private void Discount_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Discount". При необходимости она может быть перемещена или удалена.
             this.discountTableAdapter.Fill(this.MEGABYTDataSet.Discount);
-
         }
     }
 }

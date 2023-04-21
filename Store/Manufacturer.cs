@@ -22,14 +22,11 @@ namespace Store
             this.Validate();
             this.manufacturerBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
-
         }
 
         private void Manufacturer_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Manufacturer". При необходимости она может быть перемещена или удалена.
             this.manufacturerTableAdapter.Fill(this.MEGABYTDataSet.Manufacturer);
-
         }
     }
 }

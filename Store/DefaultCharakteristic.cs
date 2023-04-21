@@ -37,7 +37,6 @@ namespace Store
 
         private void DefaultCharakteristic_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.DefaultGoodsInfo". При необходимости она может быть перемещена или удалена.
             this.defaultGoodsInfoTableAdapter.Fill(this.MEGABYTDataSet.DefaultGoodsInfo);
 
             defaultGoodsInfoBindingSource.Filter = "IDKategoryGoods = "+ID;

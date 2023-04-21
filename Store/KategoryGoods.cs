@@ -22,14 +22,11 @@ namespace Store
             this.Validate();
             this.kategoryGoodsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
-
         }
 
         private void KategoryGoods_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.KategoryGoods". При необходимости она может быть перемещена или удалена.
             this.kategoryGoodsTableAdapter.Fill(this.MEGABYTDataSet.KategoryGoods);
-
         }
 
         private void button1_Click(object sender, EventArgs e)

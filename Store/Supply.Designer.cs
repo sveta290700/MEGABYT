@@ -49,38 +49,38 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.supplyBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.supplyDataGridView = new System.Windows.Forms.DataGridView();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.scopeDeliveryDataGridView = new System.Windows.Forms.DataGridView();
-            this.scopeDeliveryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeeTableAdapter = new Store.MEGABYTDataSetTableAdapters.EmployeeTableAdapter();
-            this.homeappliancestoreDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.supplierTableAdapter = new Store.MEGABYTDataSetTableAdapters.SupplierTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.homeappliancestoreDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.goodsTableAdapter = new Store.MEGABYTDataSetTableAdapters.GoodsTableAdapter();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.scopeDeliveryDataGridView = new System.Windows.Forms.DataGridView();
             this.iDScopeDeliveryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDSupplyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDGoodsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.countSupplyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceSupplyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.summPositionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scopeDeliveryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeTableAdapter = new Store.MEGABYTDataSetTableAdapters.EmployeeTableAdapter();
+            this.supplierTableAdapter = new Store.MEGABYTDataSetTableAdapters.SupplierTableAdapter();
+            this.goodsTableAdapter = new Store.MEGABYTDataSetTableAdapters.GoodsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplyBindingNavigator)).BeginInit();
             this.supplyBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeappliancestoreDataSetBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scopeDeliveryDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scopeDeliveryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.homeappliancestoreDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scopeDeliveryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // MEGABYTDataSet
@@ -109,6 +109,7 @@
             this.tableAdapterManager.KategoryGoodsTableAdapter = null;
             this.tableAdapterManager.ManufacturerTableAdapter = null;
             this.tableAdapterManager.PostsTableAdapter = null;
+            this.tableAdapterManager.ProfileTableAdapter = null;
             this.tableAdapterManager.ReceiptTableAdapter = null;
             this.tableAdapterManager.SaleTableAdapter = null;
             this.tableAdapterManager.ScopeDeliveryTableAdapter = this.scopeDeliveryTableAdapter;
@@ -205,6 +206,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -264,10 +266,55 @@
             this.supplyDataGridView.Size = new System.Drawing.Size(800, 530);
             this.supplyDataGridView.TabIndex = 1;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDSupply";
+            this.dataGridViewTextBoxColumn1.HeaderText = "№ поставки";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "IDEmployee";
+            this.dataGridViewTextBoxColumn2.DataSource = this.employeeBindingSource;
+            this.dataGridViewTextBoxColumn2.DisplayMember = "FullName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Сотрудник";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn2.ValueMember = "IDEmployee";
+            // 
             // employeeBindingSource
             // 
             this.employeeBindingSource.DataMember = "Employee";
             this.employeeBindingSource.DataSource = this.MEGABYTDataSet;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "IDSupplier";
+            this.dataGridViewTextBoxColumn3.DataSource = this.supplierBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "NameSupplier";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Поставщик";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "IDSupplier";
+            // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataMember = "Supplier";
+            this.supplierBindingSource.DataSource = this.homeappliancestoreDataSetBindingSource;
+            // 
+            // homeappliancestoreDataSetBindingSource
+            // 
+            this.homeappliancestoreDataSetBindingSource.DataSource = this.MEGABYTDataSet;
+            this.homeappliancestoreDataSetBindingSource.Position = 0;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DateSupply";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Дата";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // groupBox1
             // 
@@ -299,73 +346,6 @@
             this.scopeDeliveryDataGridView.Size = new System.Drawing.Size(794, 291);
             this.scopeDeliveryDataGridView.TabIndex = 0;
             // 
-            // scopeDeliveryBindingSource
-            // 
-            this.scopeDeliveryBindingSource.DataMember = "Supply_BeDescribed_ScopeDelivery";
-            this.scopeDeliveryBindingSource.DataSource = this.supplyBindingSource;
-            // 
-            // employeeTableAdapter
-            // 
-            this.employeeTableAdapter.ClearBeforeFill = true;
-            // 
-            // homeappliancestoreDataSetBindingSource
-            // 
-            this.homeappliancestoreDataSetBindingSource.DataSource = this.MEGABYTDataSet;
-            this.homeappliancestoreDataSetBindingSource.Position = 0;
-            // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataMember = "Supplier";
-            this.supplierBindingSource.DataSource = this.homeappliancestoreDataSetBindingSource;
-            // 
-            // supplierTableAdapter
-            // 
-            this.supplierTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDSupply";
-            this.dataGridViewTextBoxColumn1.HeaderText = "№ поставки";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "IDEmployee";
-            this.dataGridViewTextBoxColumn2.DataSource = this.employeeBindingSource;
-            this.dataGridViewTextBoxColumn2.DisplayMember = "FullName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Сотрудник";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn2.ValueMember = "IDEmployee";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "IDSupplier";
-            this.dataGridViewTextBoxColumn3.DataSource = this.supplierBindingSource;
-            this.dataGridViewTextBoxColumn3.DisplayMember = "NameSupplier";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Поставщик";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn3.ValueMember = "IDSupplier";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DateSupply";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Дата";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // goodsBindingSource
-            // 
-            this.goodsBindingSource.DataMember = "Goods";
-            this.goodsBindingSource.DataSource = this.MEGABYTDataSet;
-            // 
-            // goodsTableAdapter
-            // 
-            this.goodsTableAdapter.ClearBeforeFill = true;
-            // 
             // iDScopeDeliveryDataGridViewTextBoxColumn
             // 
             this.iDScopeDeliveryDataGridViewTextBoxColumn.DataPropertyName = "IDScopeDelivery";
@@ -390,7 +370,11 @@
             this.iDGoodsDataGridViewTextBoxColumn.Name = "iDGoodsDataGridViewTextBoxColumn";
             this.iDGoodsDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.iDGoodsDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.iDGoodsDataGridViewTextBoxColumn.ValueMember = "IDGood";
+            // 
+            // goodsBindingSource
+            // 
+            this.goodsBindingSource.DataMember = "Goods";
+            this.goodsBindingSource.DataSource = this.MEGABYTDataSet;
             // 
             // countSupplyDataGridViewTextBoxColumn
             // 
@@ -414,6 +398,23 @@
             this.summPositionDataGridViewTextBoxColumn.Name = "summPositionDataGridViewTextBoxColumn";
             this.summPositionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // scopeDeliveryBindingSource
+            // 
+            this.scopeDeliveryBindingSource.DataMember = "Supply_BeDescribed_ScopeDelivery";
+            this.scopeDeliveryBindingSource.DataSource = this.supplyBindingSource;
+            // 
+            // employeeTableAdapter
+            // 
+            this.employeeTableAdapter.ClearBeforeFill = true;
+            // 
+            // supplierTableAdapter
+            // 
+            this.supplierTableAdapter.ClearBeforeFill = true;
+            // 
+            // goodsTableAdapter
+            // 
+            this.goodsTableAdapter.ClearBeforeFill = true;
+            // 
             // Supply
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,6 +423,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.supplyDataGridView);
             this.Controls.Add(this.supplyBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Supply";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Поставка";
@@ -433,12 +435,12 @@
             this.supplyBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplyDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.homeappliancestoreDataSetBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scopeDeliveryDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scopeDeliveryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.homeappliancestoreDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scopeDeliveryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

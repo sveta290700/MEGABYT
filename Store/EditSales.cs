@@ -24,17 +24,11 @@ namespace Store
 
         private void EditSales_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Goods". При необходимости она может быть перемещена или удалена.
             this.goodsTableAdapter.Fill(this.MEGABYTDataSet.Goods);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Receipt". При необходимости она может быть перемещена или удалена.
             this.receiptTableAdapter.Fill(this.MEGABYTDataSet.Receipt);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Receipt". При необходимости она может быть перемещена или удалена.
             this.receiptTableAdapter.Fill(this.MEGABYTDataSet.Receipt);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Employee". При необходимости она может быть перемещена или удалена.
             this.employeeTableAdapter.Fill(this.MEGABYTDataSet.Employee);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Sale". При необходимости она может быть перемещена или удалена.
             this.saleTableAdapter.Fill(this.MEGABYTDataSet.Sale);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.ClientCard". При необходимости она может быть перемещена или удалена.
             this.clientCardTableAdapter.Fill(this.MEGABYTDataSet.ClientCard);
 
 
@@ -180,7 +174,6 @@ namespace Store
                 (grid.Rows[e.RowIndex]).Cells[4].Value = cena;
                 (grid.Rows[e.RowIndex]).Cells[5].Value = (cena - (cena * skidka / 100));
             }
-
 
             calcsum();
         }

@@ -22,16 +22,12 @@ namespace Store
             this.Validate();
             this.serviceCenterBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
-
         }
 
         private void ServiceCenter_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Manufacturer". При необходимости она может быть перемещена или удалена.
             this.manufacturerTableAdapter.Fill(this.MEGABYTDataSet.Manufacturer);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.ServiceCenter". При необходимости она может быть перемещена или удалена.
             this.serviceCenterTableAdapter.Fill(this.MEGABYTDataSet.ServiceCenter);
-
         }
     }
 }

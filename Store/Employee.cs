@@ -22,16 +22,12 @@ namespace Store
             this.Validate();
             this.employeeBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
-
         }
 
         private void Employee_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Posts". При необходимости она может быть перемещена или удалена.
             this.postsTableAdapter.Fill(this.MEGABYTDataSet.Posts);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Employee". При необходимости она может быть перемещена или удалена.
             this.employeeTableAdapter.Fill(this.MEGABYTDataSet.Employee);
-
         }
     }
 }

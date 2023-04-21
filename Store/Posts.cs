@@ -22,14 +22,11 @@ namespace Store
             this.Validate();
             this.postsBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
-
         }
 
         private void Posts_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "MEGABYTDataSet.Posts". При необходимости она может быть перемещена или удалена.
             this.postsTableAdapter.Fill(this.MEGABYTDataSet.Posts);
-
         }
     }
 }

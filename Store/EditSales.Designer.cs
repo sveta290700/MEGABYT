@@ -33,6 +33,7 @@
             System.Windows.Forms.Label dateLabel;
             System.Windows.Forms.Label id_employeeLabel;
             System.Windows.Forms.Label id_clientLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditSales));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.saleBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -43,20 +44,20 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.receiptDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.receiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientCardTableAdapter = new Store.MEGABYTDataSetTableAdapters.ClientCardTableAdapter();
             this.saleTableAdapter = new Store.MEGABYTDataSetTableAdapters.SaleTableAdapter();
             this.employeeTableAdapter = new Store.MEGABYTDataSetTableAdapters.EmployeeTableAdapter();
             this.tableAdapterManager = new Store.MEGABYTDataSetTableAdapters.TableAdapterManager();
             this.receiptTableAdapter = new Store.MEGABYTDataSetTableAdapters.ReceiptTableAdapter();
             this.goodsTableAdapter = new Store.MEGABYTDataSetTableAdapters.GoodsTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label1 = new System.Windows.Forms.Label();
             dateLabel = new System.Windows.Forms.Label();
             id_employeeLabel = new System.Windows.Forms.Label();
@@ -67,8 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.receiptDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,29 +84,29 @@
             // dateLabel
             // 
             dateLabel.AutoSize = true;
-            dateLabel.Location = new System.Drawing.Point(51, 64);
+            dateLabel.Location = new System.Drawing.Point(51, 76);
             dateLabel.Name = "dateLabel";
-            dateLabel.Size = new System.Drawing.Size(36, 13);
+            dateLabel.Size = new System.Drawing.Size(33, 13);
             dateLabel.TabIndex = 15;
-            dateLabel.Text = "Дата:";
+            dateLabel.Text = "Дата";
             // 
             // id_employeeLabel
             // 
             id_employeeLabel.AutoSize = true;
-            id_employeeLabel.Location = new System.Drawing.Point(19, 36);
+            id_employeeLabel.Location = new System.Drawing.Point(24, 47);
             id_employeeLabel.Name = "id_employeeLabel";
-            id_employeeLabel.Size = new System.Drawing.Size(63, 13);
+            id_employeeLabel.Size = new System.Drawing.Size(60, 13);
             id_employeeLabel.TabIndex = 14;
-            id_employeeLabel.Text = "Сотрудник:";
+            id_employeeLabel.Text = "Сотрудник";
             // 
             // id_clientLabel
             // 
             id_clientLabel.AutoSize = true;
-            id_clientLabel.Location = new System.Drawing.Point(36, 9);
+            id_clientLabel.Location = new System.Drawing.Point(41, 18);
             id_clientLabel.Name = "id_clientLabel";
-            id_clientLabel.Size = new System.Drawing.Size(46, 13);
+            id_clientLabel.Size = new System.Drawing.Size(43, 13);
             id_clientLabel.TabIndex = 13;
-            id_clientLabel.Text = "Клиент:";
+            id_clientLabel.Text = "Клиент";
             // 
             // textBox1
             // 
@@ -120,7 +121,7 @@
             this.comboBox2.DataSource = this.clientCardBindingSource;
             this.comboBox2.DisplayMember = "FullName";
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(93, 6);
+            this.comboBox2.Location = new System.Drawing.Point(93, 15);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(273, 21);
             this.comboBox2.TabIndex = 19;
@@ -147,7 +148,7 @@
             this.comboBox1.DataSource = this.employeeBindingSource;
             this.comboBox1.DisplayMember = "FullName";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(93, 33);
+            this.comboBox1.Location = new System.Drawing.Point(93, 42);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(273, 21);
             this.comboBox1.TabIndex = 18;
@@ -161,7 +162,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.saleBindingSource, "DateSale", true));
-            this.dateTimePicker1.Location = new System.Drawing.Point(93, 60);
+            this.dateTimePicker1.Location = new System.Drawing.Point(93, 73);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(273, 20);
             this.dateTimePicker1.TabIndex = 12;
@@ -184,11 +185,11 @@
             this.receiptDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.receiptDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
+            this.dataGridViewTextBoxColumn6});
             this.receiptDataGridView.DataSource = this.receiptBindingSource;
             this.receiptDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.receiptDataGridView.Location = new System.Drawing.Point(3, 16);
@@ -200,60 +201,15 @@
             this.receiptDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.receiptDataGridView_DefaultValuesNeeded);
             this.receiptDataGridView.Enter += new System.EventHandler(this.receiptDataGridView_Enter);
             // 
-            // dataGridViewTextBoxColumn1
+            // receiptBindingSource
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDReceipt";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IDReceipt";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.receiptBindingSource.DataMember = "Receipt";
+            this.receiptBindingSource.DataSource = this.MEGABYTDataSet;
             // 
             // goodsBindingSource
             // 
             this.goodsBindingSource.DataMember = "Goods";
             this.goodsBindingSource.DataSource = this.MEGABYTDataSet;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "IDSale";
-            this.dataGridViewTextBoxColumn3.HeaderText = "IDSale";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CountGood";
-            this.dataGridViewTextBoxColumn4.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Кол-во";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "PriceGood";
-            this.dataGridViewTextBoxColumn5.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Цена";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "PriceGoodDiscount";
-            this.dataGridViewTextBoxColumn6.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Цена со скидкой";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "SuumaPos";
-            this.dataGridViewTextBoxColumn7.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Сумма";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // receiptBindingSource
-            // 
-            this.receiptBindingSource.DataMember = "Receipt";
-            this.receiptBindingSource.DataSource = this.MEGABYTDataSet;
             // 
             // clientCardTableAdapter
             // 
@@ -298,6 +254,51 @@
             // 
             this.goodsTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDReceipt";
+            this.dataGridViewTextBoxColumn1.HeaderText = "IDReceipt";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "IDSale";
+            this.dataGridViewTextBoxColumn2.HeaderText = "IDSale";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CountGood";
+            this.dataGridViewTextBoxColumn3.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Кол-во";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "PriceGood";
+            this.dataGridViewTextBoxColumn4.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Цена";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "PriceGoodDiscount";
+            this.dataGridViewTextBoxColumn5.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Цена со скидкой";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "SuumaPos";
+            this.dataGridViewTextBoxColumn6.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Сумма";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
             // EditSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +313,7 @@
             this.Controls.Add(dateLabel);
             this.Controls.Add(id_employeeLabel);
             this.Controls.Add(id_clientLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редактирование продажи";
@@ -323,8 +325,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.receiptDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,11 +353,10 @@
         private System.Windows.Forms.BindingSource goodsBindingSource;
         private MEGABYTDataSetTableAdapters.GoodsTableAdapter goodsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

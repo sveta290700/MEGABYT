@@ -63,9 +63,9 @@ namespace Store.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _175803a54de5418 {
+        internal static System.Drawing.Bitmap Бытовая_техника {
             get {
-                object obj = ResourceManager.GetObject("175803a54de5418", resourceCulture);
+                object obj = ResourceManager.GetObject("Бытовая_техника", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

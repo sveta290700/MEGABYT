@@ -34,26 +34,39 @@
             this.warrantyServiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.warrantyServiceTableAdapter = new Store.MEGABYTDataSetTableAdapters.WarrantyServiceTableAdapter();
             this.tableAdapterManager = new Store.MEGABYTDataSetTableAdapters.TableAdapterManager();
+            this.receiptTableAdapter = new Store.MEGABYTDataSetTableAdapters.ReceiptTableAdapter();
+            this.serviceCenterTableAdapter = new Store.MEGABYTDataSetTableAdapters.ServiceCenterTableAdapter();
+            this.transferRepairTableAdapter = new Store.MEGABYTDataSetTableAdapters.TransferRepairTableAdapter();
             this.warrantyServiceBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.warrantyServiceBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.transferRepairDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.serviceCenterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.transferRepairBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.receiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.receiptTableAdapter = new Store.MEGABYTDataSetTableAdapters.ReceiptTableAdapter();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.warrantyServiceDataGridView = new System.Windows.Forms.DataGridView();
@@ -62,32 +75,19 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceCenterBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.serviceCenterTableAdapter = new Store.MEGABYTDataSetTableAdapters.ServiceCenterTableAdapter();
-            this.transferRepairBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.transferRepairTableAdapter = new Store.MEGABYTDataSetTableAdapters.TransferRepairTableAdapter();
-            this.transferRepairDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.warrantyServiceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.warrantyServiceBindingNavigator)).BeginInit();
             this.warrantyServiceBindingNavigator.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.transferRepairDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceCenterBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transferRepairBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warrantyServiceDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceCenterBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transferRepairBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transferRepairDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // MEGABYTDataSet
@@ -116,6 +116,7 @@
             this.tableAdapterManager.KategoryGoodsTableAdapter = null;
             this.tableAdapterManager.ManufacturerTableAdapter = null;
             this.tableAdapterManager.PostsTableAdapter = null;
+            this.tableAdapterManager.ProfileTableAdapter = null;
             this.tableAdapterManager.ReceiptTableAdapter = this.receiptTableAdapter;
             this.tableAdapterManager.SaleTableAdapter = null;
             this.tableAdapterManager.ScopeDeliveryTableAdapter = null;
@@ -125,6 +126,18 @@
             this.tableAdapterManager.TransferRepairTableAdapter = this.transferRepairTableAdapter;
             this.tableAdapterManager.UpdateOrder = Store.MEGABYTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.WarrantyServiceTableAdapter = this.warrantyServiceTableAdapter;
+            // 
+            // receiptTableAdapter
+            // 
+            this.receiptTableAdapter.ClearBeforeFill = true;
+            // 
+            // serviceCenterTableAdapter
+            // 
+            this.serviceCenterTableAdapter.ClearBeforeFill = true;
+            // 
+            // transferRepairTableAdapter
+            // 
+            this.transferRepairTableAdapter.ClearBeforeFill = true;
             // 
             // warrantyServiceBindingNavigator
             // 
@@ -156,6 +169,31 @@
             this.warrantyServiceBindingNavigator.TabIndex = 0;
             this.warrantyServiceBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -183,22 +221,16 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 15);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -206,7 +238,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
             // 
             // bindingNavigatorMoveLastItem
@@ -215,38 +247,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // warrantyServiceBindingNavigatorSaveItem
             // 
             this.warrantyServiceBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.warrantyServiceBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("warrantyServiceBindingNavigatorSaveItem.Image")));
             this.warrantyServiceBindingNavigatorSaveItem.Name = "warrantyServiceBindingNavigatorSaveItem";
-            this.warrantyServiceBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.warrantyServiceBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.warrantyServiceBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.warrantyServiceBindingNavigatorSaveItem.Click += new System.EventHandler(this.warrantyServiceBindingNavigatorSaveItem_Click);
             // 
@@ -261,6 +275,102 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Процесс обработки обслуживания";
+            // 
+            // transferRepairDataGridView
+            // 
+            this.transferRepairDataGridView.AutoGenerateColumns = false;
+            this.transferRepairDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.transferRepairDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.transferRepairDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13});
+            this.transferRepairDataGridView.DataSource = this.transferRepairBindingSource;
+            this.transferRepairDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.transferRepairDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.transferRepairDataGridView.Name = "transferRepairDataGridView";
+            this.transferRepairDataGridView.Size = new System.Drawing.Size(1030, 310);
+            this.transferRepairDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "IDTransferRepair";
+            this.dataGridViewTextBoxColumn6.HeaderText = "IDTransferRepair";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "IDServiceCenter";
+            this.dataGridViewTextBoxColumn7.DataSource = this.serviceCenterBindingSource;
+            this.dataGridViewTextBoxColumn7.DisplayMember = "AddressCenter";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Сервис центр";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn7.ValueMember = "IDServiceCenter";
+            // 
+            // serviceCenterBindingSource
+            // 
+            this.serviceCenterBindingSource.DataMember = "ServiceCenter";
+            this.serviceCenterBindingSource.DataSource = this.MEGABYTDataSet;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "IDWarrantyService";
+            this.dataGridViewTextBoxColumn8.HeaderText = "IDWarrantyService";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "DateTransfer";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Дата передачи";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "PlanDateEnd";
+            this.dataGridViewTextBoxColumn10.HeaderText = "План дата завершения";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "FaktDateEnd";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Факт дата завершения";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Result";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Result";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Статус";
+            this.dataGridViewTextBoxColumn13.Items.AddRange(new object[] {
+            "Зарегистрировано",
+            "В работе",
+            "Ремонт выполнен",
+            "Ремонт невозможен",
+            "Отмена"});
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // transferRepairBindingSource
+            // 
+            this.transferRepairBindingSource.DataMember = "WarrantyService_DrawUp_TransferRepair";
+            this.transferRepairBindingSource.DataSource = this.warrantyServiceBindingSource;
             // 
             // groupBox2
             // 
@@ -307,10 +417,6 @@
             // 
             this.receiptBindingSource.DataMember = "Receipt";
             this.receiptBindingSource.DataSource = this.MEGABYTDataSet;
-            // 
-            // receiptTableAdapter
-            // 
-            this.receiptTableAdapter.ClearBeforeFill = true;
             // 
             // groupBox4
             // 
@@ -398,110 +504,6 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Visible = false;
             // 
-            // serviceCenterBindingSource
-            // 
-            this.serviceCenterBindingSource.DataMember = "ServiceCenter";
-            this.serviceCenterBindingSource.DataSource = this.MEGABYTDataSet;
-            // 
-            // serviceCenterTableAdapter
-            // 
-            this.serviceCenterTableAdapter.ClearBeforeFill = true;
-            // 
-            // transferRepairBindingSource
-            // 
-            this.transferRepairBindingSource.DataMember = "WarrantyService_DrawUp_TransferRepair";
-            this.transferRepairBindingSource.DataSource = this.warrantyServiceBindingSource;
-            // 
-            // transferRepairTableAdapter
-            // 
-            this.transferRepairTableAdapter.ClearBeforeFill = true;
-            // 
-            // transferRepairDataGridView
-            // 
-            this.transferRepairDataGridView.AutoGenerateColumns = false;
-            this.transferRepairDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.transferRepairDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.transferRepairDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13});
-            this.transferRepairDataGridView.DataSource = this.transferRepairBindingSource;
-            this.transferRepairDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.transferRepairDataGridView.Location = new System.Drawing.Point(3, 16);
-            this.transferRepairDataGridView.Name = "transferRepairDataGridView";
-            this.transferRepairDataGridView.Size = new System.Drawing.Size(1030, 310);
-            this.transferRepairDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "IDTransferRepair";
-            this.dataGridViewTextBoxColumn6.HeaderText = "IDTransferRepair";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "IDServiceCenter";
-            this.dataGridViewTextBoxColumn7.DataSource = this.serviceCenterBindingSource;
-            this.dataGridViewTextBoxColumn7.DisplayMember = "AddressCenter";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Сервис центр";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn7.ValueMember = "IDServiceCenter";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "IDWarrantyService";
-            this.dataGridViewTextBoxColumn8.HeaderText = "IDWarrantyService";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "DateTransfer";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Дата передачи";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "PlanDateEnd";
-            this.dataGridViewTextBoxColumn10.HeaderText = "План дата завершения";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "FaktDateEnd";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Факт дата завершения";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Result";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Result";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Статус";
-            this.dataGridViewTextBoxColumn13.Items.AddRange(new object[] {
-            "Зарегистрировано",
-            "В работе",
-            "Ремонт выполнен",
-            "Ремонт невозможен",
-            "Отмена"});
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // WarrantyService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,6 +514,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.warrantyServiceBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WarrantyService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Гарантийное обслуживание";
@@ -522,6 +525,9 @@
             this.warrantyServiceBindingNavigator.ResumeLayout(false);
             this.warrantyServiceBindingNavigator.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.transferRepairDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceCenterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transferRepairBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -530,9 +536,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.warrantyServiceDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.serviceCenterBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transferRepairBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transferRepairDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
