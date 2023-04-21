@@ -64,11 +64,6 @@ namespace Store
             f.ShowDialog();
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Goods f = new Goods();

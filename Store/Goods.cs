@@ -33,7 +33,6 @@ namespace Store
             this.manufacturerTableAdapter.Fill(this.MEGABYTDataSet.Manufacturer);
             this.infoGoodsTableAdapter.Fill(this.MEGABYTDataSet.InfoGoods);
             this.goodsTableAdapter.Fill(this.MEGABYTDataSet.Goods);
-
         }
     }
 }

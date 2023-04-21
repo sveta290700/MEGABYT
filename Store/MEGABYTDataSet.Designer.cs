@@ -749,8 +749,8 @@ namespace Store {
                         this.tableDefaultGoodsInfo.IDKategoryGoodsColumn}, false);
             this.Relations.Add(this.relationKategoryGoods_Have_DefaultGoodsInfo);
             this.relationPosts_TakeBy_Employee = new global::System.Data.DataRelation("Posts_TakeBy_Employee", new global::System.Data.DataColumn[] {
-                        this.tablePosts.IDPostColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEmployee.IDPostColumn}, false);
+                        this.tablePosts.IDpostColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEmployee.IDpostColumn}, false);
             this.Relations.Add(this.relationPosts_TakeBy_Employee);
             this.relationProfile_StateInSystem_Employee = new global::System.Data.DataRelation("Profile_StateInSystem_Employee", new global::System.Data.DataColumn[] {
                         this.tableProfile.IDProfileColumn}, new global::System.Data.DataColumn[] {
@@ -766,7 +766,7 @@ namespace Store {
             this.Relations.Add(this.relationManufacturer_Manufacture_Goods);
             this.relationDefaultGoodsInfo_Describe_InfoGoods = new global::System.Data.DataRelation("DefaultGoodsInfo_Describe_InfoGoods", new global::System.Data.DataColumn[] {
                         this.tableDefaultGoodsInfo.IDDefaultGoodInfoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableInfoGoods.IDDefaulitGoodInfoColumn}, false);
+                        this.tableInfoGoods.IDDefaultGoodInfoColumn}, false);
             this.Relations.Add(this.relationDefaultGoodsInfo_Describe_InfoGoods);
             this.relationGoods_Have_InfoGoods = new global::System.Data.DataRelation("Goods_Have_InfoGoods", new global::System.Data.DataColumn[] {
                         this.tableGoods.IDGoodsColumn}, new global::System.Data.DataColumn[] {
@@ -1193,10 +1193,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientCardRow AddClientCardRow(int IDClientCard, DiscountRow parentDiscountRowByDiscount_DefineDictount_ClientCard, string FullName, string NumberTelephone, string Email, System.DateTime DateBirth) {
+            public ClientCardRow AddClientCardRow(DiscountRow parentDiscountRowByDiscount_DefineDictount_ClientCard, string FullName, string NumberTelephone, string Email, System.DateTime DateBirth) {
                 ClientCardRow rowClientCardRow = ((ClientCardRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDClientCard,
+                        null,
                         null,
                         FullName,
                         NumberTelephone,
@@ -1259,6 +1259,8 @@ namespace Store {
                 base.Columns.Add(this.columnDateBirth);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDClientCard}, true));
+                this.columnIDClientCard.AutoIncrement = true;
+                this.columnIDClientCard.AutoIncrementSeed = 1;
                 this.columnIDClientCard.AllowDBNull = false;
                 this.columnIDClientCard.Unique = true;
                 this.columnIDDiscount.AllowDBNull = false;
@@ -1512,10 +1514,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DefaultGoodsInfoRow AddDefaultGoodsInfoRow(int IDDefaultGoodInfo, KategoryGoodsRow parentKategoryGoodsRowByKategoryGoods_Have_DefaultGoodsInfo, string NameInfo, string DescriptionInfo) {
+            public DefaultGoodsInfoRow AddDefaultGoodsInfoRow(KategoryGoodsRow parentKategoryGoodsRowByKategoryGoods_Have_DefaultGoodsInfo, string NameInfo, string DescriptionInfo) {
                 DefaultGoodsInfoRow rowDefaultGoodsInfoRow = ((DefaultGoodsInfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDDefaultGoodInfo,
+                        null,
                         null,
                         NameInfo,
                         DescriptionInfo};
@@ -1570,12 +1572,13 @@ namespace Store {
                 base.Columns.Add(this.columnDescriptionInfo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDDefaultGoodInfo}, true));
+                this.columnIDDefaultGoodInfo.AutoIncrement = true;
+                this.columnIDDefaultGoodInfo.AutoIncrementSeed = 1;
                 this.columnIDDefaultGoodInfo.AllowDBNull = false;
                 this.columnIDDefaultGoodInfo.Unique = true;
                 this.columnIDKategoryGoods.AllowDBNull = false;
                 this.columnNameInfo.AllowDBNull = false;
                 this.columnNameInfo.MaxLength = 150;
-                this.columnDescriptionInfo.AllowDBNull = false;
                 this.columnDescriptionInfo.MaxLength = 2147483647;
             }
             
@@ -1820,10 +1823,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DiscountRow AddDiscountRow(int IDDiscount, string NameDiscount, string DescriptionDiscount, double PercentDiscount) {
+            public DiscountRow AddDiscountRow(string NameDiscount, string DescriptionDiscount, double PercentDiscount) {
                 DiscountRow rowDiscountRow = ((DiscountRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDDiscount,
+                        null,
                         NameDiscount,
                         DescriptionDiscount,
                         PercentDiscount};
@@ -1875,11 +1878,12 @@ namespace Store {
                 base.Columns.Add(this.columnPercentDiscount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDDiscount}, true));
+                this.columnIDDiscount.AutoIncrement = true;
+                this.columnIDDiscount.AutoIncrementSeed = 1;
                 this.columnIDDiscount.AllowDBNull = false;
                 this.columnIDDiscount.Unique = true;
                 this.columnNameDiscount.AllowDBNull = false;
                 this.columnNameDiscount.MaxLength = 100;
-                this.columnDescriptionDiscount.AllowDBNull = false;
                 this.columnDescriptionDiscount.MaxLength = 2147483647;
                 this.columnPercentDiscount.AllowDBNull = false;
             }
@@ -2025,7 +2029,7 @@ namespace Store {
             
             private global::System.Data.DataColumn columnDateBirth;
             
-            private global::System.Data.DataColumn columnIDPost;
+            private global::System.Data.DataColumn columnIDpost;
             
             private global::System.Data.DataColumn columnTelephone;
             
@@ -2117,9 +2121,9 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IDPostColumn {
+            public global::System.Data.DataColumn IDpostColumn {
                 get {
-                    return this.columnIDPost;
+                    return this.columnIDpost;
                 }
             }
             
@@ -2184,10 +2188,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EmployeeRow AddEmployeeRow(int IDEmployee, string SName, string FName, string Patronym, System.DateTime DateBirth, PostsRow parentPostsRowByPosts_TakeBy_Employee, string Telephone, ProfileRow parentProfileRowByProfile_StateInSystem_Employee, string FullName) {
+            public EmployeeRow AddEmployeeRow(string SName, string FName, string Patronym, System.DateTime DateBirth, PostsRow parentPostsRowByPosts_TakeBy_Employee, string Telephone, ProfileRow parentProfileRowByProfile_StateInSystem_Employee, string FullName) {
                 EmployeeRow rowEmployeeRow = ((EmployeeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDEmployee,
+                        null,
                         SName,
                         FName,
                         Patronym,
@@ -2209,10 +2213,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EmployeeRow AddEmployeeRow(int IDEmployee, string SName, string FName, string Patronym, System.DateTime DateBirth, PostsRow parentPostsRowByPosts_TakeBy_Employee, string Telephone, ProfileRow parentProfileRowByProfile_StateInSystem_Employee) {
+            public EmployeeRow AddEmployeeRow(string SName, string FName, string Patronym, System.DateTime DateBirth, PostsRow parentPostsRowByPosts_TakeBy_Employee, string Telephone, ProfileRow parentProfileRowByProfile_StateInSystem_Employee) {
                 EmployeeRow rowEmployeeRow = ((EmployeeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDEmployee,
+                        null,
                         SName,
                         FName,
                         Patronym,
@@ -2261,7 +2265,7 @@ namespace Store {
                 this.columnFName = base.Columns["FName"];
                 this.columnPatronym = base.Columns["Patronym"];
                 this.columnDateBirth = base.Columns["DateBirth"];
-                this.columnIDPost = base.Columns["IDPost"];
+                this.columnIDpost = base.Columns["IDpost"];
                 this.columnTelephone = base.Columns["Telephone"];
                 this.columnIDProfile = base.Columns["IDProfile"];
                 this.columnFullName = base.Columns["FullName"];
@@ -2280,8 +2284,8 @@ namespace Store {
                 base.Columns.Add(this.columnPatronym);
                 this.columnDateBirth = new global::System.Data.DataColumn("DateBirth", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDateBirth);
-                this.columnIDPost = new global::System.Data.DataColumn("IDPost", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIDPost);
+                this.columnIDpost = new global::System.Data.DataColumn("IDpost", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDpost);
                 this.columnTelephone = new global::System.Data.DataColumn("Telephone", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTelephone);
                 this.columnIDProfile = new global::System.Data.DataColumn("IDProfile", typeof(int), null, global::System.Data.MappingType.Element);
@@ -2290,6 +2294,8 @@ namespace Store {
                 base.Columns.Add(this.columnFullName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDEmployee}, true));
+                this.columnIDEmployee.AutoIncrement = true;
+                this.columnIDEmployee.AutoIncrementSeed = 1;
                 this.columnIDEmployee.AllowDBNull = false;
                 this.columnIDEmployee.Unique = true;
                 this.columnSName.AllowDBNull = false;
@@ -2299,7 +2305,7 @@ namespace Store {
                 this.columnPatronym.AllowDBNull = false;
                 this.columnPatronym.MaxLength = 100;
                 this.columnDateBirth.AllowDBNull = false;
-                this.columnIDPost.AllowDBNull = false;
+                this.columnIDpost.AllowDBNull = false;
                 this.columnTelephone.AllowDBNull = false;
                 this.columnTelephone.MaxLength = 50;
                 this.columnFullName.ReadOnly = true;
@@ -2562,10 +2568,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GoodsRow AddGoodsRow(int IDGoods, string ModelGood, ManufacturerRow parentManufacturerRowByManufacturer_Manufacture_Goods, KategoryGoodsRow parentKategoryGoodsRowByKategoryGoods_Define_Goods, decimal PriceGood) {
+            public GoodsRow AddGoodsRow(string ModelGood, ManufacturerRow parentManufacturerRowByManufacturer_Manufacture_Goods, KategoryGoodsRow parentKategoryGoodsRowByKategoryGoods_Define_Goods, decimal PriceGood) {
                 GoodsRow rowGoodsRow = ((GoodsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDGoods,
+                        null,
                         ModelGood,
                         null,
                         null,
@@ -2627,6 +2633,8 @@ namespace Store {
                 base.Columns.Add(this.columnPriceGood);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDGoods}, true));
+                this.columnIDGoods.AutoIncrement = true;
+                this.columnIDGoods.AutoIncrementSeed = 1;
                 this.columnIDGoods.AllowDBNull = false;
                 this.columnIDGoods.Unique = true;
                 this.columnModelGood.AllowDBNull = false;
@@ -2771,7 +2779,7 @@ namespace Store {
             
             private global::System.Data.DataColumn columnIDGoods;
             
-            private global::System.Data.DataColumn columnIDDefaulitGoodInfo;
+            private global::System.Data.DataColumn columnIDDefaultGoodInfo;
             
             private global::System.Data.DataColumn columnValueInfo;
             
@@ -2826,9 +2834,9 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IDDefaulitGoodInfoColumn {
+            public global::System.Data.DataColumn IDDefaultGoodInfoColumn {
                 get {
-                    return this.columnIDDefaulitGoodInfo;
+                    return this.columnIDDefaultGoodInfo;
                 }
             }
             
@@ -2877,10 +2885,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InfoGoodsRow AddInfoGoodsRow(int IDInfoGoods, GoodsRow parentGoodsRowByGoods_Have_InfoGoods, DefaultGoodsInfoRow parentDefaultGoodsInfoRowByDefaultGoodsInfo_Describe_InfoGoods, string ValueInfo) {
+            public InfoGoodsRow AddInfoGoodsRow(GoodsRow parentGoodsRowByGoods_Have_InfoGoods, DefaultGoodsInfoRow parentDefaultGoodsInfoRowByDefaultGoodsInfo_Describe_InfoGoods, string ValueInfo) {
                 InfoGoodsRow rowInfoGoodsRow = ((InfoGoodsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDInfoGoods,
+                        null,
                         null,
                         null,
                         ValueInfo};
@@ -2921,7 +2929,7 @@ namespace Store {
             internal void InitVars() {
                 this.columnIDInfoGoods = base.Columns["IDInfoGoods"];
                 this.columnIDGoods = base.Columns["IDGoods"];
-                this.columnIDDefaulitGoodInfo = base.Columns["IDDefaulitGoodInfo"];
+                this.columnIDDefaultGoodInfo = base.Columns["IDDefaultGoodInfo"];
                 this.columnValueInfo = base.Columns["ValueInfo"];
             }
             
@@ -2932,16 +2940,18 @@ namespace Store {
                 base.Columns.Add(this.columnIDInfoGoods);
                 this.columnIDGoods = new global::System.Data.DataColumn("IDGoods", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIDGoods);
-                this.columnIDDefaulitGoodInfo = new global::System.Data.DataColumn("IDDefaulitGoodInfo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIDDefaulitGoodInfo);
+                this.columnIDDefaultGoodInfo = new global::System.Data.DataColumn("IDDefaultGoodInfo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDDefaultGoodInfo);
                 this.columnValueInfo = new global::System.Data.DataColumn("ValueInfo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValueInfo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDInfoGoods}, true));
+                this.columnIDInfoGoods.AutoIncrement = true;
+                this.columnIDInfoGoods.AutoIncrementSeed = 1;
                 this.columnIDInfoGoods.AllowDBNull = false;
                 this.columnIDInfoGoods.Unique = true;
                 this.columnIDGoods.AllowDBNull = false;
-                this.columnIDDefaulitGoodInfo.AllowDBNull = false;
+                this.columnIDDefaultGoodInfo.AllowDBNull = false;
                 this.columnValueInfo.AllowDBNull = false;
                 this.columnValueInfo.MaxLength = 100;
             }
@@ -3177,10 +3187,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public KategoryGoodsRow AddKategoryGoodsRow(int IDKategoryGoods, string NameKategory, string DescriptionKategory) {
+            public KategoryGoodsRow AddKategoryGoodsRow(string NameKategory, string DescriptionKategory) {
                 KategoryGoodsRow rowKategoryGoodsRow = ((KategoryGoodsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDKategoryGoods,
+                        null,
                         NameKategory,
                         DescriptionKategory};
                 rowKategoryGoodsRow.ItemArray = columnValuesArray;
@@ -3228,11 +3238,12 @@ namespace Store {
                 base.Columns.Add(this.columnDescriptionKategory);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDKategoryGoods}, true));
+                this.columnIDKategoryGoods.AutoIncrement = true;
+                this.columnIDKategoryGoods.AutoIncrementSeed = 1;
                 this.columnIDKategoryGoods.AllowDBNull = false;
                 this.columnIDKategoryGoods.Unique = true;
                 this.columnNameKategory.AllowDBNull = false;
                 this.columnNameKategory.MaxLength = 150;
-                this.columnDescriptionKategory.AllowDBNull = false;
                 this.columnDescriptionKategory.MaxLength = 2147483647;
             }
             
@@ -3467,10 +3478,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ManufacturerRow AddManufacturerRow(int IDManufacturer, string NameManufacturer, string CountryManufacturer) {
+            public ManufacturerRow AddManufacturerRow(string NameManufacturer, string CountryManufacturer) {
                 ManufacturerRow rowManufacturerRow = ((ManufacturerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDManufacturer,
+                        null,
                         NameManufacturer,
                         CountryManufacturer};
                 rowManufacturerRow.ItemArray = columnValuesArray;
@@ -3518,6 +3529,8 @@ namespace Store {
                 base.Columns.Add(this.columnCountryManufacturer);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDManufacturer}, true));
+                this.columnIDManufacturer.AutoIncrement = true;
+                this.columnIDManufacturer.AutoIncrementSeed = 1;
                 this.columnIDManufacturer.AllowDBNull = false;
                 this.columnIDManufacturer.Unique = true;
                 this.columnNameManufacturer.AllowDBNull = false;
@@ -3657,7 +3670,7 @@ namespace Store {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class PostsDataTable : global::System.Data.TypedTableBase<PostsRow> {
             
-            private global::System.Data.DataColumn columnIDPost;
+            private global::System.Data.DataColumn columnIDpost;
             
             private global::System.Data.DataColumn columnNamePost;
             
@@ -3702,9 +3715,9 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IDPostColumn {
+            public global::System.Data.DataColumn IDpostColumn {
                 get {
-                    return this.columnIDPost;
+                    return this.columnIDpost;
                 }
             }
             
@@ -3777,10 +3790,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PostsRow AddPostsRow(int IDPost, string NamePost, string DescriptionPost, decimal SalaryPost, double PercentSale) {
+            public PostsRow AddPostsRow(string NamePost, string DescriptionPost, decimal SalaryPost, double PercentSale) {
                 PostsRow rowPostsRow = ((PostsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDPost,
+                        null,
                         NamePost,
                         DescriptionPost,
                         SalaryPost,
@@ -3792,9 +3805,9 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PostsRow FindByIDPost(int IDPost) {
+            public PostsRow FindByIDpost(int IDpost) {
                 return ((PostsRow)(this.Rows.Find(new object[] {
-                            IDPost})));
+                            IDpost})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3814,7 +3827,7 @@ namespace Store {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnIDPost = base.Columns["IDPost"];
+                this.columnIDpost = base.Columns["IDpost"];
                 this.columnNamePost = base.Columns["NamePost"];
                 this.columnDescriptionPost = base.Columns["DescriptionPost"];
                 this.columnSalaryPost = base.Columns["SalaryPost"];
@@ -3824,8 +3837,8 @@ namespace Store {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnIDPost = new global::System.Data.DataColumn("IDPost", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIDPost);
+                this.columnIDpost = new global::System.Data.DataColumn("IDpost", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDpost);
                 this.columnNamePost = new global::System.Data.DataColumn("NamePost", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNamePost);
                 this.columnDescriptionPost = new global::System.Data.DataColumn("DescriptionPost", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3835,12 +3848,13 @@ namespace Store {
                 this.columnPercentSale = new global::System.Data.DataColumn("PercentSale", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPercentSale);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnIDPost}, true));
-                this.columnIDPost.AllowDBNull = false;
-                this.columnIDPost.Unique = true;
+                                this.columnIDpost}, true));
+                this.columnIDpost.AutoIncrement = true;
+                this.columnIDpost.AutoIncrementSeed = 1;
+                this.columnIDpost.AllowDBNull = false;
+                this.columnIDpost.Unique = true;
                 this.columnNamePost.AllowDBNull = false;
                 this.columnNamePost.MaxLength = 100;
-                this.columnDescriptionPost.AllowDBNull = false;
                 this.columnDescriptionPost.MaxLength = 2147483647;
                 this.columnSalaryPost.AllowDBNull = false;
                 this.columnPercentSale.AllowDBNull = false;
@@ -4077,10 +4091,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProfileRow AddProfileRow(int IDProfile, string Login, string Password) {
+            public ProfileRow AddProfileRow(string Login, string Password) {
                 ProfileRow rowProfileRow = ((ProfileRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDProfile,
+                        null,
                         Login,
                         Password};
                 rowProfileRow.ItemArray = columnValuesArray;
@@ -4128,6 +4142,8 @@ namespace Store {
                 base.Columns.Add(this.columnPassword);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDProfile}, true));
+                this.columnIDProfile.AutoIncrement = true;
+                this.columnIDProfile.AutoIncrementSeed = 1;
                 this.columnIDProfile.AllowDBNull = false;
                 this.columnIDProfile.Unique = true;
                 this.columnLogin.AllowDBNull = false;
@@ -4416,10 +4432,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ReceiptRow AddReceiptRow(int IDReceipt, GoodsRow parentGoodsRowByGoods_BePartOf_Receipt, SaleRow parentSaleRowBySale_Confirmed_Receipt, int CountGood, decimal PriceGood, decimal PriceGoodDiscount, string SuumaPos) {
+            public ReceiptRow AddReceiptRow(GoodsRow parentGoodsRowByGoods_BePartOf_Receipt, SaleRow parentSaleRowBySale_Confirmed_Receipt, int CountGood, decimal PriceGood, decimal PriceGoodDiscount, string SuumaPos) {
                 ReceiptRow rowReceiptRow = ((ReceiptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDReceipt,
+                        null,
                         null,
                         null,
                         CountGood,
@@ -4439,10 +4455,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ReceiptRow AddReceiptRow(int IDReceipt, GoodsRow parentGoodsRowByGoods_BePartOf_Receipt, SaleRow parentSaleRowBySale_Confirmed_Receipt, int CountGood, decimal PriceGood, decimal PriceGoodDiscount) {
+            public ReceiptRow AddReceiptRow(GoodsRow parentGoodsRowByGoods_BePartOf_Receipt, SaleRow parentSaleRowBySale_Confirmed_Receipt, int CountGood, decimal PriceGood, decimal PriceGoodDiscount) {
                 ReceiptRow rowReceiptRow = ((ReceiptRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDReceipt,
+                        null,
                         null,
                         null,
                         CountGood,
@@ -4512,6 +4528,8 @@ namespace Store {
                 base.Columns.Add(this.columnSuumaPos);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDReceipt}, true));
+                this.columnIDReceipt.AutoIncrement = true;
+                this.columnIDReceipt.AutoIncrementSeed = 1;
                 this.columnIDReceipt.AllowDBNull = false;
                 this.columnIDReceipt.Unique = true;
                 this.columnIDGoods.AllowDBNull = false;
@@ -4770,10 +4788,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SaleRow AddSaleRow(int IDSale, EmployeeRow parentEmployeeRowByEmployee_Make_Sale, ClientCardRow parentClientCardRowByClientCard_PayFor_Sale, System.DateTime DateSale) {
+            public SaleRow AddSaleRow(EmployeeRow parentEmployeeRowByEmployee_Make_Sale, ClientCardRow parentClientCardRowByClientCard_PayFor_Sale, System.DateTime DateSale) {
                 SaleRow rowSaleRow = ((SaleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDSale,
+                        null,
                         null,
                         null,
                         DateSale};
@@ -4831,6 +4849,8 @@ namespace Store {
                 base.Columns.Add(this.columnDateSale);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDSale}, true));
+                this.columnIDSale.AutoIncrement = true;
+                this.columnIDSale.AutoIncrementSeed = 1;
                 this.columnIDSale.AllowDBNull = false;
                 this.columnIDSale.Unique = true;
                 this.columnIDEmployee.AllowDBNull = false;
@@ -5108,12 +5128,12 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ScopeDeliveryRow AddScopeDeliveryRow(SupplyRow parentSupplyRowBySupply_BeDescribed_ScopeDelivery, GoodsRow parentGoodsRowByGoods_BePartOf_ScopeDelivery, int IDScopeDelivery, int CountSupply, decimal PriceSupply, string SummPosition) {
+            public ScopeDeliveryRow AddScopeDeliveryRow(SupplyRow parentSupplyRowBySupply_BeDescribed_ScopeDelivery, GoodsRow parentGoodsRowByGoods_BePartOf_ScopeDelivery, int CountSupply, decimal PriceSupply, string SummPosition) {
                 ScopeDeliveryRow rowScopeDeliveryRow = ((ScopeDeliveryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        IDScopeDelivery,
+                        null,
                         CountSupply,
                         PriceSupply,
                         SummPosition};
@@ -5130,12 +5150,12 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ScopeDeliveryRow AddScopeDeliveryRow(SupplyRow parentSupplyRowBySupply_BeDescribed_ScopeDelivery, GoodsRow parentGoodsRowByGoods_BePartOf_ScopeDelivery, int IDScopeDelivery, int CountSupply, decimal PriceSupply) {
+            public ScopeDeliveryRow AddScopeDeliveryRow(SupplyRow parentSupplyRowBySupply_BeDescribed_ScopeDelivery, GoodsRow parentGoodsRowByGoods_BePartOf_ScopeDelivery, int CountSupply, decimal PriceSupply) {
                 ScopeDeliveryRow rowScopeDeliveryRow = ((ScopeDeliveryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        IDScopeDelivery,
+                        null,
                         CountSupply,
                         PriceSupply,
                         null};
@@ -5201,6 +5221,8 @@ namespace Store {
                                 this.columnIDScopeDelivery}, true));
                 this.columnIDSupply.AllowDBNull = false;
                 this.columnIDGoods.AllowDBNull = false;
+                this.columnIDScopeDelivery.AutoIncrement = true;
+                this.columnIDScopeDelivery.AutoIncrementSeed = 1;
                 this.columnIDScopeDelivery.AllowDBNull = false;
                 this.columnIDScopeDelivery.Unique = true;
                 this.columnCountSupply.AllowDBNull = false;
@@ -5465,10 +5487,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ServiceCenterRow AddServiceCenterRow(int IDServiceCenter, ManufacturerRow parentManufacturerRowByManufacturer_Have_ServiceCenter, string AddressCenter, string TelephoneCenter, string NoteCenter) {
+            public ServiceCenterRow AddServiceCenterRow(ManufacturerRow parentManufacturerRowByManufacturer_Have_ServiceCenter, string AddressCenter, string TelephoneCenter, string NoteCenter) {
                 ServiceCenterRow rowServiceCenterRow = ((ServiceCenterRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDServiceCenter,
+                        null,
                         null,
                         AddressCenter,
                         TelephoneCenter,
@@ -5527,6 +5549,8 @@ namespace Store {
                 base.Columns.Add(this.columnNoteCenter);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDServiceCenter}, true));
+                this.columnIDServiceCenter.AutoIncrement = true;
+                this.columnIDServiceCenter.AutoIncrementSeed = 1;
                 this.columnIDServiceCenter.AllowDBNull = false;
                 this.columnIDServiceCenter.Unique = true;
                 this.columnIDManufacturer.AllowDBNull = false;
@@ -5768,10 +5792,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SupplierRow AddSupplierRow(int IDSupplier, string NameSupplier, string TelephoneSupplier) {
+            public SupplierRow AddSupplierRow(string NameSupplier, string TelephoneSupplier) {
                 SupplierRow rowSupplierRow = ((SupplierRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDSupplier,
+                        null,
                         NameSupplier,
                         TelephoneSupplier};
                 rowSupplierRow.ItemArray = columnValuesArray;
@@ -5819,6 +5843,8 @@ namespace Store {
                 base.Columns.Add(this.columnTelephoneSupplier);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDSupplier}, true));
+                this.columnIDSupplier.AutoIncrement = true;
+                this.columnIDSupplier.AutoIncrementSeed = 1;
                 this.columnIDSupplier.AllowDBNull = false;
                 this.columnIDSupplier.Unique = true;
                 this.columnNameSupplier.AllowDBNull = false;
@@ -6068,10 +6094,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SupplyRow AddSupplyRow(int IDSupply, EmployeeRow parentEmployeeRowByEmployee_DealWith_Supply, SupplierRow parentSupplierRowBySupplier_Send_Supply, System.DateTime DateSupply) {
+            public SupplyRow AddSupplyRow(EmployeeRow parentEmployeeRowByEmployee_DealWith_Supply, SupplierRow parentSupplierRowBySupplier_Send_Supply, System.DateTime DateSupply) {
                 SupplyRow rowSupplyRow = ((SupplyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDSupply,
+                        null,
                         null,
                         null,
                         DateSupply};
@@ -6129,6 +6155,8 @@ namespace Store {
                 base.Columns.Add(this.columnDateSupply);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDSupply}, true));
+                this.columnIDSupply.AutoIncrement = true;
+                this.columnIDSupply.AutoIncrementSeed = 1;
                 this.columnIDSupply.AllowDBNull = false;
                 this.columnIDSupply.Unique = true;
                 this.columnIDEmployee.AllowDBNull = false;
@@ -6417,10 +6445,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransferRepairRow AddTransferRepairRow(int IDTransferRepair, ServiceCenterRow parentServiceCenterRowByServiceCenter_Recieve_TransferRepair, WarrantyServiceRow parentWarrantyServiceRowByWarrantyService_DrawUp_TransferRepair, System.DateTime DateTransfer, System.DateTime PlanDateEnd, System.DateTime FaktDateEnd, string Result, string Status) {
+            public TransferRepairRow AddTransferRepairRow(ServiceCenterRow parentServiceCenterRowByServiceCenter_Recieve_TransferRepair, WarrantyServiceRow parentWarrantyServiceRowByWarrantyService_DrawUp_TransferRepair, System.DateTime DateTransfer, System.DateTime PlanDateEnd, System.DateTime FaktDateEnd, string Result, string Status) {
                 TransferRepairRow rowTransferRepairRow = ((TransferRepairRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDTransferRepair,
+                        null,
                         null,
                         null,
                         DateTransfer,
@@ -6494,6 +6522,8 @@ namespace Store {
                 base.Columns.Add(this.columnStatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDTransferRepair}, true));
+                this.columnIDTransferRepair.AutoIncrement = true;
+                this.columnIDTransferRepair.AutoIncrementSeed = 1;
                 this.columnIDTransferRepair.AllowDBNull = false;
                 this.columnIDTransferRepair.Unique = true;
                 this.columnIDServiceCenter.AllowDBNull = false;
@@ -6756,10 +6786,10 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public WarrantyServiceRow AddWarrantyServiceRow(int IDWarrantyService, ReceiptRow parentReceiptRowByReceipt_GiveRightOn_WarrantyService, string DescriptionProblem, string StatusService, string ResultWarrantyService) {
+            public WarrantyServiceRow AddWarrantyServiceRow(ReceiptRow parentReceiptRowByReceipt_GiveRightOn_WarrantyService, string DescriptionProblem, string StatusService, string ResultWarrantyService) {
                 WarrantyServiceRow rowWarrantyServiceRow = ((WarrantyServiceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDWarrantyService,
+                        null,
                         null,
                         DescriptionProblem,
                         StatusService,
@@ -6818,10 +6848,11 @@ namespace Store {
                 base.Columns.Add(this.columnResultWarrantyService);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDWarrantyService}, true));
+                this.columnIDWarrantyService.AutoIncrement = true;
+                this.columnIDWarrantyService.AutoIncrementSeed = 1;
                 this.columnIDWarrantyService.AllowDBNull = false;
                 this.columnIDWarrantyService.Unique = true;
                 this.columnIDReceipt.AllowDBNull = false;
-                this.columnDescriptionProblem.AllowDBNull = false;
                 this.columnDescriptionProblem.MaxLength = 2147483647;
                 this.columnStatusService.AllowDBNull = false;
                 this.columnStatusService.MaxLength = 50;
@@ -7425,7 +7456,13 @@ namespace Store {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string DescriptionInfo {
                 get {
-                    return ((string)(this[this.tableDefaultGoodsInfo.DescriptionInfoColumn]));
+                    try {
+                        return ((string)(this[this.tableDefaultGoodsInfo.DescriptionInfoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DescriptionInfo\' в таблице \'DefaultGoodsInfo\' равно DBNull." +
+                                "", e);
+                    }
                 }
                 set {
                     this[this.tableDefaultGoodsInfo.DescriptionInfoColumn] = value;
@@ -7441,6 +7478,18 @@ namespace Store {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["KategoryGoods_Have_DefaultGoodsInfo"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDescriptionInfoNull() {
+                return this.IsNull(this.tableDefaultGoodsInfo.DescriptionInfoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDescriptionInfoNull() {
+                this[this.tableDefaultGoodsInfo.DescriptionInfoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7495,7 +7544,12 @@ namespace Store {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string DescriptionDiscount {
                 get {
-                    return ((string)(this[this.tableDiscount.DescriptionDiscountColumn]));
+                    try {
+                        return ((string)(this[this.tableDiscount.DescriptionDiscountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DescriptionDiscount\' в таблице \'Discount\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDiscount.DescriptionDiscountColumn] = value;
@@ -7511,6 +7565,18 @@ namespace Store {
                 set {
                     this[this.tableDiscount.PercentDiscountColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDescriptionDiscountNull() {
+                return this.IsNull(this.tableDiscount.DescriptionDiscountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDescriptionDiscountNull() {
+                this[this.tableDiscount.DescriptionDiscountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7596,12 +7662,12 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int IDPost {
+            public int IDpost {
                 get {
-                    return ((int)(this[this.tableEmployee.IDPostColumn]));
+                    return ((int)(this[this.tableEmployee.IDpostColumn]));
                 }
                 set {
-                    this[this.tableEmployee.IDPostColumn] = value;
+                    this[this.tableEmployee.IDpostColumn] = value;
                 }
             }
             
@@ -7880,12 +7946,12 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int IDDefaulitGoodInfo {
+            public int IDDefaultGoodInfo {
                 get {
-                    return ((int)(this[this.tableInfoGoods.IDDefaulitGoodInfoColumn]));
+                    return ((int)(this[this.tableInfoGoods.IDDefaultGoodInfoColumn]));
                 }
                 set {
-                    this[this.tableInfoGoods.IDDefaulitGoodInfoColumn] = value;
+                    this[this.tableInfoGoods.IDDefaultGoodInfoColumn] = value;
                 }
             }
             
@@ -7963,11 +8029,29 @@ namespace Store {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string DescriptionKategory {
                 get {
-                    return ((string)(this[this.tableKategoryGoods.DescriptionKategoryColumn]));
+                    try {
+                        return ((string)(this[this.tableKategoryGoods.DescriptionKategoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DescriptionKategory\' в таблице \'KategoryGoods\' равно DBNull" +
+                                ".", e);
+                    }
                 }
                 set {
                     this[this.tableKategoryGoods.DescriptionKategoryColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDescriptionKategoryNull() {
+                return this.IsNull(this.tableKategoryGoods.DescriptionKategoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDescriptionKategoryNull() {
+                this[this.tableKategoryGoods.DescriptionKategoryColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8079,12 +8163,12 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int IDPost {
+            public int IDpost {
                 get {
-                    return ((int)(this[this.tablePosts.IDPostColumn]));
+                    return ((int)(this[this.tablePosts.IDpostColumn]));
                 }
                 set {
-                    this[this.tablePosts.IDPostColumn] = value;
+                    this[this.tablePosts.IDpostColumn] = value;
                 }
             }
             
@@ -8103,7 +8187,12 @@ namespace Store {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string DescriptionPost {
                 get {
-                    return ((string)(this[this.tablePosts.DescriptionPostColumn]));
+                    try {
+                        return ((string)(this[this.tablePosts.DescriptionPostColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DescriptionPost\' в таблице \'Posts\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePosts.DescriptionPostColumn] = value;
@@ -8130,6 +8219,18 @@ namespace Store {
                 set {
                     this[this.tablePosts.PercentSaleColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDescriptionPostNull() {
+                return this.IsNull(this.tablePosts.DescriptionPostColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDescriptionPostNull() {
+                this[this.tablePosts.DescriptionPostColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9016,7 +9117,13 @@ namespace Store {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string DescriptionProblem {
                 get {
-                    return ((string)(this[this.tableWarrantyService.DescriptionProblemColumn]));
+                    try {
+                        return ((string)(this[this.tableWarrantyService.DescriptionProblemColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DescriptionProblem\' в таблице \'WarrantyService\' равно DBNul" +
+                                "l.", e);
+                    }
                 }
                 set {
                     this[this.tableWarrantyService.DescriptionProblemColumn] = value;
@@ -9060,6 +9167,18 @@ namespace Store {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Receipt_GiveRightOn_WarrantyService"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDescriptionProblemNull() {
+                return this.IsNull(this.tableWarrantyService.DescriptionProblemColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDescriptionProblemNull() {
+                this[this.tableWarrantyService.DescriptionProblemColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10490,7 +10609,7 @@ SELECT IDDefaultGoodInfo, IDKategoryGoods, NameInfo, DescriptionInfo FROM Defaul
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(NameInfo));
             }
             if ((DescriptionInfo == null)) {
-                throw new global::System.ArgumentNullException("DescriptionInfo");
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(DescriptionInfo));
@@ -10525,7 +10644,7 @@ SELECT IDDefaultGoodInfo, IDKategoryGoods, NameInfo, DescriptionInfo FROM Defaul
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(NameInfo));
             }
             if ((DescriptionInfo == null)) {
-                throw new global::System.ArgumentNullException("DescriptionInfo");
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(DescriptionInfo));
@@ -10834,7 +10953,7 @@ SELECT IDDiscount, NameDiscount, DescriptionDiscount, PercentDiscount FROM Disco
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(NameDiscount));
             }
             if ((DescriptionDiscount == null)) {
-                throw new global::System.ArgumentNullException("DescriptionDiscount");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DescriptionDiscount));
@@ -10869,7 +10988,7 @@ SELECT IDDiscount, NameDiscount, DescriptionDiscount, PercentDiscount FROM Disco
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(NameDiscount));
             }
             if ((DescriptionDiscount == null)) {
-                throw new global::System.ArgumentNullException("DescriptionDiscount");
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DescriptionDiscount));
@@ -11034,47 +11153,47 @@ SELECT IDDiscount, NameDiscount, DescriptionDiscount, PercentDiscount FROM Disco
             tableMapping.ColumnMappings.Add("FName", "FName");
             tableMapping.ColumnMappings.Add("Patronym", "Patronym");
             tableMapping.ColumnMappings.Add("DateBirth", "DateBirth");
-            tableMapping.ColumnMappings.Add("IDPost", "IDPost");
+            tableMapping.ColumnMappings.Add("IDpost", "IDpost");
             tableMapping.ColumnMappings.Add("Telephone", "Telephone");
             tableMapping.ColumnMappings.Add("IDProfile", "IDProfile");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Employee] WHERE (([IDEmployee] = @Original_IDEmployee) AND ([SName] = @Original_SName) AND ([FName] = @Original_FName) AND ([Patronym] = @Original_Patronym) AND ([DateBirth] = @Original_DateBirth) AND ([IDPost] = @Original_IDPost) AND ([Telephone] = @Original_Telephone) AND ((@IsNull_IDProfile = 1 AND [IDProfile] IS NULL) OR ([IDProfile] = @Original_IDProfile)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Employee] WHERE (([IDEmployee] = @Original_IDEmployee) AND ([SName] = @Original_SName) AND ([FName] = @Original_FName) AND ([Patronym] = @Original_Patronym) AND ([DateBirth] = @Original_DateBirth) AND ([IDpost] = @Original_IDpost) AND ([Telephone] = @Original_Telephone) AND ((@IsNull_IDProfile = 1 AND [IDProfile] IS NULL) OR ([IDProfile] = @Original_IDProfile)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDEmployee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDEmployee", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Patronym", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Patronym", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateBirth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBirth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDPost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDpost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDpost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Telephone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telephone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDProfile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDProfile", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDProfile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDProfile", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Employee] ([IDEmployee], [SName], [FName], [Patronym], [DateBirth], [IDPost], [Telephone], [IDProfile]) VALUES (@IDEmployee, @SName, @FName, @Patronym, @DateBirth, @IDPost, @Telephone, @IDProfile);
-SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfile FROM Employee WHERE (IDEmployee = @IDEmployee)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Employee] ([IDEmployee], [SName], [FName], [Patronym], [DateBirth], [IDpost], [Telephone], [IDProfile]) VALUES (@IDEmployee, @SName, @FName, @Patronym, @DateBirth, @IDpost, @Telephone, @IDProfile);
+SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDpost, Telephone, IDProfile FROM Employee WHERE (IDEmployee = @IDEmployee)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDEmployee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDEmployee", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Patronym", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Patronym", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateBirth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBirth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDPost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDpost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDpost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telephone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDProfile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDProfile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Employee] SET [IDEmployee] = @IDEmployee, [SName] = @SName, [FName] = @FName, [Patronym] = @Patronym, [DateBirth] = @DateBirth, [IDPost] = @IDPost, [Telephone] = @Telephone, [IDProfile] = @IDProfile WHERE (([IDEmployee] = @Original_IDEmployee) AND ([SName] = @Original_SName) AND ([FName] = @Original_FName) AND ([Patronym] = @Original_Patronym) AND ([DateBirth] = @Original_DateBirth) AND ([IDPost] = @Original_IDPost) AND ([Telephone] = @Original_Telephone) AND ((@IsNull_IDProfile = 1 AND [IDProfile] IS NULL) OR ([IDProfile] = @Original_IDProfile)));
-SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfile FROM Employee WHERE (IDEmployee = @IDEmployee)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Employee] SET [IDEmployee] = @IDEmployee, [SName] = @SName, [FName] = @FName, [Patronym] = @Patronym, [DateBirth] = @DateBirth, [IDpost] = @IDpost, [Telephone] = @Telephone, [IDProfile] = @IDProfile WHERE (([IDEmployee] = @Original_IDEmployee) AND ([SName] = @Original_SName) AND ([FName] = @Original_FName) AND ([Patronym] = @Original_Patronym) AND ([DateBirth] = @Original_DateBirth) AND ([IDpost] = @Original_IDpost) AND ([Telephone] = @Original_Telephone) AND ((@IsNull_IDProfile = 1 AND [IDProfile] IS NULL) OR ([IDProfile] = @Original_IDProfile)));
+SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDpost, Telephone, IDProfile FROM Employee WHERE (IDEmployee = @IDEmployee)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDEmployee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDEmployee", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Patronym", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Patronym", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateBirth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBirth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDPost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDpost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDpost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telephone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDProfile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDProfile", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDEmployee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDEmployee", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -11082,7 +11201,7 @@ SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfi
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Patronym", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Patronym", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateBirth", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateBirth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDPost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDpost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDpost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Telephone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telephone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDProfile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDProfile", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDProfile", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDProfile", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -11101,7 +11220,7 @@ SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfi
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfil" +
+            this._commandCollection[0].CommandText = "SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDpost, Telephone, IDProfil" +
                 "e FROM dbo.Employee";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -11163,7 +11282,7 @@ SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IDEmployee, string Original_SName, string Original_FName, string Original_Patronym, System.DateTime Original_DateBirth, int Original_IDPost, string Original_Telephone, global::System.Nullable<int> Original_IDProfile) {
+        public virtual int Delete(int Original_IDEmployee, string Original_SName, string Original_FName, string Original_Patronym, System.DateTime Original_DateBirth, int Original_IDpost, string Original_Telephone, global::System.Nullable<int> Original_IDProfile) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IDEmployee));
             if ((Original_SName == null)) {
                 throw new global::System.ArgumentNullException("Original_SName");
@@ -11184,7 +11303,7 @@ SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfi
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Patronym));
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_DateBirth));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_IDPost));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_IDpost));
             if ((Original_Telephone == null)) {
                 throw new global::System.ArgumentNullException("Original_Telephone");
             }
@@ -11219,7 +11338,7 @@ SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int IDEmployee, string SName, string FName, string Patronym, System.DateTime DateBirth, int IDPost, string Telephone, global::System.Nullable<int> IDProfile) {
+        public virtual int Insert(int IDEmployee, string SName, string FName, string Patronym, System.DateTime DateBirth, int IDpost, string Telephone, global::System.Nullable<int> IDProfile) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IDEmployee));
             if ((SName == null)) {
                 throw new global::System.ArgumentNullException("SName");
@@ -11240,7 +11359,7 @@ SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfi
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Patronym));
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DateBirth));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(IDPost));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(IDpost));
             if ((Telephone == null)) {
                 throw new global::System.ArgumentNullException("Telephone");
             }
@@ -11279,7 +11398,7 @@ SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfi
                     string FName, 
                     string Patronym, 
                     System.DateTime DateBirth, 
-                    int IDPost, 
+                    int IDpost, 
                     string Telephone, 
                     global::System.Nullable<int> IDProfile, 
                     int Original_IDEmployee, 
@@ -11287,7 +11406,7 @@ SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfi
                     string Original_FName, 
                     string Original_Patronym, 
                     System.DateTime Original_DateBirth, 
-                    int Original_IDPost, 
+                    int Original_IDpost, 
                     string Original_Telephone, 
                     global::System.Nullable<int> Original_IDProfile) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IDEmployee));
@@ -11310,7 +11429,7 @@ SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfi
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Patronym));
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(DateBirth));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(IDPost));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(IDpost));
             if ((Telephone == null)) {
                 throw new global::System.ArgumentNullException("Telephone");
             }
@@ -11343,7 +11462,7 @@ SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfi
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Patronym));
             }
             this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_DateBirth));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_IDPost));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_IDpost));
             if ((Original_Telephone == null)) {
                 throw new global::System.ArgumentNullException("Original_Telephone");
             }
@@ -11378,8 +11497,8 @@ SELECT IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string SName, string FName, string Patronym, System.DateTime DateBirth, int IDPost, string Telephone, global::System.Nullable<int> IDProfile, int Original_IDEmployee, string Original_SName, string Original_FName, string Original_Patronym, System.DateTime Original_DateBirth, int Original_IDPost, string Original_Telephone, global::System.Nullable<int> Original_IDProfile) {
-            return this.Update(Original_IDEmployee, SName, FName, Patronym, DateBirth, IDPost, Telephone, IDProfile, Original_IDEmployee, Original_SName, Original_FName, Original_Patronym, Original_DateBirth, Original_IDPost, Original_Telephone, Original_IDProfile);
+        public virtual int Update(string SName, string FName, string Patronym, System.DateTime DateBirth, int IDpost, string Telephone, global::System.Nullable<int> IDProfile, int Original_IDEmployee, string Original_SName, string Original_FName, string Original_Patronym, System.DateTime Original_DateBirth, int Original_IDpost, string Original_Telephone, global::System.Nullable<int> Original_IDProfile) {
+            return this.Update(Original_IDEmployee, SName, FName, Patronym, DateBirth, IDpost, Telephone, IDProfile, Original_IDEmployee, Original_SName, Original_FName, Original_Patronym, Original_DateBirth, Original_IDpost, Original_Telephone, Original_IDProfile);
         }
     }
     
@@ -11855,40 +11974,40 @@ SELECT IDGoods, ModelGood, IDManufacturer, IDKategoryGoods, PriceGood FROM Goods
             tableMapping.DataSetTable = "InfoGoods";
             tableMapping.ColumnMappings.Add("IDInfoGoods", "IDInfoGoods");
             tableMapping.ColumnMappings.Add("IDGoods", "IDGoods");
-            tableMapping.ColumnMappings.Add("IDDefaulitGoodInfo", "IDDefaulitGoodInfo");
+            tableMapping.ColumnMappings.Add("IDDefaultGoodInfo", "IDDefaultGoodInfo");
             tableMapping.ColumnMappings.Add("ValueInfo", "ValueInfo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[InfoGoods] WHERE (([IDInfoGoods] = @Original_IDInfoGoods) AND " +
-                "([IDGoods] = @Original_IDGoods) AND ([IDDefaulitGoodInfo] = @Original_IDDefaulit" +
-                "GoodInfo) AND ([ValueInfo] = @Original_ValueInfo))";
+                "([IDGoods] = @Original_IDGoods) AND ([IDDefaultGoodInfo] = @Original_IDDefaultGo" +
+                "odInfo) AND ([ValueInfo] = @Original_ValueInfo))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDInfoGoods", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDInfoGoods", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDGoods", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDGoods", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDDefaulitGoodInfo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDefaulitGoodInfo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDDefaultGoodInfo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDefaultGoodInfo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ValueInfo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ValueInfo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[InfoGoods] ([IDInfoGoods], [IDGoods], [IDDefaulitGoodInfo], [ValueInfo]) VALUES (@IDInfoGoods, @IDGoods, @IDDefaulitGoodInfo, @ValueInfo);
-SELECT IDInfoGoods, IDGoods, IDDefaulitGoodInfo, ValueInfo FROM InfoGoods WHERE (IDInfoGoods = @IDInfoGoods)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[InfoGoods] ([IDInfoGoods], [IDGoods], [IDDefaultGoodInfo], [ValueInfo]) VALUES (@IDInfoGoods, @IDGoods, @IDDefaultGoodInfo, @ValueInfo);
+SELECT IDInfoGoods, IDGoods, IDDefaultGoodInfo, ValueInfo FROM InfoGoods WHERE (IDInfoGoods = @IDInfoGoods)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDInfoGoods", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDInfoGoods", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDGoods", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDGoods", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDDefaulitGoodInfo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDefaulitGoodInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDDefaultGoodInfo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDefaultGoodInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ValueInfo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ValueInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[InfoGoods] SET [IDInfoGoods] = @IDInfoGoods, [IDGoods] = @IDGoods, [IDDefaulitGoodInfo] = @IDDefaulitGoodInfo, [ValueInfo] = @ValueInfo WHERE (([IDInfoGoods] = @Original_IDInfoGoods) AND ([IDGoods] = @Original_IDGoods) AND ([IDDefaulitGoodInfo] = @Original_IDDefaulitGoodInfo) AND ([ValueInfo] = @Original_ValueInfo));
-SELECT IDInfoGoods, IDGoods, IDDefaulitGoodInfo, ValueInfo FROM InfoGoods WHERE (IDInfoGoods = @IDInfoGoods)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[InfoGoods] SET [IDInfoGoods] = @IDInfoGoods, [IDGoods] = @IDGoods, [IDDefaultGoodInfo] = @IDDefaultGoodInfo, [ValueInfo] = @ValueInfo WHERE (([IDInfoGoods] = @Original_IDInfoGoods) AND ([IDGoods] = @Original_IDGoods) AND ([IDDefaultGoodInfo] = @Original_IDDefaultGoodInfo) AND ([ValueInfo] = @Original_ValueInfo));
+SELECT IDInfoGoods, IDGoods, IDDefaultGoodInfo, ValueInfo FROM InfoGoods WHERE (IDInfoGoods = @IDInfoGoods)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDInfoGoods", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDInfoGoods", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDGoods", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDGoods", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDDefaulitGoodInfo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDefaulitGoodInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDDefaultGoodInfo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDefaultGoodInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ValueInfo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ValueInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDInfoGoods", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDInfoGoods", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDGoods", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDGoods", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDDefaulitGoodInfo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDefaulitGoodInfo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDDefaultGoodInfo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDefaultGoodInfo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ValueInfo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ValueInfo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -11905,7 +12024,7 @@ SELECT IDInfoGoods, IDGoods, IDDefaulitGoodInfo, ValueInfo FROM InfoGoods WHERE 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IDInfoGoods, IDGoods, IDDefaulitGoodInfo, ValueInfo FROM dbo.InfoGoods";
+            this._commandCollection[0].CommandText = "SELECT IDInfoGoods, IDGoods, IDDefaultGoodInfo, ValueInfo FROM dbo.InfoGoods";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -11966,10 +12085,10 @@ SELECT IDInfoGoods, IDGoods, IDDefaulitGoodInfo, ValueInfo FROM InfoGoods WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IDInfoGoods, int Original_IDGoods, int Original_IDDefaulitGoodInfo, string Original_ValueInfo) {
+        public virtual int Delete(int Original_IDInfoGoods, int Original_IDGoods, int Original_IDDefaultGoodInfo, string Original_ValueInfo) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IDInfoGoods));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_IDGoods));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_IDDefaulitGoodInfo));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_IDDefaultGoodInfo));
             if ((Original_ValueInfo == null)) {
                 throw new global::System.ArgumentNullException("Original_ValueInfo");
             }
@@ -11996,10 +12115,10 @@ SELECT IDInfoGoods, IDGoods, IDDefaulitGoodInfo, ValueInfo FROM InfoGoods WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int IDInfoGoods, int IDGoods, int IDDefaulitGoodInfo, string ValueInfo) {
+        public virtual int Insert(int IDInfoGoods, int IDGoods, int IDDefaultGoodInfo, string ValueInfo) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IDInfoGoods));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(IDGoods));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(IDDefaulitGoodInfo));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(IDDefaultGoodInfo));
             if ((ValueInfo == null)) {
                 throw new global::System.ArgumentNullException("ValueInfo");
             }
@@ -12026,10 +12145,10 @@ SELECT IDInfoGoods, IDGoods, IDDefaulitGoodInfo, ValueInfo FROM InfoGoods WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int IDInfoGoods, int IDGoods, int IDDefaulitGoodInfo, string ValueInfo, int Original_IDInfoGoods, int Original_IDGoods, int Original_IDDefaulitGoodInfo, string Original_ValueInfo) {
+        public virtual int Update(int IDInfoGoods, int IDGoods, int IDDefaultGoodInfo, string ValueInfo, int Original_IDInfoGoods, int Original_IDGoods, int Original_IDDefaultGoodInfo, string Original_ValueInfo) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IDInfoGoods));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(IDGoods));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(IDDefaulitGoodInfo));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(IDDefaultGoodInfo));
             if ((ValueInfo == null)) {
                 throw new global::System.ArgumentNullException("ValueInfo");
             }
@@ -12038,7 +12157,7 @@ SELECT IDInfoGoods, IDGoods, IDDefaulitGoodInfo, ValueInfo FROM InfoGoods WHERE 
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_IDInfoGoods));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_IDGoods));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_IDDefaulitGoodInfo));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_IDDefaultGoodInfo));
             if ((Original_ValueInfo == null)) {
                 throw new global::System.ArgumentNullException("Original_ValueInfo");
             }
@@ -12065,8 +12184,8 @@ SELECT IDInfoGoods, IDGoods, IDDefaulitGoodInfo, ValueInfo FROM InfoGoods WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int IDGoods, int IDDefaulitGoodInfo, string ValueInfo, int Original_IDInfoGoods, int Original_IDGoods, int Original_IDDefaulitGoodInfo, string Original_ValueInfo) {
-            return this.Update(Original_IDInfoGoods, IDGoods, IDDefaulitGoodInfo, ValueInfo, Original_IDInfoGoods, Original_IDGoods, Original_IDDefaulitGoodInfo, Original_ValueInfo);
+        public virtual int Update(int IDGoods, int IDDefaultGoodInfo, string ValueInfo, int Original_IDInfoGoods, int Original_IDGoods, int Original_IDDefaultGoodInfo, string Original_ValueInfo) {
+            return this.Update(Original_IDInfoGoods, IDGoods, IDDefaultGoodInfo, ValueInfo, Original_IDInfoGoods, Original_IDGoods, Original_IDDefaultGoodInfo, Original_ValueInfo);
         }
     }
     
@@ -12333,7 +12452,7 @@ SELECT IDKategoryGoods, NameKategory, DescriptionKategory FROM KategoryGoods WHE
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(NameKategory));
             }
             if ((DescriptionKategory == null)) {
-                throw new global::System.ArgumentNullException("DescriptionKategory");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DescriptionKategory));
@@ -12367,7 +12486,7 @@ SELECT IDKategoryGoods, NameKategory, DescriptionKategory FROM KategoryGoods WHE
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(NameKategory));
             }
             if ((DescriptionKategory == null)) {
-                throw new global::System.ArgumentNullException("DescriptionKategory");
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DescriptionKategory));
@@ -12875,7 +12994,7 @@ SELECT IDManufacturer, NameManufacturer, CountryManufacturer FROM Manufacturer W
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Posts";
-            tableMapping.ColumnMappings.Add("IDPost", "IDPost");
+            tableMapping.ColumnMappings.Add("IDpost", "IDpost");
             tableMapping.ColumnMappings.Add("NamePost", "NamePost");
             tableMapping.ColumnMappings.Add("DescriptionPost", "DescriptionPost");
             tableMapping.ColumnMappings.Add("SalaryPost", "SalaryPost");
@@ -12883,35 +13002,35 @@ SELECT IDManufacturer, NameManufacturer, CountryManufacturer FROM Manufacturer W
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Posts] WHERE (([IDPost] = @Original_IDPost) AND ([NamePost] = " +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Posts] WHERE (([IDpost] = @Original_IDpost) AND ([NamePost] = " +
                 "@Original_NamePost) AND ([SalaryPost] = @Original_SalaryPost) AND ([PercentSale]" +
                 " = @Original_PercentSale))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDPost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDpost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDpost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NamePost", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NamePost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SalaryPost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalaryPost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PercentSale", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PercentSale", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Posts] ([IDPost], [NamePost], [DescriptionPost], [SalaryPost], [PercentSale]) VALUES (@IDPost, @NamePost, @DescriptionPost, @SalaryPost, @PercentSale);
-SELECT IDPost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM Posts WHERE (IDPost = @IDPost)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Posts] ([IDpost], [NamePost], [DescriptionPost], [SalaryPost], [PercentSale]) VALUES (@IDpost, @NamePost, @DescriptionPost, @SalaryPost, @PercentSale);
+SELECT IDpost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM Posts WHERE (IDpost = @IDpost)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDPost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDpost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDpost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NamePost", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NamePost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescriptionPost", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescriptionPost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalaryPost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalaryPost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PercentSale", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PercentSale", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Posts] SET [IDPost] = @IDPost, [NamePost] = @NamePost, [DescriptionPost] = @DescriptionPost, [SalaryPost] = @SalaryPost, [PercentSale] = @PercentSale WHERE (([IDPost] = @Original_IDPost) AND ([NamePost] = @Original_NamePost) AND ([SalaryPost] = @Original_SalaryPost) AND ([PercentSale] = @Original_PercentSale));
-SELECT IDPost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM Posts WHERE (IDPost = @IDPost)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Posts] SET [IDpost] = @IDpost, [NamePost] = @NamePost, [DescriptionPost] = @DescriptionPost, [SalaryPost] = @SalaryPost, [PercentSale] = @PercentSale WHERE (([IDpost] = @Original_IDpost) AND ([NamePost] = @Original_NamePost) AND ([SalaryPost] = @Original_SalaryPost) AND ([PercentSale] = @Original_PercentSale));
+SELECT IDpost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM Posts WHERE (IDpost = @IDpost)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDPost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDpost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDpost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NamePost", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NamePost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescriptionPost", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescriptionPost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalaryPost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalaryPost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PercentSale", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PercentSale", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDPost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDPost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDpost", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDpost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NamePost", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NamePost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SalaryPost", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalaryPost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PercentSale", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PercentSale", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -12930,7 +13049,7 @@ SELECT IDPost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM Posts WHE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IDPost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM dbo.Posts";
+            this._commandCollection[0].CommandText = "SELECT IDpost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM dbo.Posts";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12991,8 +13110,8 @@ SELECT IDPost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM Posts WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IDPost, string Original_NamePost, decimal Original_SalaryPost, double Original_PercentSale) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IDPost));
+        public virtual int Delete(int Original_IDpost, string Original_NamePost, decimal Original_SalaryPost, double Original_PercentSale) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IDpost));
             if ((Original_NamePost == null)) {
                 throw new global::System.ArgumentNullException("Original_NamePost");
             }
@@ -13021,8 +13140,8 @@ SELECT IDPost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM Posts WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int IDPost, string NamePost, string DescriptionPost, decimal SalaryPost, double PercentSale) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IDPost));
+        public virtual int Insert(int IDpost, string NamePost, string DescriptionPost, decimal SalaryPost, double PercentSale) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IDpost));
             if ((NamePost == null)) {
                 throw new global::System.ArgumentNullException("NamePost");
             }
@@ -13030,7 +13149,7 @@ SELECT IDPost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM Posts WHE
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(NamePost));
             }
             if ((DescriptionPost == null)) {
-                throw new global::System.ArgumentNullException("DescriptionPost");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DescriptionPost));
@@ -13057,8 +13176,8 @@ SELECT IDPost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM Posts WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int IDPost, string NamePost, string DescriptionPost, decimal SalaryPost, double PercentSale, int Original_IDPost, string Original_NamePost, decimal Original_SalaryPost, double Original_PercentSale) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IDPost));
+        public virtual int Update(int IDpost, string NamePost, string DescriptionPost, decimal SalaryPost, double PercentSale, int Original_IDpost, string Original_NamePost, decimal Original_SalaryPost, double Original_PercentSale) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IDpost));
             if ((NamePost == null)) {
                 throw new global::System.ArgumentNullException("NamePost");
             }
@@ -13066,14 +13185,14 @@ SELECT IDPost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM Posts WHE
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(NamePost));
             }
             if ((DescriptionPost == null)) {
-                throw new global::System.ArgumentNullException("DescriptionPost");
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DescriptionPost));
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(SalaryPost));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(PercentSale));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_IDPost));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_IDpost));
             if ((Original_NamePost == null)) {
                 throw new global::System.ArgumentNullException("Original_NamePost");
             }
@@ -13102,8 +13221,8 @@ SELECT IDPost, NamePost, DescriptionPost, SalaryPost, PercentSale FROM Posts WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NamePost, string DescriptionPost, decimal SalaryPost, double PercentSale, int Original_IDPost, string Original_NamePost, decimal Original_SalaryPost, double Original_PercentSale) {
-            return this.Update(Original_IDPost, NamePost, DescriptionPost, SalaryPost, PercentSale, Original_IDPost, Original_NamePost, Original_SalaryPost, Original_PercentSale);
+        public virtual int Update(string NamePost, string DescriptionPost, decimal SalaryPost, double PercentSale, int Original_IDpost, string Original_NamePost, decimal Original_SalaryPost, double Original_PercentSale) {
+            return this.Update(Original_IDpost, NamePost, DescriptionPost, SalaryPost, PercentSale, Original_IDpost, Original_NamePost, Original_SalaryPost, Original_PercentSale);
         }
     }
     
@@ -16156,7 +16275,7 @@ SELECT IDWarrantyService, IDReceipt, DescriptionProblem, StatusService, ResultWa
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IDWarrantyService));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(IDReceipt));
             if ((DescriptionProblem == null)) {
-                throw new global::System.ArgumentNullException("DescriptionProblem");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DescriptionProblem));
@@ -16197,7 +16316,7 @@ SELECT IDWarrantyService, IDReceipt, DescriptionProblem, StatusService, ResultWa
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IDWarrantyService));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(IDReceipt));
             if ((DescriptionProblem == null)) {
-                throw new global::System.ArgumentNullException("DescriptionProblem");
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DescriptionProblem));

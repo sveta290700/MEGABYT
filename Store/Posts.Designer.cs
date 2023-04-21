@@ -279,7 +279,7 @@
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "SalaryPost";
             this.dataGridViewTextBoxColumn4.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "ЗП";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Заработная плата";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
