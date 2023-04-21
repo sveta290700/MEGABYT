@@ -12,14 +12,13 @@ namespace Store
 {
     public partial class DefaultCharakteristic : Form
     {
-        string ID, Title;
+        readonly string ID;
+
         public DefaultCharakteristic(string id, string title)
         {
             InitializeComponent();
             ID = id;
-            Title = title;
-
-            label1.Text = title;
+            label1.Text = "Категория товаров: " + title;
         }
 
         private void defaultGoodsInfoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -27,7 +26,6 @@ namespace Store
             this.Validate();
             this.defaultGoodsInfoBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
-
         }
 
         private void defaultGoodsInfoDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
@@ -38,8 +36,7 @@ namespace Store
         private void DefaultCharakteristic_Load(object sender, EventArgs e)
         {
             this.defaultGoodsInfoTableAdapter.Fill(this.MEGABYTDataSet.DefaultGoodsInfo);
-
-            defaultGoodsInfoBindingSource.Filter = "IDKategoryGoods = "+ID;
+            defaultGoodsInfoBindingSource.Filter = "IDKategoryGoods = " + ID;
         }
     }
 }

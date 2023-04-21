@@ -31,7 +31,6 @@ namespace Store
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // TODO: проверка на индексы???
             DataGridViewCell cur_cell = kategoryGoodsDataGridView.CurrentCell;
             if (cur_cell != null)
             {
@@ -43,11 +42,6 @@ namespace Store
                     "Не была корректно выбрана категория товара",
                     "Ошибка",
                     MessageBoxButtons.OK);
-        }
-
-        private void kategoryGoodsDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
-        {
-            
         }
     }
 }

@@ -260,7 +260,6 @@
             this.kategoryGoodsDataGridView.Name = "kategoryGoodsDataGridView";
             this.kategoryGoodsDataGridView.Size = new System.Drawing.Size(800, 272);
             this.kategoryGoodsDataGridView.TabIndex = 3;
-            this.kategoryGoodsDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.kategoryGoodsDataGridView_DefaultValuesNeeded);
             // 
             // dataGridViewTextBoxColumn1
             // 
