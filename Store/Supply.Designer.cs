@@ -54,7 +54,7 @@
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.homeappliancestoreDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MEGABYTDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.scopeDeliveryDataGridView = new System.Windows.Forms.DataGridView();
@@ -76,7 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.supplyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.homeappliancestoreDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSetBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scopeDeliveryDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
@@ -129,7 +129,7 @@
             this.supplyBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.supplyBindingNavigator.BindingSource = this.supplyBindingSource;
             this.supplyBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.supplyBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.supplyBindingNavigator.DeleteItem = null;
             this.supplyBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -178,6 +178,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -265,6 +266,7 @@
             this.supplyDataGridView.Name = "supplyDataGridView";
             this.supplyDataGridView.Size = new System.Drawing.Size(800, 530);
             this.supplyDataGridView.TabIndex = 1;
+            this.supplyDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.supplyDataGridView_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -303,12 +305,12 @@
             // supplierBindingSource
             // 
             this.supplierBindingSource.DataMember = "Supplier";
-            this.supplierBindingSource.DataSource = this.homeappliancestoreDataSetBindingSource;
+            this.supplierBindingSource.DataSource = this.MEGABYTDataSetBindingSource;
             // 
-            // homeappliancestoreDataSetBindingSource
+            // MEGABYTDataSetBindingSource
             // 
-            this.homeappliancestoreDataSetBindingSource.DataSource = this.MEGABYTDataSet;
-            this.homeappliancestoreDataSetBindingSource.Position = 0;
+            this.MEGABYTDataSetBindingSource.DataSource = this.MEGABYTDataSet;
+            this.MEGABYTDataSetBindingSource.Position = 0;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -370,6 +372,7 @@
             this.iDGoodsDataGridViewTextBoxColumn.Name = "iDGoodsDataGridViewTextBoxColumn";
             this.iDGoodsDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.iDGoodsDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.iDGoodsDataGridViewTextBoxColumn.ValueMember = "IDGoods";
             // 
             // goodsBindingSource
             // 
@@ -387,7 +390,7 @@
             // 
             this.priceSupplyDataGridViewTextBoxColumn.DataPropertyName = "PriceSupply";
             this.priceSupplyDataGridViewTextBoxColumn.FillWeight = 50F;
-            this.priceSupplyDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.priceSupplyDataGridViewTextBoxColumn.HeaderText = "Стоимость";
             this.priceSupplyDataGridViewTextBoxColumn.Name = "priceSupplyDataGridViewTextBoxColumn";
             // 
             // summPositionDataGridViewTextBoxColumn
@@ -436,7 +439,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.supplyDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.homeappliancestoreDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSetBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scopeDeliveryDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).EndInit();
@@ -472,7 +475,7 @@
         private System.Windows.Forms.DataGridView scopeDeliveryDataGridView;
         private System.Windows.Forms.BindingSource employeeBindingSource;
         private MEGABYTDataSetTableAdapters.EmployeeTableAdapter employeeTableAdapter;
-        private System.Windows.Forms.BindingSource homeappliancestoreDataSetBindingSource;
+        private System.Windows.Forms.BindingSource MEGABYTDataSetBindingSource;
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private MEGABYTDataSetTableAdapters.SupplierTableAdapter supplierTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

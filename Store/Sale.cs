@@ -27,28 +27,27 @@ namespace Store
             this.catalog_salesTableAdapter.Fill(this.MEGABYTDataSet.catalog_sales);
         }
 
-        private void catalogDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             DataGridViewCell cur_cell = catalogDataGridView.CurrentCell;
             if (cur_cell != null)
             {
-                DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите удалить?", "Удаление", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Вы уверены, что хотите удалить запись?", "Удаление", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    int selectedSaleRow = catalogDataGridView.CurrentCell.RowIndex;
+                    int selectedSaleID = (int)catalogDataGridView.Rows[selectedSaleRow].Cells[0].Value;
                     SqlConnection myConnection;
                     myConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString);
-                    SqlCommand cmd = new SqlCommand("Empty", myConnection);
-
-                    cmd.CommandText = "DELETE FROM sale WHERE IDSale = @IDSale;";
-                    cmd.Parameters.AddWithValue("IDSale", catalogDataGridView.Rows[catalogDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                    SqlCommand cmd1 = new SqlCommand("Empty", myConnection);
+                    cmd1.CommandText = "DELETE FROM dbo.Receipt WHERE IDSale=" + selectedSaleID;
+                    SqlCommand cmd2 = new SqlCommand("Empty", myConnection);
+                    cmd2.CommandText = "DELETE FROM dbo.Sale WHERE IDSale=@IDSale;";
+                    cmd2.Parameters.AddWithValue("IDSale", catalogDataGridView.Rows[catalogDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
                     myConnection.Open();
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                    cmd1.ExecuteNonQuery();
+                    cmd2.ExecuteNonQuery();
+                    cmd2.Parameters.Clear();
                     myConnection.Close();
 
                     this.catalog_salesTableAdapter.Fill(this.MEGABYTDataSet.catalog_sales);
@@ -65,7 +64,6 @@ namespace Store
         {
             if (catalogDataGridView.Rows.Count > 0)
             {
-                //создание и открытие формы формы в режиме редактирования
                 EditSales form = new EditSales(catalogDataGridView.Rows[catalogDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
                 form.ShowDialog();
 

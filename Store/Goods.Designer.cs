@@ -52,8 +52,13 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.goodsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.goodsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.manufacturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.kategoryGoodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.infoGoodsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,11 +67,6 @@
             this.defaultGoodsInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.infoGoodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goodsBindingNavigator)).BeginInit();
@@ -138,7 +138,7 @@
             this.goodsBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.goodsBindingNavigator.BindingSource = this.goodsBindingSource;
             this.goodsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.goodsBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.goodsBindingNavigator.DeleteItem = null;
             this.goodsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -187,6 +187,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -272,19 +273,63 @@
             this.goodsDataGridView.DataSource = this.goodsBindingSource;
             this.goodsDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.goodsDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.goodsDataGridView.MultiSelect = false;
             this.goodsDataGridView.Name = "goodsDataGridView";
             this.goodsDataGridView.Size = new System.Drawing.Size(800, 220);
             this.goodsDataGridView.TabIndex = 1;
+            this.goodsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goodsDataGridView_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDGoods";
+            this.dataGridViewTextBoxColumn1.HeaderText = "IDGoods";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "IDManufacturer";
+            this.dataGridViewTextBoxColumn2.DataSource = this.manufacturerBindingSource;
+            this.dataGridViewTextBoxColumn2.DisplayMember = "NameManufacturer";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Производитель";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn2.ValueMember = "IDManufacturer";
             // 
             // manufacturerBindingSource
             // 
             this.manufacturerBindingSource.DataMember = "Manufacturer";
             this.manufacturerBindingSource.DataSource = this.MEGABYTDataSet;
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "IDKategoryGoods";
+            this.dataGridViewTextBoxColumn3.DataSource = this.kategoryGoodsBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "NameKategory";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Категория";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "IDKategoryGoods";
+            // 
             // kategoryGoodsBindingSource
             // 
             this.kategoryGoodsBindingSource.DataMember = "KategoryGoods";
             this.kategoryGoodsBindingSource.DataSource = this.MEGABYTDataSet;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ModelGood";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Модель";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "PriceGood";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Стоимость";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // groupBox1
             // 
@@ -357,48 +402,6 @@
             // 
             this.infoGoodsBindingSource.DataMember = "Goods_Have_InfoGoods";
             this.infoGoodsBindingSource.DataSource = this.goodsBindingSource;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDGoods";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IDGoods";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "IDManufacturer";
-            this.dataGridViewTextBoxColumn2.DataSource = this.manufacturerBindingSource;
-            this.dataGridViewTextBoxColumn2.DisplayMember = "NameManufacturer";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Производитель";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn2.ValueMember = "IDManufacturer";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "IDKategoryGoods";
-            this.dataGridViewTextBoxColumn3.DataSource = this.kategoryGoodsBindingSource;
-            this.dataGridViewTextBoxColumn3.DisplayMember = "NameKategory";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Категория";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn3.ValueMember = "IDKategoryGoods";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ModelGood";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Модель";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "PriceGood";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Стоимость";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // Goods
             // 

@@ -86,7 +86,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(226, 22);
+            this.label11.Location = new System.Drawing.Point(218, 22);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(19, 13);
             this.label11.TabIndex = 23;
@@ -130,7 +130,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(337, 72);
+            this.label4.Location = new System.Drawing.Point(337, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(19, 13);
             this.label4.TabIndex = 21;
@@ -138,7 +138,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(361, 68);
+            this.textBox1.Location = new System.Drawing.Point(365, 70);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(83, 20);
             this.textBox1.TabIndex = 20;
@@ -146,7 +146,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(223, 71);
+            this.label8.Location = new System.Drawing.Point(220, 74);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(18, 13);
             this.label8.TabIndex = 19;
@@ -154,7 +154,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(247, 68);
+            this.textBox4.Location = new System.Drawing.Point(247, 71);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(83, 20);
             this.textBox4.TabIndex = 18;
@@ -321,10 +321,10 @@
             this.catalogDataGridView.DataSource = this.catalog_salesBindingSource;
             this.catalogDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.catalogDataGridView.Location = new System.Drawing.Point(0, 33);
+            this.catalogDataGridView.MultiSelect = false;
             this.catalogDataGridView.Name = "catalogDataGridView";
             this.catalogDataGridView.Size = new System.Drawing.Size(727, 417);
             this.catalogDataGridView.TabIndex = 10;
-            this.catalogDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.catalogDataGridView_CellContentClick);
             // 
             // номерПродажиDataGridViewTextBoxColumn
             // 

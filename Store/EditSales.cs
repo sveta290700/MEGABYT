@@ -16,6 +16,7 @@ namespace Store
     {
         string ID;
         bool firstFlag = false;
+
         public EditSales(string id)
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace Store
                 myConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString);
 
                 myConnection.Open();
-                string sql = "SELECT IDENT_CURRENT('dbo.sale')+1";
+                string sql = "SELECT IDENT_CURRENT('dbo.Sale')+1";
                 SqlCommand cmd = new SqlCommand(sql, myConnection);
                 ID = (string)cmd.ExecuteScalar().ToString();
                 if (ID == "")
@@ -56,7 +57,7 @@ namespace Store
                 saleBindingSource.Filter = "IDSale=" + ID;
             }
 
-            receiptBindingSource.Filter = "IDSale = " + ID;
+            receiptBindingSource.Filter = "IDSale= " + ID;
             if (!firstFlag)
                 calcsum();
             else
@@ -127,15 +128,15 @@ namespace Store
             }
 
             DataTable tres = new DataTable();
-            float cena = 0;
-            float skidka = 0;
+            float price = 0;
+            float discount = 0;
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 using (SqlDataAdapter da = new SqlDataAdapter())
                 {
-                    da.SelectCommand = new SqlCommand("SELECT PriceGood FROM dbo.Goods WHERE IDGood =" + receiptDataGridView.Rows[receiptDataGridView.CurrentCell.RowIndex].Cells[1].Value.ToString(), conn);
+                    da.SelectCommand = new SqlCommand("SELECT PriceGood FROM dbo.Goods WHERE IDGoods=" + receiptDataGridView.Rows[receiptDataGridView.CurrentCell.RowIndex].Cells[1].Value.ToString(), conn);
 
                     DataSet ds = new DataSet();
                     da.Fill(ds, "result_name");
@@ -143,7 +144,7 @@ namespace Store
                     tres = ds.Tables["result_name"];
                     foreach (DataRow row in tres.Rows)
                     {
-                        cena = float.Parse(row["PriceGood"].ToString());
+                        price = float.Parse(row["PriceGood"].ToString());
                     }
                 }
             }
@@ -153,7 +154,7 @@ namespace Store
                 using (SqlDataAdapter da = new SqlDataAdapter())
                 {
                     da.SelectCommand = new SqlCommand("SELECT PercentDiscount"
-                        +" FROM dbo.Discount d INNER JOIN dbo.ClientCard cc ON cc.IDDiscount = d.IDDiscount WHERE cc.IDClientCard=" + comboBox2.SelectedValue.ToString(), conn);
+                        + " FROM dbo.Discount d INNER JOIN dbo.ClientCard cc ON cc.IDDiscount = d.IDDiscount WHERE cc.IDClientCard=" + comboBox2.SelectedValue.ToString(), conn);
 
                     DataSet ds = new DataSet();
                     da.Fill(ds, "result_name");
@@ -161,18 +162,17 @@ namespace Store
                     tres = ds.Tables["result_name"];
                     foreach (DataRow row in tres.Rows)
                     {
-                        skidka = float.Parse(row["PercentDiscount"].ToString());
+                        discount = float.Parse(row["PercentDiscount"].ToString());
                     }
                 }
             }
 
-            var grid = (sender as DataGridView);
-
+            var grid = sender as DataGridView;
 
             if (e.RowIndex != -1 && ((e.ColumnIndex == 1) || (e.ColumnIndex == 3)))
             {
-                (grid.Rows[e.RowIndex]).Cells[4].Value = cena;
-                (grid.Rows[e.RowIndex]).Cells[5].Value = (cena - (cena * skidka / 100));
+                grid.Rows[e.RowIndex].Cells[4].Value = price;
+                grid.Rows[e.RowIndex].Cells[5].Value = price - (price * discount / 100);
             }
 
             calcsum();

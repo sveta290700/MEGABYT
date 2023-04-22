@@ -157,7 +157,7 @@
     <Compile Include="WarrantyService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WarrantyService.Designer.cs">
+    <Compile Include="WarrantyService.designer.cs">
       <DependentUpon>WarrantyService.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CardClients.resx">
