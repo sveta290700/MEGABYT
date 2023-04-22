@@ -12,8 +12,6 @@ namespace Store
 {
     public partial class Goods : Form
     {
-
-        int sellNow = 0;
         public Goods()
         {
             InitializeComponent();
@@ -35,11 +33,6 @@ namespace Store
             this.manufacturerTableAdapter.Fill(this.MEGABYTDataSet.Manufacturer);
             this.infoGoodsTableAdapter.Fill(this.MEGABYTDataSet.InfoGoods);
             this.goodsTableAdapter.Fill(this.MEGABYTDataSet.Goods);
-        }
-
-        private void goodsDataGridView_CurrentCellChanged(object sender, EventArgs e)
-        {
-            sellNow = goodsDataGridView.CurrentCell.RowIndex;
         }
     }
 }
