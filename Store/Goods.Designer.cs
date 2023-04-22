@@ -275,6 +275,7 @@
             this.goodsDataGridView.Name = "goodsDataGridView";
             this.goodsDataGridView.Size = new System.Drawing.Size(800, 220);
             this.goodsDataGridView.TabIndex = 1;
+            this.goodsDataGridView.CurrentCellChanged += new System.EventHandler(this.goodsDataGridView_CurrentCellChanged);
             // 
             // manufacturerBindingSource
             // 
