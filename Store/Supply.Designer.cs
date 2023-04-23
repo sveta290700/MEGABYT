@@ -38,7 +38,6 @@
             this.supplyBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -47,6 +46,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.supplyBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.supplyDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,17 +58,17 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.scopeDeliveryDataGridView = new System.Windows.Forms.DataGridView();
-            this.iDScopeDeliveryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDSupplyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDGoodsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.countSupplyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceSupplyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.summPositionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scopeDeliveryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeTableAdapter = new Store.MEGABYTDataSetTableAdapters.EmployeeTableAdapter();
             this.supplierTableAdapter = new Store.MEGABYTDataSetTableAdapters.SupplierTableAdapter();
             this.goodsTableAdapter = new Store.MEGABYTDataSetTableAdapters.GoodsTableAdapter();
+            this.iDScopeDeliveryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDSupplyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDGoodsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.countSupplyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceSupplyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.summPositionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplyBindingNavigator)).BeginInit();
@@ -170,16 +170,6 @@
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
-            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -240,6 +230,16 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // supplyBindingNavigatorSaveItem
             // 
@@ -348,6 +348,28 @@
             this.scopeDeliveryDataGridView.Size = new System.Drawing.Size(794, 291);
             this.scopeDeliveryDataGridView.TabIndex = 0;
             // 
+            // goodsBindingSource
+            // 
+            this.goodsBindingSource.DataMember = "Goods";
+            this.goodsBindingSource.DataSource = this.MEGABYTDataSet;
+            // 
+            // scopeDeliveryBindingSource
+            // 
+            this.scopeDeliveryBindingSource.DataMember = "Supply_BeDescribed_ScopeDelivery";
+            this.scopeDeliveryBindingSource.DataSource = this.supplyBindingSource;
+            // 
+            // employeeTableAdapter
+            // 
+            this.employeeTableAdapter.ClearBeforeFill = true;
+            // 
+            // supplierTableAdapter
+            // 
+            this.supplierTableAdapter.ClearBeforeFill = true;
+            // 
+            // goodsTableAdapter
+            // 
+            this.goodsTableAdapter.ClearBeforeFill = true;
+            // 
             // iDScopeDeliveryDataGridViewTextBoxColumn
             // 
             this.iDScopeDeliveryDataGridViewTextBoxColumn.DataPropertyName = "IDScopeDelivery";
@@ -374,11 +396,6 @@
             this.iDGoodsDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.iDGoodsDataGridViewTextBoxColumn.ValueMember = "IDGoods";
             // 
-            // goodsBindingSource
-            // 
-            this.goodsBindingSource.DataMember = "Goods";
-            this.goodsBindingSource.DataSource = this.MEGABYTDataSet;
-            // 
             // countSupplyDataGridViewTextBoxColumn
             // 
             this.countSupplyDataGridViewTextBoxColumn.DataPropertyName = "CountSupply";
@@ -390,7 +407,7 @@
             // 
             this.priceSupplyDataGridViewTextBoxColumn.DataPropertyName = "PriceSupply";
             this.priceSupplyDataGridViewTextBoxColumn.FillWeight = 50F;
-            this.priceSupplyDataGridViewTextBoxColumn.HeaderText = "Стоимость";
+            this.priceSupplyDataGridViewTextBoxColumn.HeaderText = "Цена";
             this.priceSupplyDataGridViewTextBoxColumn.Name = "priceSupplyDataGridViewTextBoxColumn";
             // 
             // summPositionDataGridViewTextBoxColumn
@@ -400,23 +417,6 @@
             this.summPositionDataGridViewTextBoxColumn.HeaderText = "Сумма";
             this.summPositionDataGridViewTextBoxColumn.Name = "summPositionDataGridViewTextBoxColumn";
             this.summPositionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // scopeDeliveryBindingSource
-            // 
-            this.scopeDeliveryBindingSource.DataMember = "Supply_BeDescribed_ScopeDelivery";
-            this.scopeDeliveryBindingSource.DataSource = this.supplyBindingSource;
-            // 
-            // employeeTableAdapter
-            // 
-            this.employeeTableAdapter.ClearBeforeFill = true;
-            // 
-            // supplierTableAdapter
-            // 
-            this.supplierTableAdapter.ClearBeforeFill = true;
-            // 
-            // goodsTableAdapter
-            // 
-            this.goodsTableAdapter.ClearBeforeFill = true;
             // 
             // Supply
             // 

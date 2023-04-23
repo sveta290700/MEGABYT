@@ -52,13 +52,13 @@
             this.tableAdapterManager = new Store.MEGABYTDataSetTableAdapters.TableAdapterManager();
             this.receiptTableAdapter = new Store.MEGABYTDataSetTableAdapters.ReceiptTableAdapter();
             this.goodsTableAdapter = new Store.MEGABYTDataSetTableAdapters.GoodsTableAdapter();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label1 = new System.Windows.Forms.Label();
             dateLabel = new System.Windows.Forms.Label();
             id_employeeLabel = new System.Windows.Forms.Label();
@@ -256,42 +256,13 @@
             // 
             this.goodsTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn7
+            // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "SuumaPos";
-            this.dataGridViewTextBoxColumn7.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Сумма";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "PriceGoodDiscount";
-            this.dataGridViewTextBoxColumn6.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Стоимость со скидкой";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "PriceGood";
-            this.dataGridViewTextBoxColumn5.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Стоимость";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CountGood";
-            this.dataGridViewTextBoxColumn4.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Кол-во";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "IDSale";
-            this.dataGridViewTextBoxColumn3.HeaderText = "IDSale";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Visible = false;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDReceipt";
+            this.dataGridViewTextBoxColumn1.HeaderText = "IDReceipt";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -304,13 +275,42 @@
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn2.ValueMember = "IDGoods";
             // 
-            // dataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDReceipt";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IDReceipt";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "IDSale";
+            this.dataGridViewTextBoxColumn3.HeaderText = "IDSale";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CountGood";
+            this.dataGridViewTextBoxColumn4.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Кол-во";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "PriceGood";
+            this.dataGridViewTextBoxColumn5.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Цена";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "PriceGoodDiscount";
+            this.dataGridViewTextBoxColumn6.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Цена со скидкой";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "SuumaPos";
+            this.dataGridViewTextBoxColumn7.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Сумма";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // EditSales
             // 
