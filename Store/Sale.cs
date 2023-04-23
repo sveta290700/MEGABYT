@@ -4,9 +4,6 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using CrystalDecisions.CrystalReports.Engine;
-using System.IO;
-using CrystalDecisions.Shared;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,7 +14,6 @@ namespace Store
 {
     public partial class Sale : Form
     {
-        int selectedSaleRow = 0;
         public Sale()
         {
             InitializeComponent();
@@ -130,42 +126,6 @@ namespace Store
             }
 
             catalog_salesBindingSource.Filter = flt;
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            int selectedSaleID = (int)catalogDataGridView.Rows[selectedSaleRow].Cells[0].Value;
-            SqlConnection myConnection;
-            myConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString);
-
-            myConnection.Open();
-            string sql1 = "SELECT s.IDSale, s.DateSale, r.IDReceipt, g.ModelGood, r.CountGood, r.PriceGood, r.PriceGoodDiscount, e.Patronym, cc.FullName" +
-                " FROM dbo.Sale AS s INNER JOIN" +
-                " dbo.Receipt AS r ON r.IDSale = s.IDSale INNER JOIN" +
-                " dbo.ClientCard AS cc ON cc.IDClientCard = s.IDClientCard INNER JOIN" +
-                " dbo.Employee AS e ON e.IDEmployee = s.IDEmployee INNER JOIN" +
-                " dbo.Goods AS g ON g.IDGoods = r.IDGoods" +
-                " WHERE s.IDSale=" + selectedSaleID;
-            string sql2 = "SELECT * FROM dbo.Sale";
-            SqlCommand cmd = new SqlCommand(sql2, myConnection);
-            SqlDataAdapter adap = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            adap.Fill(ds);
-            ReportDocument rd = new ReportDocument();
-            string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string filePath = Path.Combine(currentDirectory, "..\\..\\TestReport.rpt");
-            rd.Load(filePath);
-            //rd.Load("TestReport.rpt");
-            rd.SetDataSource(ds);
-            if (File.Exists(@"D:\SVETA@mail.ru - ЛИЧНАЯ ПАПКА\test.pdf"))
-                File.Delete(@"D:\SVETA@mail.ru - ЛИЧНАЯ ПАПКА\test.pdf");
-            rd.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"D:\SVETA@mail.ru - ЛИЧНАЯ ПАПКА\test.pdf");
-            myConnection.Close();
-        }
-
-        private void catalogDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            selectedSaleRow = catalogDataGridView.CurrentCell.RowIndex;
         }
     }
 }
