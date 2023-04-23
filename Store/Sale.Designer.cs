@@ -65,6 +65,7 @@
             this.tableAdapterManager = new Store.MEGABYTDataSetTableAdapters.TableAdapterManager();
             this.clientCardTableAdapter = new Store.MEGABYTDataSetTableAdapters.ClientCardTableAdapter();
             this.employeeTableAdapter = new Store.MEGABYTDataSetTableAdapters.EmployeeTableAdapter();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
@@ -103,6 +104,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
@@ -179,7 +181,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(488, 85);
+            this.button2.Location = new System.Drawing.Point(488, 104);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(226, 37);
             this.button2.TabIndex = 15;
@@ -189,7 +191,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(488, 41);
+            this.button1.Location = new System.Drawing.Point(488, 61);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(226, 38);
             this.button1.TabIndex = 14;
@@ -325,6 +327,7 @@
             this.catalogDataGridView.Name = "catalogDataGridView";
             this.catalogDataGridView.Size = new System.Drawing.Size(727, 417);
             this.catalogDataGridView.TabIndex = 10;
+            this.catalogDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.catalogDataGridView_CellClick);
             // 
             // номерПродажиDataGridViewTextBoxColumn
             // 
@@ -397,6 +400,16 @@
             // 
             this.employeeTableAdapter.ClearBeforeFill = true;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(488, 11);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(103, 44);
+            this.button6.TabIndex = 25;
+            this.button6.Text = "Товарная накладная";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,5 +471,6 @@
         private MEGABYTDataSetTableAdapters.ClientCardTableAdapter clientCardTableAdapter;
         private System.Windows.Forms.BindingSource employeeBindingSource;
         private MEGABYTDataSetTableAdapters.EmployeeTableAdapter employeeTableAdapter;
+        private System.Windows.Forms.Button button6;
     }
 }
