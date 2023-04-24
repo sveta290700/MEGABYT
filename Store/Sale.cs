@@ -131,7 +131,8 @@ namespace Store
 
         private void button6_Click(object sender, EventArgs e)
         {
-            PackingListReportViewer f = new PackingListReportViewer();
+            int selectedSaleID = (int)catalogDataGridView.Rows[selectedSaleRow].Cells[0].Value;
+            PackingListReportViewer f = new PackingListReportViewer(selectedSaleID);
             f.ShowDialog();
         }
 
