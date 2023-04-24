@@ -1,7 +1,7 @@
 ﻿
 namespace Store
 {
-    partial class FormRep
+    partial class PackingListReportViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -29,25 +29,30 @@ namespace Store
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PackingListReportViewer));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(13, 12);
+            this.reportViewer1.Location = new System.Drawing.Point(20, 18);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(757, 426);
+            this.reportViewer1.Size = new System.Drawing.Size(1849, 883);
             this.reportViewer1.TabIndex = 0;
             // 
-            // FormRep
+            // PackingListReportViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1882, 915);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "FormRep";
-            this.Text = "FormRep";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "PackingListReportViewer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Просмотр товарной накладной";
             this.Load += new System.EventHandler(this.FormRep_Load);
             this.ResumeLayout(false);
 

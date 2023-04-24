@@ -14,6 +14,7 @@ namespace Store
 {
     public partial class Sale : Form
     {
+        int selectedSaleRow = 0;
         public Sale()
         {
             InitializeComponent();
@@ -126,6 +127,17 @@ namespace Store
             }
 
             catalog_salesBindingSource.Filter = flt;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PackingListReportViewer f = new PackingListReportViewer();
+            f.ShowDialog();
+        }
+
+        private void catalogDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedSaleRow = catalogDataGridView.CurrentCell.RowIndex;
         }
     }
 }

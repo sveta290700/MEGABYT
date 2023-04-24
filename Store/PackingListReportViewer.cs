@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Store
 {
-    public partial class FormRep : Form
+    public partial class PackingListReportViewer : Form
     {
-        public FormRep()
+        public PackingListReportViewer()
         {
             InitializeComponent();
         }
