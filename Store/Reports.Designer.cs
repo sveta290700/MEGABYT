@@ -143,7 +143,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(578, 37);
             this.button3.TabIndex = 2;
-            this.button3.Text = "ЗП сотрудников";
+            this.button3.Text = "Зарабаотная плата сотрудников";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -180,6 +180,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Reports";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Отчеты";

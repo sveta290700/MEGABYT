@@ -13,16 +13,16 @@ using System.Windows.Forms;
 
 namespace Store
 {
-    public partial class PackingListReportViewer : Form
+    public partial class ReceiptReportViewer : Form
     {
         int SaleID;
-        public PackingListReportViewer(int SaleID)
+        public ReceiptReportViewer(int SaleID)
         {
             InitializeComponent();
             this.SaleID = SaleID;
         }
 
-        private void PackingListReportViewer_Load(object sender, EventArgs e)
+        private void ReceiptReportViewer_Load(object sender, EventArgs e)
         {
             this.MEGABYTDataSet.EnforceConstraints = false;
             MEGABYTDataSetTableAdapters.packing_listTableAdapter plTA = new MEGABYTDataSetTableAdapters.packing_listTableAdapter();

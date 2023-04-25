@@ -9,16 +9,16 @@
               <Width>1.56441cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.78473cm</Width>
+              <Width>7.00888cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.81198cm</Width>
+              <Width>2.74678cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.21682cm</Width>
+              <Width>2.96558cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.13744cm</Width>
+              <Width>2.10096cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.95804cm</Width>
@@ -26,7 +26,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.53927cm</Height>
+              <Height>1.85677cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -52,6 +52,7 @@
                       <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                           <Width>0.8pt</Width>
                         </Border>
@@ -87,6 +88,7 @@
                       <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                           <Width>0.8pt</Width>
                         </Border>
@@ -107,7 +109,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Кол-во</Value>
+                              <Value>Цена за ед.</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -115,13 +117,14 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox8</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                           <Width>0.8pt</Width>
                         </Border>
@@ -142,7 +145,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Цена</Value>
+                              <Value>Цена за ед. с учетом дисконта</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -150,13 +153,14 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox12</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                           <Width>0.8pt</Width>
                         </Border>
@@ -177,7 +181,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Цена с учетом дисконта</Value>
+                              <Value>Кол-во</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -185,13 +189,14 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                           <Width>0.8pt</Width>
                         </Border>
@@ -220,13 +225,14 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                           <Width>0.8pt</Width>
                         </Border>
@@ -259,13 +265,14 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>IDReceipt</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                           <Width>0.8pt</Width>
                         </Border>
@@ -300,6 +307,7 @@
                       <rd:DefaultName>ModelGood</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                           <Width>0.8pt</Width>
                         </Border>
@@ -313,41 +321,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CountGood">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!CountGood.Value</Value>
-                              <Style>
-                                <FontSize>11pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>CountGood</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>Solid</Style>
-                          <Width>0.8pt</Width>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="PriceGood">
+                    <Textbox Name="PriceGood1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -365,9 +339,10 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>PriceGood</rd:DefaultName>
+                      <rd:DefaultName>PriceGood1</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                           <Width>0.8pt</Width>
                         </Border>
@@ -402,6 +377,42 @@
                       <rd:DefaultName>PriceGoodDiscount</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
+                          <Style>Solid</Style>
+                          <Width>0.8pt</Width>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CountGood1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!CountGood.Value</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CountGood1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                           <Width>0.8pt</Width>
                         </Border>
@@ -436,6 +447,7 @@
                       <rd:DefaultName>Textbox15</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>White</Color>
                           <Style>Solid</Style>
                           <Width>0.8pt</Width>
                         </Border>
@@ -475,8 +487,8 @@
         <DataSetName>PackingListDataSet</DataSetName>
         <Top>0.18521cm</Top>
         <Left>0.25099cm</Left>
-        <Height>3.07854cm</Height>
-        <Width>20.47342cm</Width>
+        <Height>3.39604cm</Height>
+        <Width>20.34465cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -490,9 +502,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Итого с учетом дисконта:</Value>
+                <Value>ИТОГО:</Value>
                 <Style>
                   <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -501,7 +514,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
         <Top>3.75764cm</Top>
-        <Left>11.67699cm</Left>
+        <Left>0.25099cm</Left>
         <Height>0.6cm</Height>
         <Width>4.96062cm</Width>
         <ZIndex>1</ZIndex>
@@ -550,138 +563,188 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox25">
+      <Line Name="Line2">
+        <Top>3.58125cm</Top>
+        <Height>0cm</Height>
+        <Width>20.80442cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line3">
+        <Top>4.68775cm</Top>
+        <Height>0cm</Height>
+        <Width>20.80442cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox31">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Count(Fields!ModelGood.Value, "PackingListDataSet")</Value>
+                <Value>РН ККТ:</Value>
+                <Style>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> 0002992716041284</Value>
                 <Style>
                   <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>№ ФН:</Value>
+                <Style>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> 7281440500463091</Value>
+                <Style>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ФПД:</Value>
+                <Style>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> 456221163</Value>
+                <Style>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Подпись клиента не требуется</Value>
+                <Style>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>4.82465cm</Top>
-        <Left>4.89421cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.22111cm</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox26">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Отпустил:</Value>
-                <Style>
-                  <FontSize>11pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>6.16976cm</Top>
-        <Left>0.6731cm</Left>
-        <Height>0.6cm</Height>
-        <Width>1.97215cm</Width>
-        <ZIndex>4</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Line Name="Line3">
-        <Top>6.78257cm</Top>
-        <Left>6.78498cm</Left>
-        <Height>0cm</Height>
-        <Width>-3.81cm</Width>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>4.86414cm</Top>
+        <Left>5.24447cm</Left>
+        <Height>2.61083cm</Height>
+        <Width>10.33876cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
-            <Width>0.8pt</Width>
+            <Style>None</Style>
           </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Line>
-      <Textbox Name="Textbox27">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Всего наименований:</Value>
-                <Style>
-                  <FontSize>11pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>4.82465cm</Top>
-        <Left>0.6731cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.22111cm</Width>
+      </Textbox>
+      <Image Name="QR">
+        <Source>Embedded</Source>
+        <Value>QR</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>7.65136cm</Top>
+        <Left>9.11532cm</Left>
+        <Height>2.55833cm</Height>
+        <Width>2.50542cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Textbox>
-      <Textbox Name="Textbox28">
+      </Image>
+      <Textbox Name="Textbox32">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Получил:</Value>
+                <Value>СПАСИБО</Value>
                 <Style>
-                  <FontSize>11pt</FontSize>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ЗА ПОКУПКУ!</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>6.15695cm</Top>
-        <Left>13.93943cm</Left>
-        <Height>0.6cm</Height>
-        <Width>1.97215cm</Width>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>10.38608cm</Top>
+        <Left>5.24447cm</Left>
+        <Height>1.20854cm</Height>
+        <Width>10.33876cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -693,21 +756,8 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Line Name="Line4">
-        <Top>6.76976cm</Top>
-        <Left>20.05131cm</Left>
-        <Height>0cm</Height>
-        <Width>-3.81cm</Width>
-        <ZIndex>8</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-            <Width>0.8pt</Width>
-          </Border>
-        </Style>
-      </Line>
     </ReportItems>
-    <Height>7.04716cm</Height>
+    <Height>11.65525cm</Height>
     <Style>
       <Border>
         <Style>None</Style>
@@ -717,27 +767,13 @@
       </TopBorder>
     </Style>
   </Body>
-  <Width>20.72441cm</Width>
+  <Width>20.8277cm</Width>
   <Page>
     <PageHeader>
-      <Height>7.05266cm</Height>
+      <Height>6.77044cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Image Name="Logo">
-          <Source>Embedded</Source>
-          <Value>Logo</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.44662cm</Top>
-          <Left>0.65828cm</Left>
-          <Height>1.31479cm</Height>
-          <Width>4.56506cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
         <Textbox Name="Textbox1">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -745,7 +781,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Товарная накладная №</Value>
+                  <Value>Кассовый чек. Приход</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -756,111 +792,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.61051cm</Top>
-          <Left>6.25594cm</Left>
+          <Top>4.0003cm</Top>
+          <Left>7.37185cm</Left>
           <Height>0.75875cm</Height>
           <Width>6.25708cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>от</Value>
-                  <Style>
-                    <FontSize>14pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>2.36926cm</Top>
-          <Left>6.25594cm</Left>
-          <Height>0.75875cm</Height>
-          <Width>0.72729cm</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="ExecutionTime">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Globals!ExecutionTime</Value>
-                  <Style>
-                    <FontSize>11pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>0.44662cm</Top>
-          <Left>17.05913cm</Left>
-          <Height>0.78562cm</Height>
-          <Width>3.53651cm</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="IDSale">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!IDSale.Value, "PackingListDataSet")</Value>
-                  <Style>
-                    <FontSize>14pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Left</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>IDSale</rd:DefaultName>
-          <Top>1.58405cm</Top>
-          <Left>12.51302cm</Left>
-          <Height>0.75875cm</Height>
-          <Width>4.54611cm</Width>
-          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -880,8 +815,7 @@
                 <TextRun>
                   <Value>=First(Fields!DateSale.Value, "PackingListDataSet")</Value>
                   <Style>
-                    <FontSize>14pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
+                    <FontSize>11pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -891,76 +825,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>2.3428cm</Top>
-          <Left>7.01851cm</Left>
-          <Height>0.75875cm</Height>
-          <Width>6.08417cm</Width>
-          <ZIndex>5</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox5">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>На склад</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>3.40417cm</Top>
-          <Left>10.59111cm</Left>
-          <Height>0.75875cm</Height>
-          <Width>2.42062cm</Width>
-          <ZIndex>6</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox7">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Организация:</Value>
-                  <Style>
-                    <FontSize>11pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>4.5912cm</Top>
-          <Left>5.8124cm</Left>
-          <Height>0.6cm</Height>
-          <Width>4.44448cm</Width>
-          <ZIndex>7</ZIndex>
+          <Top>5.8353cm</Top>
+          <Left>0.25099cm</Left>
+          <Height>0.62646cm</Height>
+          <Width>2.98282cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -978,7 +847,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Продавец-консультант:</Value>
+                  <Value>Чек №:</Value>
                   <Style>
                     <FontSize>11pt</FontSize>
                   </Style>
@@ -988,11 +857,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>5.36759cm</Top>
-          <Left>5.8124cm</Left>
+          <Top>5.05891cm</Top>
+          <Left>0.25099cm</Left>
           <Height>0.6cm</Height>
-          <Width>4.44448cm</Width>
-          <ZIndex>8</ZIndex>
+          <Width>1.48115cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1010,7 +879,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!FName.Value, "PackingListDataSet")+" "+First(Fields!SName.Value, "PackingListDataSet")+" "+First(Fields!Patronym.Value, "PackingListDataSet")</Value>
+                  <Value>=First(Fields!IDSale.Value, "PackingListDataSet")</Value>
                   <Style>
                     <FontSize>11pt</FontSize>
                   </Style>
@@ -1022,111 +891,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>5.36759cm</Top>
-          <Left>10.25688cm</Left>
+          <Top>5.05891cm</Top>
+          <Left>1.73214cm</Left>
           <Height>0.6cm</Height>
-          <Width>10.33876cm</Width>
-          <ZIndex>9</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox13">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Дата печати:</Value>
-                  <Style>
-                    <FontSize>11pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox13</rd:DefaultName>
-          <Top>0.44662cm</Top>
-          <Left>14.231cm</Left>
-          <Height>0.78562cm</Height>
-          <Width>2.82813cm</Width>
-          <ZIndex>10</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox22">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Покупатель:</Value>
-                  <Style>
-                    <FontSize>11pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>6.14398cm</Top>
-          <Left>5.8124cm</Left>
-          <Height>0.6cm</Height>
-          <Width>4.44448cm</Width>
-          <ZIndex>11</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox23">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!FullName.Value, "PackingListDataSet")</Value>
-                  <Style>
-                    <FontSize>11pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Left</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox11</rd:DefaultName>
-          <Top>6.14398cm</Top>
-          <Left>10.25688cm</Left>
-          <Height>0.6cm</Height>
-          <Width>10.33876cm</Width>
-          <ZIndex>12</ZIndex>
+          <Width>1.50168cm</Width>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1150,15 +919,17 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>4.5912cm</Top>
-          <Left>10.25688cm</Left>
+          <Top>0.91349cm</Top>
+          <Left>5.199cm</Left>
           <Height>0.6cm</Height>
           <Width>10.33876cm</Width>
-          <ZIndex>13</ZIndex>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1169,6 +940,86 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Textbox Name="Textbox29">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>ИНН: 1617834688</Value>
+                  <Style>
+                    <FontSize>11pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox7</rd:DefaultName>
+          <Top>1.68988cm</Top>
+          <Left>5.199cm</Left>
+          <Height>0.6cm</Height>
+          <Width>10.33876cm</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox30">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>690039, Регион 25, Владивосток, Русская улица, дом 2к</Value>
+                  <Style>
+                    <FontSize>11pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox7</rd:DefaultName>
+          <Top>2.46627cm</Top>
+          <Left>5.199cm</Left>
+          <Height>0.6cm</Height>
+          <Width>10.33876cm</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line1">
+          <Top>6.74398cm</Top>
+          <Left>0.02328cm</Left>
+          <Height>0cm</Height>
+          <Width>20.80442cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -1319,6 +1170,22 @@ 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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="QR">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>

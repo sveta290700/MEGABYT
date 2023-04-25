@@ -1,7 +1,7 @@
 ﻿
 namespace Store
 {
-    partial class PackingListReportViewer
+    partial class ReceiptReportViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace Store
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PackingListReportViewer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceiptReportViewer));
             this.packinglistBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MEGABYTDataSet = new Store.MEGABYTDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -55,7 +55,7 @@ namespace Store
             reportDataSource1.Name = "PackingListDataSet";
             reportDataSource1.Value = this.packinglistBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Store.PackingList.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Store.Receipt.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(13, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -69,17 +69,17 @@ namespace Store
             // 
             this.packing_listTableAdapter.ClearBeforeFill = true;
             // 
-            // PackingListReportViewer
+            // ReceiptReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1255, 595);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "PackingListReportViewer";
+            this.Name = "ReceiptReportViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Просмотр товарной накладной";
-            this.Load += new System.EventHandler(this.PackingListReportViewer_Load);
+            this.Text = "Просмотр чека продажи";
+            this.Load += new System.EventHandler(this.ReceiptReportViewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.packinglistBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).EndInit();
             this.ResumeLayout(false);

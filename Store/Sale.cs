@@ -140,5 +140,12 @@ namespace Store
         {
             selectedSaleRow = catalogDataGridView.CurrentCell.RowIndex;
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int selectedSaleID = (int)catalogDataGridView.Rows[selectedSaleRow].Cells[0].Value;
+            ReceiptReportViewer f = new ReceiptReportViewer(selectedSaleID);
+            f.ShowDialog();
+        }
     }
 }
