@@ -36,8 +36,7 @@ namespace Store
             if (ID == "0")
             {
                 SqlConnection myConnection;
-                myConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString);
-
+                myConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString);
                 myConnection.Open();
                 string sql = "SELECT IDENT_CURRENT('dbo.Sale')+1";
                 SqlCommand cmd = new SqlCommand(sql, myConnection);
@@ -130,7 +129,7 @@ namespace Store
             DataTable tres = new DataTable();
             float price = 0;
             float discount = 0;
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

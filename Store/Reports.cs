@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -34,61 +35,13 @@ namespace Store
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            DataTable dt = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlCommand command = new SqlCommand("SELECT kg.NameKategory as Категория, g.ModelGood as Модель, COUNT(r.IDReceipt) as Количество"
-                +" FROM dbo.KategoryGoods kg INNER JOIN goods g ON g.IDKategoryGoods = kg.IDKategoryGoods"
-                +" INNER JOIN dbo.Receipt r ON r.IDGood = g.IDGood"
-                +" INNER JOIN dbo.Sale s ON s.IDSale = r.IDSale"
-                +" GROUP BY kg.NameKategory, ModelGood"
-                +" ORDER BY COUNT(r.IDReceipt) DESC", conn);
-            adapter.SelectCommand = command;
-            adapter.Fill(dt);
-
-            // создаем пустую книгу и объявляем переменные
-            Microsoft.Office.Interop.Excel.Application xlexcel;
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-            object misValue = System.Reflection.Missing.Value;
-            xlexcel = new Excel.Application();
-            xlexcel.Visible = true;
-            xlWorkBook = xlexcel.Workbooks.Add(misValue);
-            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-            foreach (DataColumn col in dt.Columns)
-            {
-                xlWorkSheet.Cells[1, dt.Columns.IndexOf(col) + 1] = col.ColumnName.ToString();
-            }
-
-            foreach (DataRow row in dt.Rows)
-            {
-                foreach (DataColumn col in dt.Columns)
-                {
-                    xlWorkSheet.Cells[dt.Rows.IndexOf(row) + 2, dt.Columns.IndexOf(col) + 1] = row[dt.Columns.IndexOf(col)];
-                }
-            }
-
-            xlWorkSheet.Columns["A:G"].Hidden = true;
-
-            //автовыравнивание колонок
-            xlWorkSheet.Columns["A:G"].AutoFit();
-
-            //границы таблицы
-            Excel.Range xlWorkSheet_rng = xlWorkSheet.get_Range("A1", "C" + (dt.Rows.Count + 1).ToString());
-            xlWorkSheet_rng.Borders.ColorIndex = 0;
-            xlWorkSheet_rng.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
-            xlWorkSheet_rng.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
-
-            //сделать первую строку жирной
-            xlWorkSheet.Cells[1, 1].EntireRow.Font.Bold = true;
+            PopularGoodsReportViewer f = new PopularGoodsReportViewer();
+            f.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
             SqlConnection conn = new SqlConnection(connectionString);
 
             DataTable dt = new DataTable();
@@ -141,7 +94,7 @@ namespace Store
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
             SqlConnection conn = new SqlConnection(connectionString);
 
             DataTable dt = new DataTable();
@@ -207,7 +160,7 @@ namespace Store
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
             SqlConnection conn = new SqlConnection(connectionString);
 
             DataTable dt = new DataTable();
@@ -263,7 +216,7 @@ namespace Store
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
             SqlConnection conn = new SqlConnection(connectionString);
 
             DataTable dt = new DataTable();

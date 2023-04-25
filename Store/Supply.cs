@@ -40,7 +40,7 @@ namespace Store
         {
             int selectedSupplyID = (int)supplyDataGridView.Rows[selectedSupplyRow].Cells[0].Value;
             SqlConnection myConnection;
-            myConnection = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString);
+            myConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString);
             SqlCommand cmd1 = new SqlCommand("Empty", myConnection);
             cmd1.CommandText = "DELETE FROM dbo.ScopeDelivery WHERE IDSupply=" + selectedSupplyID;
             SqlCommand cmd2 = new SqlCommand("Empty", myConnection);

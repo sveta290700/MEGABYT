@@ -48,12 +48,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.megabytDataSet1 = new Store.MEGABYTDataSet();
-            this.catalog_salesTableAdapter1 = new Store.MEGABYTDataSetTableAdapters.catalog_salesTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.megabytDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -216,15 +213,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // megabytDataSet1
-            // 
-            this.megabytDataSet1.DataSetName = "MEGABYTDataSet";
-            this.megabytDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // catalog_salesTableAdapter1
-            // 
-            this.catalog_salesTableAdapter1.ClearBeforeFill = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -266,7 +254,6 @@
             this.Text = "ИС ООО \"МегаБыт\"";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.megabytDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -294,8 +281,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem поставщикиToolStripMenuItem;
-        private MEGABYTDataSet megabytDataSet1;
-        private MEGABYTDataSetTableAdapters.catalog_salesTableAdapter catalog_salesTableAdapter1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

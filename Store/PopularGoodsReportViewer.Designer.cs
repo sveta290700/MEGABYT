@@ -1,7 +1,7 @@
 ﻿
 namespace Store
 {
-    partial class ReceiptReportViewer
+    partial class PopularGoodsReportViewer
     {
         /// <summary>
         /// Required designer variable.
@@ -31,19 +31,14 @@ namespace Store
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceiptReportViewer));
-            this.packinglistBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopularGoodsReportViewer));
             this.MEGABYTDataSet = new Store.MEGABYTDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.packing_listTableAdapter = new Store.MEGABYTDataSetTableAdapters.packing_listTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.packinglistBindingSource)).BeginInit();
+            this.popular_goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.popular_goodsTableAdapter = new Store.MEGABYTDataSetTableAdapters.popular_goodsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popular_goodsBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // packinglistBindingSource
-            // 
-            this.packinglistBindingSource.DataMember = "packing_list";
-            this.packinglistBindingSource.DataSource = this.MEGABYTDataSet;
             // 
             // MEGABYTDataSet
             // 
@@ -52,10 +47,10 @@ namespace Store
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "PackingListDataSet";
-            reportDataSource1.Value = this.packinglistBindingSource;
+            reportDataSource1.Name = "PopularGoodsDataSet";
+            reportDataSource1.Value = this.popular_goodsBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Store.Receipt.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Store.PopularGoods.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(13, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -66,23 +61,28 @@ namespace Store
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
-            // packing_listTableAdapter
+            // popular_goodsBindingSource
             // 
-            this.packing_listTableAdapter.ClearBeforeFill = true;
+            this.popular_goodsBindingSource.DataMember = "popular_goods";
+            this.popular_goodsBindingSource.DataSource = this.MEGABYTDataSet;
             // 
-            // ReceiptReportViewer
+            // popular_goodsTableAdapter
+            // 
+            this.popular_goodsTableAdapter.ClearBeforeFill = true;
+            // 
+            // PopularGoodsReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1255, 595);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ReceiptReportViewer";
+            this.Name = "PopularGoodsReportViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Просмотр чека продажи";
-            this.Load += new System.EventHandler(this.ReceiptReportViewer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.packinglistBindingSource)).EndInit();
+            this.Text = "Просмотр списка популярных товаров";
+            this.Load += new System.EventHandler(this.PopularGoodsReportViewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popular_goodsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -91,7 +91,7 @@ namespace Store
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private MEGABYTDataSet MEGABYTDataSet;
-        private System.Windows.Forms.BindingSource packinglistBindingSource;
-        private MEGABYTDataSetTableAdapters.packing_listTableAdapter packing_listTableAdapter;
+        private System.Windows.Forms.BindingSource popular_goodsBindingSource;
+        private MEGABYTDataSetTableAdapters.popular_goodsTableAdapter popular_goodsTableAdapter;
     }
 }
