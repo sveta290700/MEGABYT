@@ -32,13 +32,23 @@ namespace Store
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PackingListReportViewer));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.MEGABYTDataSet = new Store.MEGABYTDataSet();
             this.packinglistBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MEGABYTDataSet = new Store.MEGABYTDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.packing_listTableAdapter = new Store.MEGABYTDataSetTableAdapters.packing_listTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packinglistBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // packinglistBindingSource
+            // 
+            this.packinglistBindingSource.DataMember = "packing_list";
+            this.packinglistBindingSource.DataSource = this.MEGABYTDataSet;
+            // 
+            // MEGABYTDataSet
+            // 
+            this.MEGABYTDataSet.DataSetName = "MEGABYTDataSet";
+            this.MEGABYTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -46,22 +56,11 @@ namespace Store
             reportDataSource1.Value = this.packinglistBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Store.PackingList.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(20, 18);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.reportViewer1.Location = new System.Drawing.Point(13, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1849, 883);
+            this.reportViewer1.Size = new System.Drawing.Size(1230, 575);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // MEGABYTDataSet
-            // 
-            this.MEGABYTDataSet.DataSetName = "MEGABYTDataSet";
-            this.MEGABYTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // packinglistBindingSource
-            // 
-            this.packinglistBindingSource.DataMember = "packing_list";
-            this.packinglistBindingSource.DataSource = this.MEGABYTDataSet;
             // 
             // packing_listTableAdapter
             // 
@@ -69,18 +68,17 @@ namespace Store
             // 
             // PackingListReportViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1882, 915);
+            this.ClientSize = new System.Drawing.Size(1255, 595);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PackingListReportViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Просмотр товарной накладной";
             this.Load += new System.EventHandler(this.PackingListReportViewer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packinglistBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
