@@ -7819,6 +7819,8 @@ namespace Store {
             
             private global::System.Data.DataColumn columnNameKategory;
             
+            private global::System.Data.DataColumn columnNameManufacturer;
+            
             private global::System.Data.DataColumn columnModelGood;
             
             private global::System.Data.DataColumn columnTimes;
@@ -7861,6 +7863,14 @@ namespace Store {
             public global::System.Data.DataColumn NameKategoryColumn {
                 get {
                     return this.columnNameKategory;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NameManufacturerColumn {
+                get {
+                    return this.columnNameManufacturer;
                 }
             }
             
@@ -7917,10 +7927,11 @@ namespace Store {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public popular_goodsRow Addpopular_goodsRow(string NameKategory, string ModelGood, int Times) {
+            public popular_goodsRow Addpopular_goodsRow(string NameKategory, string NameManufacturer, string ModelGood, int Times) {
                 popular_goodsRow rowpopular_goodsRow = ((popular_goodsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NameKategory,
+                        NameManufacturer,
                         ModelGood,
                         Times};
                 rowpopular_goodsRow.ItemArray = columnValuesArray;
@@ -7946,6 +7957,7 @@ namespace Store {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnNameKategory = base.Columns["NameKategory"];
+                this.columnNameManufacturer = base.Columns["NameManufacturer"];
                 this.columnModelGood = base.Columns["ModelGood"];
                 this.columnTimes = base.Columns["Times"];
             }
@@ -7955,12 +7967,16 @@ namespace Store {
             private void InitClass() {
                 this.columnNameKategory = new global::System.Data.DataColumn("NameKategory", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNameKategory);
+                this.columnNameManufacturer = new global::System.Data.DataColumn("NameManufacturer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNameManufacturer);
                 this.columnModelGood = new global::System.Data.DataColumn("ModelGood", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModelGood);
                 this.columnTimes = new global::System.Data.DataColumn("Times", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTimes);
                 this.columnNameKategory.AllowDBNull = false;
                 this.columnNameKategory.MaxLength = 150;
+                this.columnNameManufacturer.AllowDBNull = false;
+                this.columnNameManufacturer.MaxLength = 100;
                 this.columnModelGood.AllowDBNull = false;
                 this.columnModelGood.MaxLength = 50;
             }
@@ -10254,6 +10270,17 @@ namespace Store {
                 }
                 set {
                     this[this.tablepopular_goods.NameKategoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NameManufacturer {
+                get {
+                    return ((string)(this[this.tablepopular_goods.NameManufacturerColumn]));
+                }
+                set {
+                    this[this.tablepopular_goods.NameManufacturerColumn] = value;
                 }
             }
             
@@ -17885,6 +17912,7 @@ SELECT IDClientCard, IDDiscount, FullName, NumberTelephone, Email, DateBirth FRO
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "popular_goods";
             tableMapping.ColumnMappings.Add("NameKategory", "NameKategory");
+            tableMapping.ColumnMappings.Add("NameManufacturer", "NameManufacturer");
             tableMapping.ColumnMappings.Add("ModelGood", "ModelGood");
             tableMapping.ColumnMappings.Add("Times", "Times");
             this._adapter.TableMappings.Add(tableMapping);
@@ -17903,7 +17931,7 @@ SELECT IDClientCard, IDDiscount, FullName, NumberTelephone, Email, DateBirth FRO
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT NameKategory, ModelGood, Times FROM dbo.popular_goods()";
+            this._commandCollection[0].CommandText = "SELECT NameKategory, NameManufacturer, ModelGood, Times FROM dbo.popular_goods()";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

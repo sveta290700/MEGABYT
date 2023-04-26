@@ -1141,7 +1141,7 @@ SELECT IDClientCard, IDDiscount, FullName, NumberTelephone, Email, DateBirth FRO
               <DbSource ConnectionRef="MEGABYTConnectionString (Settings)" DbObjectName="MEGABYT.dbo.popular_goods" DbObjectType="Function" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT NameKategory, ModelGood, Times FROM dbo.popular_goods()</CommandText>
+                    <CommandText>SELECT NameKategory, NameManufacturer, ModelGood, Times FROM dbo.popular_goods()</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1149,6 +1149,7 @@ SELECT IDClientCard, IDDiscount, FullName, NumberTelephone, Email, DateBirth FRO
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="NameKategory" DataSetColumn="NameKategory" />
+              <Mapping SourceColumn="NameManufacturer" DataSetColumn="NameManufacturer" />
               <Mapping SourceColumn="ModelGood" DataSetColumn="ModelGood" />
               <Mapping SourceColumn="Times" DataSetColumn="Times" />
             </Mappings>
@@ -1621,6 +1622,13 @@ SELECT IDClientCard, IDDiscount, FullName, NumberTelephone, Email, DateBirth FRO
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NameManufacturer" msprop:Generator_ColumnVarNameInTable="columnNameManufacturer" msprop:Generator_ColumnPropNameInRow="NameManufacturer" msprop:Generator_ColumnPropNameInTable="NameManufacturerColumn" msprop:Generator_UserColumnName="NameManufacturer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
