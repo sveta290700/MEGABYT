@@ -43,68 +43,14 @@ namespace Store
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            DataTable dt = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlCommand command = new SqlCommand("SELECT Производитель,Адрес, [Зарегистрировано], [В работе], [Ремонт выполнен], [Ремонт невозможен], [Отмена]"
-                +" FROM("
-                +" SELECT m.NameManufacturer as Производитель, sc.AddressCenter as Адрес, tr.Status as Статус, COUNT(IDTransferRepair) as cnt"
-                +" FROM dbo.ServiceCenter sc INNER JOIN dbo.TransferRepair tr ON tr.IDServiceCenter = sc.IDServiceCenter"
-                +" INNER JOIN dbo.Manufacturer m ON m.IDManufacturer = sc.IDManufacturer"
-                +" INNER JOIN dbo.WarrantyService ws ON ws.IDWarrantyService = tr.IDWarrantyService"
-                +" GROUP BY m.NameManufacturer, sc.AddressCenter, tr.Status) t"
-                +" PIVOT"
-                +" ("
-                +" COUNT(cnt)"
-                +" FOR статус IN([Зарегистрировано], [В работе], [Ремонт выполнен], [Ремонт невозможен], [Отмена])"
-                +" ) AS PivotTable; ", conn);
-            adapter.SelectCommand = command;
-            adapter.Fill(dt);
-
-            // создаем пустую книгу и объявляем переменные
-            Microsoft.Office.Interop.Excel.Application xlexcel;
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-            object misValue = System.Reflection.Missing.Value;
-            xlexcel = new Excel.Application();
-            xlexcel.Visible = true;
-            xlWorkBook = xlexcel.Workbooks.Add(misValue);
-            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-            foreach (DataColumn col in dt.Columns)
-            {
-                xlWorkSheet.Cells[1, dt.Columns.IndexOf(col) + 1] = col.ColumnName.ToString();
-            }
-
-            foreach (DataRow row in dt.Rows)
-            {
-                foreach (DataColumn col in dt.Columns)
-                {
-                    xlWorkSheet.Cells[dt.Rows.IndexOf(row) + 2, dt.Columns.IndexOf(col) + 1] = row[dt.Columns.IndexOf(col)];
-                }
-            }
-
-            xlWorkSheet.Columns["A:G"].Hidden = true;
-
-            //автовыравнивание колонок
-            xlWorkSheet.Columns["A:G"].AutoFit();
-
-            //границы таблицы
-            Excel.Range xlWorkSheet_rng = xlWorkSheet.get_Range("A1", "G" + (dt.Rows.Count + 1).ToString());
-            xlWorkSheet_rng.Borders.ColorIndex = 0;
-            xlWorkSheet_rng.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
-            xlWorkSheet_rng.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
-
-            //сделать первую строку жирной
-            xlWorkSheet.Cells[1, 1].EntireRow.Font.Bold = true;
+            ServiceCentersStatReportViewer f = new ServiceCentersStatReportViewer();
+            f.ShowDialog();
         }
 
         private void Reports_Load(object sender, EventArgs e)
         {
-            dateTimePicker1.Value = DateTime.Today.AddDays(-15);
-            dateTimePicker2.Value = DateTime.Today.AddDays(15);
+            dateTimePicker1.Value = DateTime.Today.AddDays(-30);
+            dateTimePicker2.Value = DateTime.Today;
         }
 
         private void button3_Click(object sender, EventArgs e)
