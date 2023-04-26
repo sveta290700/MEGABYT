@@ -21,11 +21,6 @@ namespace Store
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             Diag f = new Diag(this);
@@ -41,55 +36,9 @@ namespace Store
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
-            SqlConnection conn = new SqlConnection(connectionString);
+            SuppliersRaitingReportViewer f = new SuppliersRaitingReportViewer();
+            f.ShowDialog();
 
-            DataTable dt = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlCommand command = new SqlCommand("SELECT s.NameSupplier as Поставщик, Count(su.IDSupply) as 'Количество поставок', SUM(CountSupply*PriceSupply) as 'На сумму'"
-                +" FROM Supplier s INNER JOIN Supply su ON s.IDSupplier = su.IDSupplier"
-                +" INNER JOIN dbo.ScopeDelivery sc ON sc.IDSupply = su.IDSupply"
-                +" GROUP BY s.NameSupplier"
-                +" ORDER BY SUM(CountSupply * PriceSupply) DESC, Count(su.IDSupply) DESC", conn);
-            adapter.SelectCommand = command;
-            adapter.Fill(dt);
-
-            // создаем пустую книгу и объявляем переменные
-            Microsoft.Office.Interop.Excel.Application xlexcel;
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-            object misValue = System.Reflection.Missing.Value;
-            xlexcel = new Excel.Application();
-            xlexcel.Visible = true;
-            xlWorkBook = xlexcel.Workbooks.Add(misValue);
-            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-            foreach (DataColumn col in dt.Columns)
-            {
-                xlWorkSheet.Cells[1, dt.Columns.IndexOf(col) + 1] = col.ColumnName.ToString();
-            }
-
-            foreach (DataRow row in dt.Rows)
-            {
-                foreach (DataColumn col in dt.Columns)
-                {
-                    xlWorkSheet.Cells[dt.Rows.IndexOf(row) + 2, dt.Columns.IndexOf(col) + 1] = row[dt.Columns.IndexOf(col)];
-                }
-            }
-
-            xlWorkSheet.Columns["A:G"].Hidden = true;
-
-            //автовыравнивание колонок
-            xlWorkSheet.Columns["A:G"].AutoFit();
-
-            //границы таблицы
-            Excel.Range xlWorkSheet_rng = xlWorkSheet.get_Range("A1", "C" + (dt.Rows.Count + 1).ToString());
-            xlWorkSheet_rng.Borders.ColorIndex = 0;
-            xlWorkSheet_rng.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
-            xlWorkSheet_rng.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
-
-            //сделать первую строку жирной
-            xlWorkSheet.Cells[1, 1].EntireRow.Font.Bold = true;
         }
 
         private void button6_Click(object sender, EventArgs e)

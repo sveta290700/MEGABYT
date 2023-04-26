@@ -181,5 +181,19 @@ namespace Store
         {
             calcsum();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int selectedSaleID = Int32.Parse(ID);
+            PackingListReportViewer f = new PackingListReportViewer(selectedSaleID);
+            f.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int selectedSaleID = Int32.Parse(ID);
+            ReceiptReportViewer f = new ReceiptReportViewer(selectedSaleID);
+            f.ShowDialog();
+        }
     }
 }
