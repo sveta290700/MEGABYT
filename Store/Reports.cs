@@ -21,9 +21,8 @@ namespace Store
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Diag f = new Diag(this);
+            KategoriesReportReportViewer f = new KategoriesReportReportViewer(dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString());
             f.ShowDialog();
-
         }
 
         private void button1_Click(object sender, EventArgs e)
