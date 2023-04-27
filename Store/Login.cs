@@ -46,18 +46,39 @@ namespace Store
                     myConnection.Close();
                     if (res2 == "Менеджер по закупкам")
                     {
+                        myConnection.Open();
+                        string sql3 = "SELECT Employee.SName+' '+Employee.FName+' '+Employee.Patronym FROM dbo.Employee AS Employee INNER JOIN dbo.Profile AS Profile ON Employee.IDProfile = Profile.IDProfile INNER JOIN dbo.Posts AS Posts ON Employee.IDPost = Posts.IDPost WHERE Profile.Login='" + textBox1.Text + "' AND Profile.Password='" + textBox2.Text + "'";
+                        SqlCommand findEmployeeName = new SqlCommand(sql3, myConnection);
+                        string res3 = (string)findEmployeeName.ExecuteScalar();
+                        myConnection.Close();
                         this.Hide();
-                        MainForm f = new MainForm();
+                        SupplyManagerForm f = new SupplyManagerForm(res3);
                         f.Closed += (s, args) => this.Close();
                         f.Show();
                     }
                     else if (res2 == "Продавец-консультант")
                     {
-
+                        myConnection.Open();
+                        string sql3 = "SELECT Employee.SName+' '+Employee.FName+' '+Employee.Patronym FROM dbo.Employee AS Employee INNER JOIN dbo.Profile AS Profile ON Employee.IDProfile = Profile.IDProfile INNER JOIN dbo.Posts AS Posts ON Employee.IDPost = Posts.IDPost WHERE Profile.Login='" + textBox1.Text + "' AND Profile.Password='" + textBox2.Text + "'";
+                        SqlCommand findEmployeeName = new SqlCommand(sql3, myConnection);
+                        string res3 = (string)findEmployeeName.ExecuteScalar();
+                        myConnection.Close();
+                        this.Hide();
+                        SellerForm f = new SellerForm(res3);
+                        f.Closed += (s, args) => this.Close();
+                        f.Show();
                     }
                     else if (res2 == "Менеджер по кадрам")
                     {
-
+                        myConnection.Open();
+                        string sql3 = "SELECT Employee.SName+' '+Employee.FName+' '+Employee.Patronym FROM dbo.Employee AS Employee INNER JOIN dbo.Profile AS Profile ON Employee.IDProfile = Profile.IDProfile INNER JOIN dbo.Posts AS Posts ON Employee.IDPost = Posts.IDPost WHERE Profile.Login='" + textBox1.Text + "' AND Profile.Password='" + textBox2.Text + "'";
+                        SqlCommand findEmployeeName = new SqlCommand(sql3, myConnection);
+                        string res3 = (string)findEmployeeName.ExecuteScalar();
+                        myConnection.Close();
+                        this.Hide();
+                        PersonalManagerForm f = new PersonalManagerForm(res3);
+                        f.Closed += (s, args) => this.Close();
+                        f.Show();
                     }
                     else
                     {

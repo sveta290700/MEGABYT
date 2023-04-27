@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace Store
 {
-    public partial class MainForm : Form
+    public partial class SellerForm : Form
     {
-        public MainForm()
+        public SellerForm(string login)
         {
             InitializeComponent();
+            label1.Text = label1.Text + login + "!";
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)

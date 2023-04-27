@@ -142,6 +142,24 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="SellerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerForm.Designer.cs">
+      <DependentUpon>SellerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplyManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplyManagerForm.Designer.cs">
+      <DependentUpon>SupplyManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalManagerForm.Designer.cs">
+      <DependentUpon>PersonalManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServiceCentersStatReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,12 +201,6 @@
     </Compile>
     <Compile Include="Goods.Designer.cs">
       <DependentUpon>Goods.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="KategoryGoods.cs">
       <SubType>Form</SubType>
@@ -287,6 +299,15 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SellerForm.resx">
+      <DependentUpon>SellerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplyManagerForm.resx">
+      <DependentUpon>SupplyManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalManagerForm.resx">
+      <DependentUpon>PersonalManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServiceCentersStat.rdlc" />
     <EmbeddedResource Include="ServiceCentersStatReportViewer.resx">
       <DependentUpon>ServiceCentersStatReportViewer.cs</DependentUpon>
@@ -312,9 +333,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Goods.resx">
       <DependentUpon>Goods.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KategoryGoods.resx">
       <DependentUpon>KategoryGoods.cs</DependentUpon>
@@ -406,7 +424,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Logo.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Бытовая техника.jpeg" />
   </ItemGroup>
