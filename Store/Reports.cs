@@ -10,8 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Excel = Microsoft.Office.Interop.Excel;
-
 namespace Store
 {
     public partial class Reports : Form
@@ -38,7 +36,6 @@ namespace Store
         {
             SuppliersRaitingReportViewer f = new SuppliersRaitingReportViewer();
             f.ShowDialog();
-
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -62,6 +59,12 @@ namespace Store
         private void button4_Click(object sender, EventArgs e)
         {
             FinancialReportReportViewer f = new FinancialReportReportViewer(dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString());
+            f.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            EmployeesSalesReportViewer f = new EmployeesSalesReportViewer(dateTimePicker1.Value.ToString(), dateTimePicker2.Value.ToString());
             f.ShowDialog();
         }
     }

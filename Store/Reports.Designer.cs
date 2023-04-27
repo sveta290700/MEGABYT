@@ -54,45 +54,40 @@
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(867, 89);
+            this.panel1.Size = new System.Drawing.Size(578, 58);
             this.panel1.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(428, 35);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(285, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 20);
+            this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "по";
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(471, 32);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker2.Location = new System.Drawing.Point(314, 21);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(298, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(44, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 20);
+            this.label1.Size = new System.Drawing.Size(13, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "с";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(108, 32);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker1.Location = new System.Drawing.Point(72, 21);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(298, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // groupBox1
@@ -101,11 +96,9 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 331);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(0, 215);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(867, 215);
+            this.groupBox1.Size = new System.Drawing.Size(578, 140);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Общие отчеты (без учета временного диапазона)";
@@ -113,10 +106,9 @@
             // button6
             // 
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Location = new System.Drawing.Point(4, 138);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button6.Location = new System.Drawing.Point(3, 90);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(859, 57);
+            this.button6.Size = new System.Drawing.Size(572, 37);
             this.button6.TabIndex = 2;
             this.button6.Text = "Статистика работы сервисных центров";
             this.button6.UseVisualStyleBackColor = true;
@@ -125,10 +117,9 @@
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(4, 81);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(3, 53);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(859, 57);
+            this.button2.Size = new System.Drawing.Size(572, 37);
             this.button2.TabIndex = 1;
             this.button2.Text = "Рейтинг поставщиков";
             this.button2.UseVisualStyleBackColor = true;
@@ -137,10 +128,9 @@
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(4, 24);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(3, 16);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(859, 57);
+            this.button1.Size = new System.Drawing.Size(572, 37);
             this.button1.TabIndex = 0;
             this.button1.Text = "Список популярных товаров";
             this.button1.UseVisualStyleBackColor = true;
@@ -149,10 +139,9 @@
             // button3
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Location = new System.Drawing.Point(0, 89);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Location = new System.Drawing.Point(0, 58);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(867, 57);
+            this.button3.Size = new System.Drawing.Size(578, 37);
             this.button3.TabIndex = 2;
             this.button3.Text = "Заработная плата сотрудников";
             this.button3.UseVisualStyleBackColor = true;
@@ -161,10 +150,9 @@
             // button4
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(0, 203);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Location = new System.Drawing.Point(0, 132);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(867, 57);
+            this.button4.Size = new System.Drawing.Size(578, 37);
             this.button4.TabIndex = 3;
             this.button4.Text = "Финансовый отчет работы магазина";
             this.button4.UseVisualStyleBackColor = true;
@@ -173,10 +161,9 @@
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.Location = new System.Drawing.Point(0, 260);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button5.Location = new System.Drawing.Point(0, 169);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(867, 57);
+            this.button5.Size = new System.Drawing.Size(578, 37);
             this.button5.TabIndex = 4;
             this.button5.Text = "Диаграмма по потреблению товаров";
             this.button5.UseVisualStyleBackColor = true;
@@ -185,19 +172,19 @@
             // button7
             // 
             this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.Location = new System.Drawing.Point(0, 146);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button7.Location = new System.Drawing.Point(0, 95);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(867, 57);
+            this.button7.Size = new System.Drawing.Size(578, 37);
             this.button7.TabIndex = 5;
             this.button7.Text = "Показатели продаж сотрудников";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Reports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 546);
+            this.ClientSize = new System.Drawing.Size(578, 355);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button7);
@@ -205,7 +192,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "Reports";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
