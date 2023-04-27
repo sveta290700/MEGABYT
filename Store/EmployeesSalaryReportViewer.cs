@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 
@@ -28,23 +19,25 @@ namespace Store
 
         private void EmployeesSalaryReportViewer_Load(object sender, EventArgs e)
         {
-            this.MEGABYTDataSet.EnforceConstraints = false;
+            MEGABYTDataSet.EnforceConstraints = false;
             MEGABYTDataSetTableAdapters.employees_salaryTableAdapter esTA = new MEGABYTDataSetTableAdapters.employees_salaryTableAdapter();
-            esTA.Fill(this.MEGABYTDataSet.employees_salary, date1, date2);
+            esTA.Fill(MEGABYTDataSet.employees_salary, date1, date2);
             PageSettings pg = new PageSettings();
             pg.Margins.Top = 0;
             pg.Margins.Bottom = 0;
             pg.Margins.Left = 0;
             pg.Margins.Right = 0;
-            PaperSize size = new PaperSize();
-            size.RawKind = (int)PaperKind.A4;
+            PaperSize size = new PaperSize
+            {
+                RawKind = (int)PaperKind.A4
+            };
             pg.PaperSize = size;
             reportViewer1.SetPageSettings(pg);
             ReportParameter rp1 = new ReportParameter("date1", date1.ToString());
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp1 });
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp1 });
             ReportParameter rp2 = new ReportParameter("date2", date2.ToString());
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp2 });
-            this.reportViewer1.RefreshReport();
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp2 });
+            reportViewer1.RefreshReport();
         }
     }
 }

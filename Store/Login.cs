@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Store
@@ -51,10 +44,8 @@ namespace Store
                         SqlCommand findEmployeeName = new SqlCommand(sql3, myConnection);
                         string res3 = (string)findEmployeeName.ExecuteScalar();
                         myConnection.Close();
-                        this.Hide();
                         SupplyManagerForm f = new SupplyManagerForm(res3);
-                        f.Closed += (s, args) => this.Close();
-                        f.Show();
+                        f.ShowDialog(); ;
                     }
                     else if (res2 == "Продавец-консультант")
                     {
@@ -63,10 +54,8 @@ namespace Store
                         SqlCommand findEmployeeName = new SqlCommand(sql3, myConnection);
                         string res3 = (string)findEmployeeName.ExecuteScalar();
                         myConnection.Close();
-                        this.Hide();
                         SellerForm f = new SellerForm(res3);
-                        f.Closed += (s, args) => this.Close();
-                        f.Show();
+                        f.ShowDialog();
                     }
                     else if (res2 == "Менеджер по кадрам")
                     {
@@ -75,10 +64,8 @@ namespace Store
                         SqlCommand findEmployeeName = new SqlCommand(sql3, myConnection);
                         string res3 = (string)findEmployeeName.ExecuteScalar();
                         myConnection.Close();
-                        this.Hide();
                         PersonalManagerForm f = new PersonalManagerForm(res3);
-                        f.Closed += (s, args) => this.Close();
-                        f.Show();
+                        f.ShowDialog();
                     }
                     else
                     {

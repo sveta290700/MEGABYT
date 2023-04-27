@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Store
@@ -19,14 +12,14 @@ namespace Store
 
         private void postsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.postsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
+            Validate();
+            postsBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(MEGABYTDataSet);
         }
 
         private void Posts_Load(object sender, EventArgs e)
         {
-            this.postsTableAdapter.Fill(this.MEGABYTDataSet.Posts);
+            postsTableAdapter.Fill(MEGABYTDataSet.Posts);
         }
     }
 }

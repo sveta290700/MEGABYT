@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Store
@@ -23,18 +16,18 @@ namespace Store
 
         private void supplyBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.supplyBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
+            Validate();
+            supplyBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(MEGABYTDataSet);
         }
 
         private void Supply_Load(object sender, EventArgs e)
         {
-            this.goodsTableAdapter.Fill(this.MEGABYTDataSet.Goods);
-            this.supplierTableAdapter.Fill(this.MEGABYTDataSet.Supplier);
-            this.employeeTableAdapter.Fill(this.MEGABYTDataSet.Employee);
-            this.scopeDeliveryTableAdapter.Fill(this.MEGABYTDataSet.ScopeDelivery);
-            this.supplyTableAdapter.Fill(this.MEGABYTDataSet.Supply);
+            goodsTableAdapter.Fill(MEGABYTDataSet.Goods);
+            supplierTableAdapter.Fill(MEGABYTDataSet.Supplier);
+            employeeTableAdapter.Fill(MEGABYTDataSet.Employee);
+            scopeDeliveryTableAdapter.Fill(MEGABYTDataSet.ScopeDelivery);
+            supplyTableAdapter.Fill(MEGABYTDataSet.Supply);
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -50,11 +43,11 @@ namespace Store
             cmd1.ExecuteNonQuery();
             cmd2.ExecuteNonQuery();
             myConnection.Close();
-            this.goodsTableAdapter.Fill(this.MEGABYTDataSet.Goods);
-            this.supplierTableAdapter.Fill(this.MEGABYTDataSet.Supplier);
-            this.employeeTableAdapter.Fill(this.MEGABYTDataSet.Employee);
-            this.scopeDeliveryTableAdapter.Fill(this.MEGABYTDataSet.ScopeDelivery);
-            this.supplyTableAdapter.Fill(this.MEGABYTDataSet.Supply);
+            goodsTableAdapter.Fill(MEGABYTDataSet.Goods);
+            supplierTableAdapter.Fill(MEGABYTDataSet.Supplier);
+            employeeTableAdapter.Fill(MEGABYTDataSet.Employee);
+            scopeDeliveryTableAdapter.Fill(MEGABYTDataSet.ScopeDelivery);
+            supplyTableAdapter.Fill(MEGABYTDataSet.Supply);
         }
 
         private void supplyDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)

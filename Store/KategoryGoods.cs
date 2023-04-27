@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Store
@@ -19,14 +12,14 @@ namespace Store
 
         private void kategoryGoodsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.kategoryGoodsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
+            Validate();
+            kategoryGoodsBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(MEGABYTDataSet);
         }
 
         private void KategoryGoods_Load(object sender, EventArgs e)
         {
-            this.kategoryGoodsTableAdapter.Fill(this.MEGABYTDataSet.KategoryGoods);
+            kategoryGoodsTableAdapter.Fill(MEGABYTDataSet.KategoryGoods);
         }
 
         private void button1_Click(object sender, EventArgs e)

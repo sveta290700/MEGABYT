@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Store
@@ -25,14 +19,12 @@ namespace Store
 
         private void EditSales_Load(object sender, EventArgs e)
         {
-            this.goodsTableAdapter.Fill(this.MEGABYTDataSet.Goods);
-            this.receiptTableAdapter.Fill(this.MEGABYTDataSet.Receipt);
-            this.receiptTableAdapter.Fill(this.MEGABYTDataSet.Receipt);
-            this.employeeTableAdapter.Fill(this.MEGABYTDataSet.Employee);
-            this.saleTableAdapter.Fill(this.MEGABYTDataSet.Sale);
-            this.clientCardTableAdapter.Fill(this.MEGABYTDataSet.ClientCard);
-
-
+            goodsTableAdapter.Fill(MEGABYTDataSet.Goods);
+            receiptTableAdapter.Fill(MEGABYTDataSet.Receipt);
+            receiptTableAdapter.Fill(MEGABYTDataSet.Receipt);
+            employeeTableAdapter.Fill(MEGABYTDataSet.Employee);
+            saleTableAdapter.Fill(MEGABYTDataSet.Sale);
+            clientCardTableAdapter.Fill(MEGABYTDataSet.ClientCard);
             if (ID == "0")
             {
                 SqlConnection myConnection;
@@ -40,14 +32,13 @@ namespace Store
                 myConnection.Open();
                 string sql = "SELECT IDENT_CURRENT('dbo.Sale')+1";
                 SqlCommand cmd = new SqlCommand(sql, myConnection);
-                ID = (string)cmd.ExecuteScalar().ToString();
+                ID = cmd.ExecuteScalar().ToString();
                 if (ID == "")
                 {
                     ID = "1";
                     firstFlag = true;
                 }
                 myConnection.Close();
-
                 saleBindingSource.AddNew();
                 dateTimePicker1.Value = DateTime.Now;
             }
@@ -55,7 +46,6 @@ namespace Store
             {
                 saleBindingSource.Filter = "IDSale=" + ID;
             }
-
             receiptBindingSource.Filter = "IDSale= " + ID;
             if (!firstFlag)
                 calcsum();
@@ -77,8 +67,7 @@ namespace Store
         {
             if (comboBox2.Text.Length == 0) { MessageBox.Show("Укажите клиента"); comboBox2.Focus(); return; }
             if (comboBox1.Text.Length == 0) { MessageBox.Show("Укажите сотрудника"); comboBox1.Focus(); return; }
-
-            this.saleTableAdapter.Update(this.MEGABYTDataSet.Sale);
+            saleTableAdapter.Update(MEGABYTDataSet.Sale);
         }
 
         private void receiptDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
@@ -91,14 +80,14 @@ namespace Store
 
         private void EditSales_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Validate();
+            Validate();
             try
             {
                 saleBindingSource.EndEdit();
                 saleBindingSource.EndEdit();
                 saleTableAdapter.Update(MEGABYTDataSet.Sale);
 
-                this.Validate();
+                Validate();
                 receiptBindingSource.EndEdit();
                 receiptTableAdapter.Update(MEGABYTDataSet.Receipt);
             }
@@ -115,31 +104,25 @@ namespace Store
         {
             if ((e.ColumnIndex < 0) || (e.RowIndex < 0)) { return; }
             DataGridViewCell MyCell = receiptDataGridView[e.ColumnIndex, e.RowIndex];
-
             if (MyCell == null)
             {
                 return;
             }
-
             if (MyCell.Value == null)
             {
                 return;
             }
-
             DataTable tres = new DataTable();
             float price = 0;
             float discount = 0;
             string connectionString = ConfigurationManager.ConnectionStrings["Store.Properties.Settings.MEGABYTConnectionString"].ConnectionString;
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 using (SqlDataAdapter da = new SqlDataAdapter())
                 {
                     da.SelectCommand = new SqlCommand("SELECT PriceGood FROM dbo.Goods WHERE IDGoods=" + receiptDataGridView.Rows[receiptDataGridView.CurrentCell.RowIndex].Cells[1].Value.ToString(), conn);
-
                     DataSet ds = new DataSet();
                     da.Fill(ds, "result_name");
-
                     tres = ds.Tables["result_name"];
                     foreach (DataRow row in tres.Rows)
                     {
@@ -147,17 +130,13 @@ namespace Store
                     }
                 }
             }
-
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 using (SqlDataAdapter da = new SqlDataAdapter())
                 {
-                    da.SelectCommand = new SqlCommand("SELECT PercentDiscount"
-                        + " FROM dbo.Discount d INNER JOIN dbo.ClientCard cc ON cc.IDDiscount = d.IDDiscount WHERE cc.IDClientCard=" + comboBox2.SelectedValue.ToString(), conn);
-
+                    da.SelectCommand = new SqlCommand("SELECT PercentDiscount FROM dbo.Discount AS Discount INNER JOIN dbo.ClientCard AS ClientCard ON ClientCard.IDDiscount = Discount.IDDiscount WHERE ClientCard.IDClientCard=" + comboBox2.SelectedValue.ToString(), conn);
                     DataSet ds = new DataSet();
                     da.Fill(ds, "result_name");
-
                     tres = ds.Tables["result_name"];
                     foreach (DataRow row in tres.Rows)
                     {
@@ -165,15 +144,12 @@ namespace Store
                     }
                 }
             }
-
             var grid = sender as DataGridView;
-
             if (e.RowIndex != -1 && ((e.ColumnIndex == 1) || (e.ColumnIndex == 3)))
             {
                 grid.Rows[e.RowIndex].Cells[4].Value = price;
                 grid.Rows[e.RowIndex].Cells[5].Value = price - (price * discount / 100);
             }
-
             calcsum();
         }
 
@@ -184,14 +160,14 @@ namespace Store
 
         private void button6_Click(object sender, EventArgs e)
         {
-            int selectedSaleID = Int32.Parse(ID);
+            int selectedSaleID = int.Parse(ID);
             PackingListReportViewer f = new PackingListReportViewer(selectedSaleID);
             f.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            int selectedSaleID = Int32.Parse(ID);
+            int selectedSaleID = int.Parse(ID);
             ReceiptReportViewer f = new ReceiptReportViewer(selectedSaleID);
             f.ShowDialog();
         }

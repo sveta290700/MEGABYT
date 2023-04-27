@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Store
@@ -23,10 +16,10 @@ namespace Store
 
         private void Sale_Load(object sender, EventArgs e)
         {
-            this.employeeTableAdapter.Fill(this.MEGABYTDataSet.Employee);
-            this.clientCardTableAdapter.Fill(this.MEGABYTDataSet.ClientCard);
-            this.catalog_salesTableAdapter.Fill(this.MEGABYTDataSet.catalog_sales);
-            this.catalog_salesTableAdapter.Fill(this.MEGABYTDataSet.catalog_sales);
+            employeeTableAdapter.Fill(MEGABYTDataSet.Employee);
+            clientCardTableAdapter.Fill(MEGABYTDataSet.ClientCard);
+            catalog_salesTableAdapter.Fill(MEGABYTDataSet.catalog_sales);
+            catalog_salesTableAdapter.Fill(MEGABYTDataSet.catalog_sales);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -52,7 +45,7 @@ namespace Store
                     cmd2.Parameters.Clear();
                     myConnection.Close();
 
-                    this.catalog_salesTableAdapter.Fill(this.MEGABYTDataSet.catalog_sales);
+                    catalog_salesTableAdapter.Fill(MEGABYTDataSet.catalog_sales);
                 }
             }
             else
@@ -68,7 +61,7 @@ namespace Store
             {
                 EditSales form = new EditSales(catalogDataGridView.Rows[catalogDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
                 form.ShowDialog();
-                this.catalog_salesTableAdapter.Fill(this.MEGABYTDataSet.catalog_sales);
+                catalog_salesTableAdapter.Fill(MEGABYTDataSet.catalog_sales);
             }
         }
 
@@ -76,7 +69,7 @@ namespace Store
         {
             EditSales f = new EditSales("0");
             f.ShowDialog();
-            this.catalog_salesTableAdapter.Fill(this.MEGABYTDataSet.catalog_sales);
+            catalog_salesTableAdapter.Fill(MEGABYTDataSet.catalog_sales);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -89,43 +82,36 @@ namespace Store
         private void button1_Click(object sender, EventArgs e)
         {
             string flt = "";
-
             if (dateTimePicker1.Checked == true)
             {
                 if (flt.Length > 0) { flt += " and "; }
                 flt += " Дата >= '" + dateTimePicker1.Value.ToString() + "'";
             }
-
             if (dateTimePicker2.Checked == true)
             {
                 if (flt.Length > 0) { flt += " and "; }
                 flt += " Дата <= '" + dateTimePicker2.Value.ToString() + "'";
             }
-
             if (comboBox2.Text.Length > 0)
             {
                 if (flt.Length > 0) { flt += " and "; }
                 flt += " [Клиент] = '" + comboBox2.Text.ToString() + "'";
             }
-
             if (comboBox3.Text.Length > 0)
             {
                 if (flt.Length > 0) { flt += " and "; }
                 flt += " [Сотрудник] = '" + comboBox3.Text.ToString() + "'";
             }
-
             if (textBox4.Text.Length > 0)
             {
                 if (flt.Length > 0) { flt += " and "; }
                 flt += " [Сумма] >=" + textBox4.Text.ToString();
             }
-
             if (textBox1.Text.Length > 0)
             {
                 if (flt.Length > 0) { flt += " and "; }
                 flt += " [Сумма] <=" + textBox1.Text.ToString();
             }
-
             catalog_salesBindingSource.Filter = flt;
         }
 

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Store
@@ -19,14 +12,14 @@ namespace Store
 
         private void discountBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.discountBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
+            Validate();
+            discountBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(MEGABYTDataSet);
         }
 
         private void Discount_Load(object sender, EventArgs e)
         {
-            this.discountTableAdapter.Fill(this.MEGABYTDataSet.Discount);
+            discountTableAdapter.Fill(MEGABYTDataSet.Discount);
         }
     }
 }

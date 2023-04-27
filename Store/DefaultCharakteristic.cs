@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Store
@@ -23,9 +16,9 @@ namespace Store
 
         private void defaultGoodsInfoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.defaultGoodsInfoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.MEGABYTDataSet);
+            Validate();
+            defaultGoodsInfoBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(MEGABYTDataSet);
         }
 
         private void defaultGoodsInfoDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
@@ -35,7 +28,7 @@ namespace Store
 
         private void DefaultCharakteristic_Load(object sender, EventArgs e)
         {
-            this.defaultGoodsInfoTableAdapter.Fill(this.MEGABYTDataSet.DefaultGoodsInfo);
+            defaultGoodsInfoTableAdapter.Fill(MEGABYTDataSet.DefaultGoodsInfo);
             defaultGoodsInfoBindingSource.Filter = "IDKategoryGoods = " + ID;
         }
     }

@@ -84,6 +84,7 @@
             this.dateTimePicker2.ShowCheckBox = true;
             this.dateTimePicker2.Size = new System.Drawing.Size(134, 20);
             this.dateTimePicker2.TabIndex = 24;
+            this.dateTimePicker2.TabStop = false;
             // 
             // label11
             // 
@@ -134,10 +135,11 @@
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(602, 10);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(112, 42);
             this.button7.TabIndex = 26;
+            this.button7.TabStop = false;
             this.button7.Text = "Чек продажи";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -145,10 +147,11 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(488, 10);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(110, 42);
             this.button6.TabIndex = 25;
+            this.button6.TabStop = false;
             this.button6.Text = "Товарная накладная";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -168,6 +171,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(83, 20);
             this.textBox1.TabIndex = 20;
+            this.textBox1.TabStop = false;
             // 
             // label8
             // 
@@ -184,6 +188,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(83, 20);
             this.textBox4.TabIndex = 18;
+            this.textBox4.TabStop = false;
             // 
             // label9
             // 
@@ -202,6 +207,7 @@
             this.dateTimePicker1.ShowCheckBox = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(134, 20);
             this.dateTimePicker1.TabIndex = 16;
+            this.dateTimePicker1.TabStop = false;
             // 
             // button2
             // 
@@ -209,6 +215,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(226, 37);
             this.button2.TabIndex = 15;
+            this.button2.TabStop = false;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -219,6 +226,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(226, 38);
             this.button1.TabIndex = 14;
+            this.button1.TabStop = false;
             this.button1.Text = "Поиск";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -232,6 +240,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(195, 21);
             this.comboBox3.TabIndex = 6;
+            this.comboBox3.TabStop = false;
             this.comboBox3.ValueMember = "IDEmployee";
             // 
             // employeeBindingSource
@@ -262,6 +271,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(195, 21);
             this.comboBox2.TabIndex = 4;
+            this.comboBox2.TabStop = false;
             this.comboBox2.ValueMember = "IDClientCard";
             // 
             // clientCardBindingSource
@@ -294,6 +304,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(126, 33);
             this.button3.TabIndex = 0;
+            this.button3.TabStop = false;
             this.button3.Text = "Добавить";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -305,6 +316,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(126, 33);
             this.button4.TabIndex = 1;
+            this.button4.TabStop = false;
             this.button4.Text = "Редактировать";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -327,6 +339,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(126, 33);
             this.button5.TabIndex = 2;
+            this.button5.TabStop = false;
             this.button5.Text = "Удалить";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
