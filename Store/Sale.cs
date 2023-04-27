@@ -68,7 +68,6 @@ namespace Store
             {
                 EditSales form = new EditSales(catalogDataGridView.Rows[catalogDataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString());
                 form.ShowDialog();
-
                 this.catalog_salesTableAdapter.Fill(this.MEGABYTDataSet.catalog_sales);
             }
         }

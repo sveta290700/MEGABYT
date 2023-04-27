@@ -136,6 +136,12 @@
     <Compile Include="EmployeesSalaryReportViewer.Designer.cs">
       <DependentUpon>EmployeesSalaryReportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServiceCentersStatReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     <EmbeddedResource Include="FinancialReport.rdlc" />
     <EmbeddedResource Include="EmployeesSalaryReportViewer.resx">
       <DependentUpon>EmployeesSalaryReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServiceCentersStat.rdlc" />
     <EmbeddedResource Include="ServiceCentersStatReportViewer.resx">
