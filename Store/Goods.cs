@@ -15,6 +15,7 @@ namespace Store
     public partial class Goods : Form
     {
         int selectedGoodsRow = 0;
+
         public Goods()
         {
             InitializeComponent();

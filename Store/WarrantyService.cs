@@ -15,6 +15,7 @@ namespace Store
     public partial class WarrantyService : Form
     {
         int selectedWarrantyServiceRow = 0;
+
         public WarrantyService()
         {
             InitializeComponent();

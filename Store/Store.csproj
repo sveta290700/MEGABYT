@@ -124,11 +124,23 @@
     <Compile Include="Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeesSalaryReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeesSalaryReportViewer.Designer.cs">
+      <DependentUpon>EmployeesSalaryReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServiceCentersStatReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ServiceCentersStatReportViewer.Designer.cs">
       <DependentUpon>ServiceCentersStatReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialReportReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinancialReportReportViewer.Designer.cs">
+      <DependentUpon>FinancialReportReportViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="SuppliersRaitingReportViewer.cs">
       <SubType>Form</SubType>
@@ -250,9 +262,17 @@
       <DependentUpon>Employee.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeesSalary.rdlc" />
+    <EmbeddedResource Include="FinancialReport.rdlc" />
+    <EmbeddedResource Include="EmployeesSalaryReportViewer.resx">
+      <DependentUpon>EmployeesSalaryReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServiceCentersStat.rdlc" />
     <EmbeddedResource Include="ServiceCentersStatReportViewer.resx">
       <DependentUpon>ServiceCentersStatReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancialReportReportViewer.resx">
+      <DependentUpon>FinancialReportReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuppliersRaitingReportViewer.resx">
       <DependentUpon>SuppliersRaitingReportViewer.cs</DependentUpon>

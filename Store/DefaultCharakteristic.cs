@@ -12,7 +12,7 @@ namespace Store
 {
     public partial class DefaultCharakteristic : Form
     {
-        readonly string ID;
+        string ID;
 
         public DefaultCharakteristic(string id, string title)
         {

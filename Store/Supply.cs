@@ -15,6 +15,7 @@ namespace Store
     public partial class Supply : Form
     {
         int selectedSupplyRow = 0;
+
         public Supply()
         {
             InitializeComponent();
