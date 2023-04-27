@@ -368,9 +368,9 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>KategoriesReportDataSet</DataSetName>
-            <Top>0.42208cm</Top>
+            <Top>0.17639cm</Top>
             <Left>2.51037cm</Left>
-            <Height>8.25438cm</Height>
+            <Height>8.50007cm</Height>
             <Width>15.35812cm</Width>
             <Style>
               <Border>
@@ -382,7 +382,7 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>9.07333cm</Height>
+        <Height>8.91458cm</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -395,7 +395,7 @@
       <Width>20.72441cm</Width>
       <Page>
         <PageHeader>
-          <Height>4.49599cm</Height>
+          <Height>4.31078cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
