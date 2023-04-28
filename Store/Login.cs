@@ -64,7 +64,7 @@ namespace Store
                         SqlCommand findEmployeeName = new SqlCommand(sql3, myConnection);
                         string res3 = (string)findEmployeeName.ExecuteScalar();
                         myConnection.Close();
-                        PersonalManagerForm f = new PersonalManagerForm(res3);
+                        PersonnelManagerForm f = new PersonnelManagerForm(res3);
                         f.ShowDialog();
                     }
                     else

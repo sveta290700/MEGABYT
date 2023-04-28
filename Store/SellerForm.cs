@@ -67,7 +67,7 @@ namespace Store
 
         private void SellerForm_Load(object sender, EventArgs e)
         {
-            dateTimePicker1.Value = DateTime.Today.AddDays(-30);
+            dateTimePicker1.Value = DateTime.Today.AddDays(-31);
             dateTimePicker2.Value = DateTime.Today;
         }
     }

@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Store
 {
-    public partial class PersonalManagerForm : Form
+    public partial class PersonnelManagerForm : Form
     {
-        public PersonalManagerForm(string login)
+        public PersonnelManagerForm(string login)
         {
             InitializeComponent();
             label1.Text = label1.Text + login + "!";
@@ -37,7 +37,7 @@ namespace Store
 
         private void PersonalManagerForm_Load(object sender, EventArgs e)
         {
-            dateTimePicker1.Value = DateTime.Today.AddDays(-30);
+            dateTimePicker1.Value = DateTime.Today.AddDays(-31);
             dateTimePicker2.Value = DateTime.Today;
         }
     }

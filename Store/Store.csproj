@@ -154,11 +154,11 @@
     <Compile Include="SupplyManagerForm.Designer.cs">
       <DependentUpon>SupplyManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PersonalManagerForm.cs">
+    <Compile Include="PersonnelManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonalManagerForm.Designer.cs">
-      <DependentUpon>PersonalManagerForm.cs</DependentUpon>
+    <Compile Include="PersonnelManagerForm.Designer.cs">
+      <DependentUpon>PersonnelManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ServiceCentersStatReportViewer.cs">
       <SubType>Form</SubType>
@@ -299,8 +299,8 @@
     <EmbeddedResource Include="SupplyManagerForm.resx">
       <DependentUpon>SupplyManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonalManagerForm.resx">
-      <DependentUpon>PersonalManagerForm.cs</DependentUpon>
+    <EmbeddedResource Include="PersonnelManagerForm.resx">
+      <DependentUpon>PersonnelManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServiceCentersStat.rdlc" />
     <EmbeddedResource Include="ServiceCentersStatReportViewer.resx">
