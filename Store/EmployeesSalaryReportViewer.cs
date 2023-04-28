@@ -19,7 +19,6 @@ namespace Store
 
         private void EmployeesSalaryReportViewer_Load(object sender, EventArgs e)
         {
-            MEGABYTDataSet.EnforceConstraints = false;
             MEGABYTDataSetTableAdapters.employees_salaryTableAdapter esTA = new MEGABYTDataSetTableAdapters.employees_salaryTableAdapter();
             esTA.Fill(MEGABYTDataSet.employees_salary, date1, date2);
             PageSettings pg = new PageSettings();
