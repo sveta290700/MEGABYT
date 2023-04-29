@@ -474,7 +474,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "IDReceipt";
             this.dataGridViewTextBoxColumn2.DataSource = this.receiptBindingSource;
             this.dataGridViewTextBoxColumn2.DisplayMember = "IDReceipt";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Код состава продажи";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Код товара в чеке продажи";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
