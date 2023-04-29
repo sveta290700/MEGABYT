@@ -501,7 +501,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
         <Top>3.75764cm</Top>
-        <Left>11.67699cm</Left>
+        <Left>11.61524cm</Left>
         <Height>0.6cm</Height>
         <Width>4.96062cm</Width>
         <ZIndex>1</ZIndex>
@@ -856,7 +856,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>IDSale</rd:DefaultName>
-          <Top>1.58405cm</Top>
+          <Top>1.61051cm</Top>
           <Left>12.51302cm</Left>
           <Height>0.75875cm</Height>
           <Width>4.54611cm</Width>
@@ -891,8 +891,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
-          <Top>2.3428cm</Top>
-          <Left>7.01851cm</Left>
+          <Top>2.36926cm</Top>
+          <Left>6.98323cm</Left>
           <Height>0.75875cm</Height>
           <Width>6.08417cm</Width>
           <ZIndex>5</ZIndex>
