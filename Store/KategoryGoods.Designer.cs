@@ -258,7 +258,7 @@
             this.kategoryGoodsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kategoryGoodsDataGridView.Location = new System.Drawing.Point(0, 25);
             this.kategoryGoodsDataGridView.Name = "kategoryGoodsDataGridView";
-            this.kategoryGoodsDataGridView.Size = new System.Drawing.Size(800, 272);
+            this.kategoryGoodsDataGridView.Size = new System.Drawing.Size(800, 228);
             this.kategoryGoodsDataGridView.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn1
@@ -299,8 +299,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.kategoryGoodsDataGridView);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.kategoryGoodsBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
