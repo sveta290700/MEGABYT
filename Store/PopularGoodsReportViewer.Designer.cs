@@ -32,13 +32,18 @@ namespace Store
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopularGoodsReportViewer));
+            this.popular_goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MEGABYTDataSet = new Store.MEGABYTDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.popular_goodsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.popular_goodsTableAdapter = new Store.MEGABYTDataSetTableAdapters.popular_goodsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popular_goodsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // popular_goodsBindingSource
+            // 
+            this.popular_goodsBindingSource.DataMember = "popular_goods";
+            this.popular_goodsBindingSource.DataSource = this.MEGABYTDataSet;
             // 
             // MEGABYTDataSet
             // 
@@ -59,12 +64,6 @@ namespace Store
             this.reportViewer1.ShowStopButton = false;
             this.reportViewer1.Size = new System.Drawing.Size(1230, 575);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
-            // 
-            // popular_goodsBindingSource
-            // 
-            this.popular_goodsBindingSource.DataMember = "popular_goods";
-            this.popular_goodsBindingSource.DataSource = this.MEGABYTDataSet;
             // 
             // popular_goodsTableAdapter
             // 
@@ -81,8 +80,8 @@ namespace Store
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Просмотр списка популярных товаров";
             this.Load += new System.EventHandler(this.PopularGoodsReportViewer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popular_goodsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

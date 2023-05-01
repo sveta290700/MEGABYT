@@ -64,7 +64,6 @@ namespace Store
             this.reportViewer1.ShowStopButton = false;
             this.reportViewer1.Size = new System.Drawing.Size(1230, 575);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // packing_listTableAdapter
             // 

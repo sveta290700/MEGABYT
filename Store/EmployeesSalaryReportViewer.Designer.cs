@@ -58,16 +58,14 @@ namespace Store
             reportDataSource1.Value = this.employees_salaryBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Store.EmployeesSalary.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(20, 18);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.reportViewer1.Location = new System.Drawing.Point(13, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.ShowFindControls = false;
             this.reportViewer1.ShowPrintButton = false;
             this.reportViewer1.ShowStopButton = false;
-            this.reportViewer1.Size = new System.Drawing.Size(1844, 884);
+            this.reportViewer1.Size = new System.Drawing.Size(1230, 575);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // employees_salaryTableAdapter
             // 
@@ -80,12 +78,11 @@ namespace Store
             // 
             // EmployeesSalaryReportViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1882, 915);
+            this.ClientSize = new System.Drawing.Size(1255, 595);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EmployeesSalaryReportViewer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Просмотр отчета о заработной плате сотрудников";
