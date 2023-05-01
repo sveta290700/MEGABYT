@@ -119,9 +119,19 @@ namespace Store
 
         private void button6_Click(object sender, EventArgs e)
         {
-            int selectedSaleID = (int)catalogDataGridView.Rows[selectedSaleRow].Cells[0].Value;
-            PackingListReportViewer f = new PackingListReportViewer(selectedSaleID);
-            f.ShowDialog();
+            try
+            {
+                int selectedSaleID = (int)catalogDataGridView.Rows[selectedSaleRow].Cells[0].Value;
+                PackingListReportViewer f = new PackingListReportViewer(selectedSaleID);
+                f.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Невозможно сформировать товарную накладную",
+                    "Ошибка",
+                    MessageBoxButtons.OK);
+            }
         }
 
         private void catalogDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -131,9 +141,19 @@ namespace Store
 
         private void button7_Click(object sender, EventArgs e)
         {
-            int selectedSaleID = (int)catalogDataGridView.Rows[selectedSaleRow].Cells[0].Value;
-            ReceiptReportViewer f = new ReceiptReportViewer(selectedSaleID);
-            f.ShowDialog();
+            try
+            {
+                int selectedSaleID = (int)catalogDataGridView.Rows[selectedSaleRow].Cells[0].Value;
+                ReceiptReportViewer f = new ReceiptReportViewer(selectedSaleID);
+                f.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Невозможно сформировать чек продажи",
+                    "Ошибка",
+                    MessageBoxButtons.OK);
+            }
         }
     }
 }
