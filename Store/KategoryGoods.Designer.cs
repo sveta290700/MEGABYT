@@ -257,6 +257,7 @@
             this.kategoryGoodsDataGridView.DataSource = this.kategoryGoodsBindingSource;
             this.kategoryGoodsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kategoryGoodsDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.kategoryGoodsDataGridView.MultiSelect = false;
             this.kategoryGoodsDataGridView.Name = "kategoryGoodsDataGridView";
             this.kategoryGoodsDataGridView.Size = new System.Drawing.Size(800, 228);
             this.kategoryGoodsDataGridView.TabIndex = 3;
