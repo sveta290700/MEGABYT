@@ -306,7 +306,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KategoryGoods";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Категория товаров";
+            this.Text = "Категории товаров";
             this.Load += new System.EventHandler(this.KategoryGoods_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kategoryGoodsBindingSource)).EndInit();

@@ -326,7 +326,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DefaultCharakteristic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Справочник характеристик категории";
+            this.Text = "Справочник характеристик категории товаров";
             this.Load += new System.EventHandler(this.DefaultCharakteristic_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).EndInit();

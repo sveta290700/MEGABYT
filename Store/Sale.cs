@@ -20,6 +20,8 @@ namespace Store
             clientCardTableAdapter.Fill(MEGABYTDataSet.ClientCard);
             catalog_salesTableAdapter.Fill(MEGABYTDataSet.catalog_sales);
             catalog_salesTableAdapter.Fill(MEGABYTDataSet.catalog_sales);
+            dateTimePicker1.Value = DateTime.Today.AddDays(-31);
+            dateTimePicker2.Value = DateTime.Today;
         }
 
         private void button5_Click(object sender, EventArgs e)

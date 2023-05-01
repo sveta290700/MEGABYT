@@ -49,9 +49,13 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.supplyBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.supplyDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MEGABYTDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.scopeDeliveryDataGridView = new System.Windows.Forms.DataGridView();
             this.iDScopeDeliveryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,10 +69,6 @@
             this.employeeTableAdapter = new Store.MEGABYTDataSetTableAdapters.EmployeeTableAdapter();
             this.supplierTableAdapter = new Store.MEGABYTDataSetTableAdapters.SupplierTableAdapter();
             this.goodsTableAdapter = new Store.MEGABYTDataSetTableAdapters.GoodsTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplyBindingNavigator)).BeginInit();
@@ -268,10 +268,39 @@
             this.supplyDataGridView.TabIndex = 1;
             this.supplyDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.supplyDataGridView_CellClick);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDSupply";
+            this.dataGridViewTextBoxColumn1.HeaderText = "№ поставки";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "IDEmployee";
+            this.dataGridViewTextBoxColumn2.DataSource = this.employeeBindingSource;
+            this.dataGridViewTextBoxColumn2.DisplayMember = "FullName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Сотрудник";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn2.ValueMember = "IDEmployee";
+            // 
             // employeeBindingSource
             // 
             this.employeeBindingSource.DataMember = "Employee";
             this.employeeBindingSource.DataSource = this.MEGABYTDataSet;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "IDSupplier";
+            this.dataGridViewTextBoxColumn3.DataSource = this.supplierBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "NameSupplier";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Поставщик";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "IDSupplier";
             // 
             // supplierBindingSource
             // 
@@ -282,6 +311,12 @@
             // 
             this.MEGABYTDataSetBindingSource.DataSource = this.MEGABYTDataSet;
             this.MEGABYTDataSetBindingSource.Position = 0;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DateSupply";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Дата";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // groupBox1
             // 
@@ -383,41 +418,6 @@
             // 
             this.goodsTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDSupply";
-            this.dataGridViewTextBoxColumn1.HeaderText = "№ поставки";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "IDEmployee";
-            this.dataGridViewTextBoxColumn2.DataSource = this.employeeBindingSource;
-            this.dataGridViewTextBoxColumn2.DisplayMember = "FullName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Сотрудник";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn2.ValueMember = "IDEmployee";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "IDSupplier";
-            this.dataGridViewTextBoxColumn3.DataSource = this.supplierBindingSource;
-            this.dataGridViewTextBoxColumn3.DisplayMember = "NameSupplier";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Поставщик";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn3.ValueMember = "IDSupplier";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DateSupply";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Дата";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
             // Supply
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,7 +429,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Supply";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Поставка";
+            this.Text = "Поставки";
             this.Load += new System.EventHandler(this.Supply_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplyBindingSource)).EndInit();
