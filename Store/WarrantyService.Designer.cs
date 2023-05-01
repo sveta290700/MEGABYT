@@ -97,6 +97,7 @@
             // 
             // warrantyServiceBindingSource
             // 
+            this.warrantyServiceBindingSource.AllowNew = true;
             this.warrantyServiceBindingSource.DataMember = "WarrantyService";
             this.warrantyServiceBindingSource.DataSource = this.MEGABYTDataSet;
             // 
@@ -319,6 +320,7 @@
             // 
             // serviceCenterBindingSource
             // 
+            this.serviceCenterBindingSource.AllowNew = true;
             this.serviceCenterBindingSource.DataMember = "ServiceCenter";
             this.serviceCenterBindingSource.DataSource = this.MEGABYTDataSet;
             // 
@@ -370,7 +372,7 @@
             // 
             // transferRepairBindingSource
             // 
-            this.transferRepairBindingSource.AllowNew = true;
+            this.transferRepairBindingSource.AllowNew = false;
             this.transferRepairBindingSource.DataMember = "WarrantyService_DrawUp_TransferRepair";
             this.transferRepairBindingSource.DataSource = this.warrantyServiceBindingSource;
             // 
@@ -420,6 +422,7 @@
             // 
             // receiptBindingSource
             // 
+            this.receiptBindingSource.AllowNew = true;
             this.receiptBindingSource.DataMember = "Receipt";
             this.receiptBindingSource.DataSource = this.MEGABYTDataSet;
             // 
