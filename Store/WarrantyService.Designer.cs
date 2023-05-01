@@ -394,6 +394,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(213, 291);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TabStop = false;
             // 
             // groupBox3
             // 
@@ -415,6 +416,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(213, 222);
             this.textBox2.TabIndex = 0;
+            this.textBox2.TabStop = false;
             // 
             // receiptBindingSource
             // 
@@ -441,6 +443,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(213, 222);
             this.textBox3.TabIndex = 0;
+            this.textBox3.TabStop = false;
             // 
             // warrantyServiceDataGridView
             // 
