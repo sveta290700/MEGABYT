@@ -295,6 +295,7 @@
             this.transferRepairDataGridView.DataSource = this.transferRepairBindingSource;
             this.transferRepairDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.transferRepairDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.transferRepairDataGridView.MultiSelect = false;
             this.transferRepairDataGridView.Name = "transferRepairDataGridView";
             this.transferRepairDataGridView.Size = new System.Drawing.Size(1030, 310);
             this.transferRepairDataGridView.TabIndex = 1;
@@ -462,6 +463,7 @@
             this.warrantyServiceDataGridView.DataSource = this.warrantyServiceBindingSource;
             this.warrantyServiceDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.warrantyServiceDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.warrantyServiceDataGridView.MultiSelect = false;
             this.warrantyServiceDataGridView.Name = "warrantyServiceDataGridView";
             this.warrantyServiceDataGridView.Size = new System.Drawing.Size(817, 241);
             this.warrantyServiceDataGridView.TabIndex = 6;

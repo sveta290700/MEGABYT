@@ -246,6 +246,7 @@
             this.serviceCenterDataGridView.DataSource = this.serviceCenterBindingSource;
             this.serviceCenterDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.serviceCenterDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.serviceCenterDataGridView.MultiSelect = false;
             this.serviceCenterDataGridView.Name = "serviceCenterDataGridView";
             this.serviceCenterDataGridView.Size = new System.Drawing.Size(800, 258);
             this.serviceCenterDataGridView.TabIndex = 1;

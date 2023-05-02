@@ -232,6 +232,7 @@
             this.supplierDataGridView.DataSource = this.supplierBindingSource;
             this.supplierDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.supplierDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.supplierDataGridView.MultiSelect = false;
             this.supplierDataGridView.Name = "supplierDataGridView";
             this.supplierDataGridView.Size = new System.Drawing.Size(586, 425);
             this.supplierDataGridView.TabIndex = 1;

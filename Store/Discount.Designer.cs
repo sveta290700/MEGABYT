@@ -259,6 +259,7 @@
             this.discountDataGridView.DataSource = this.discountBindingSource;
             this.discountDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.discountDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.discountDataGridView.MultiSelect = false;
             this.discountDataGridView.Name = "discountDataGridView";
             this.discountDataGridView.Size = new System.Drawing.Size(800, 272);
             this.discountDataGridView.TabIndex = 3;

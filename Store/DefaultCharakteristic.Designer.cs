@@ -282,6 +282,7 @@
             this.defaultGoodsInfoDataGridView.DataSource = this.defaultGoodsInfoBindingSource;
             this.defaultGoodsInfoDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.defaultGoodsInfoDataGridView.Location = new System.Drawing.Point(0, 98);
+            this.defaultGoodsInfoDataGridView.MultiSelect = false;
             this.defaultGoodsInfoDataGridView.Name = "defaultGoodsInfoDataGridView";
             this.defaultGoodsInfoDataGridView.Size = new System.Drawing.Size(542, 352);
             this.defaultGoodsInfoDataGridView.TabIndex = 4;

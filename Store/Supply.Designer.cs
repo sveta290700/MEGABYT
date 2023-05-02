@@ -263,6 +263,7 @@
             this.supplyDataGridView.DataSource = this.supplyBindingSource;
             this.supplyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.supplyDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.supplyDataGridView.MultiSelect = false;
             this.supplyDataGridView.Name = "supplyDataGridView";
             this.supplyDataGridView.Size = new System.Drawing.Size(800, 220);
             this.supplyDataGridView.TabIndex = 1;
@@ -344,6 +345,7 @@
             this.scopeDeliveryDataGridView.DataSource = this.scopeDeliveryBindingSource;
             this.scopeDeliveryDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.scopeDeliveryDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.scopeDeliveryDataGridView.MultiSelect = false;
             this.scopeDeliveryDataGridView.Name = "scopeDeliveryDataGridView";
             this.scopeDeliveryDataGridView.Size = new System.Drawing.Size(794, 291);
             this.scopeDeliveryDataGridView.TabIndex = 0;

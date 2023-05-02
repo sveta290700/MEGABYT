@@ -203,6 +203,7 @@
             this.receiptDataGridView.DataSource = this.receiptBindingSource;
             this.receiptDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.receiptDataGridView.Location = new System.Drawing.Point(3, 16);
+            this.receiptDataGridView.MultiSelect = false;
             this.receiptDataGridView.Name = "receiptDataGridView";
             this.receiptDataGridView.RowHeadersWidth = 62;
             this.receiptDataGridView.Size = new System.Drawing.Size(794, 374);

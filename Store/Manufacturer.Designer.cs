@@ -232,6 +232,7 @@
             this.manufacturerDataGridView.DataSource = this.manufacturerBindingSource;
             this.manufacturerDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.manufacturerDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.manufacturerDataGridView.MultiSelect = false;
             this.manufacturerDataGridView.Name = "manufacturerDataGridView";
             this.manufacturerDataGridView.Size = new System.Drawing.Size(662, 425);
             this.manufacturerDataGridView.TabIndex = 1;

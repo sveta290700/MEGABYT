@@ -259,6 +259,7 @@
             this.postsDataGridView.DataSource = this.postsBindingSource;
             this.postsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.postsDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.postsDataGridView.MultiSelect = false;
             this.postsDataGridView.Name = "postsDataGridView";
             this.postsDataGridView.Size = new System.Drawing.Size(800, 253);
             this.postsDataGridView.TabIndex = 3;

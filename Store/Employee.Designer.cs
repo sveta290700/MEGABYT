@@ -49,15 +49,15 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.employeeBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.employeeDataGridView = new System.Windows.Forms.DataGridView();
-            this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.MEGABYTDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MEGABYTDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MEGABYTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingNavigator)).BeginInit();
@@ -249,19 +249,10 @@
             this.employeeDataGridView.DataSource = this.employeeBindingSource;
             this.employeeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.employeeDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.employeeDataGridView.MultiSelect = false;
             this.employeeDataGridView.Name = "employeeDataGridView";
             this.employeeDataGridView.Size = new System.Drawing.Size(800, 425);
             this.employeeDataGridView.TabIndex = 1;
-            // 
-            // postsBindingSource
-            // 
-            this.postsBindingSource.DataMember = "Posts";
-            this.postsBindingSource.DataSource = this.MEGABYTDataSet;
-            // 
-            // MEGABYTDataSetBindingSource
-            // 
-            this.MEGABYTDataSetBindingSource.DataSource = this.MEGABYTDataSet;
-            this.MEGABYTDataSetBindingSource.Position = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -280,6 +271,11 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn2.ValueMember = "IDpost";
+            // 
+            // postsBindingSource
+            // 
+            this.postsBindingSource.DataMember = "Posts";
+            this.postsBindingSource.DataSource = this.MEGABYTDataSet;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -310,6 +306,11 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Telephone";
             this.dataGridViewTextBoxColumn7.HeaderText = "Телефон";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // MEGABYTDataSetBindingSource
+            // 
+            this.MEGABYTDataSetBindingSource.DataSource = this.MEGABYTDataSet;
+            this.MEGABYTDataSetBindingSource.Position = 0;
             // 
             // Employee
             // 
