@@ -372,7 +372,7 @@
             // 
             // transferRepairBindingSource
             // 
-            this.transferRepairBindingSource.AllowNew = false;
+            this.transferRepairBindingSource.AllowNew = true;
             this.transferRepairBindingSource.DataMember = "WarrantyService_DrawUp_TransferRepair";
             this.transferRepairBindingSource.DataSource = this.warrantyServiceBindingSource;
             // 
