@@ -1010,7 +1010,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!FName.Value, "PackingListDataSet")+" "+First(Fields!SName.Value, "PackingListDataSet")+" "+First(Fields!Patronym.Value, "PackingListDataSet")</Value>
+                  <Value>=First(Fields!SName.Value, "PackingListDataSet")+" "+First(Fields!FName.Value, "PackingListDataSet")+" "+First(Fields!Patronym.Value, "PackingListDataSet")</Value>
                   <Style>
                     <FontSize>11pt</FontSize>
                   </Style>
