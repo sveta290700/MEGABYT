@@ -159,16 +159,36 @@ namespace Store
 
         private void button6_Click(object sender, EventArgs e)
         {
-            int selectedSaleID = int.Parse(ID);
-            PackingListReportViewer f = new PackingListReportViewer(selectedSaleID);
-            f.ShowDialog();
-        }
+            try
+            {
+                int selectedSaleID = int.Parse(ID);
+                PackingListReportViewer f = new PackingListReportViewer(selectedSaleID);
+                f.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Невозможно сформировать товарную накладную",
+                    "Ошибка",
+                    MessageBoxButtons.OK);
+            }
+}
 
         private void button7_Click(object sender, EventArgs e)
         {
-            int selectedSaleID = int.Parse(ID);
-            ReceiptReportViewer f = new ReceiptReportViewer(selectedSaleID);
-            f.ShowDialog();
+            try
+            {
+                int selectedSaleID = int.Parse(ID);
+                ReceiptReportViewer f = new ReceiptReportViewer(selectedSaleID);
+                f.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Невозможно сформировать чек продажи",
+                    "Ошибка",
+                    MessageBoxButtons.OK);
+            }
         }
     }
 }
