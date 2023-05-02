@@ -79,17 +79,19 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Checked = false;
-            this.dateTimePicker2.Location = new System.Drawing.Point(244, 19);
+            this.dateTimePicker2.CustomFormat = "dd.MM.yyyy HH:mm:ss";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(275, 19);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowCheckBox = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(134, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(162, 20);
             this.dateTimePicker2.TabIndex = 24;
             this.dateTimePicker2.TabStop = false;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(218, 22);
+            this.label11.Location = new System.Drawing.Point(249, 22);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(19, 13);
             this.label11.TabIndex = 23;
@@ -202,10 +204,12 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.CustomFormat = "dd.MM.yyyy HH:mm:ss";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(73, 19);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowCheckBox = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(134, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(165, 20);
             this.dateTimePicker1.TabIndex = 16;
             this.dateTimePicker1.TabStop = false;
             // 

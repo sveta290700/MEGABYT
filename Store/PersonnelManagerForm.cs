@@ -37,7 +37,7 @@ namespace Store
 
         private void PersonalManagerForm_Load(object sender, EventArgs e)
         {
-            dateTimePicker1.Value = DateTime.Today.AddDays(-31);
+            dateTimePicker1.Value = DateTime.Today.AddDays(-62);
             dateTimePicker2.Value = DateTime.Today;
         }
     }
