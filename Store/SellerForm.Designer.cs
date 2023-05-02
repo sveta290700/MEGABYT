@@ -59,10 +59,9 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox2.Image = global::Store.Properties.Resources.Logo;
-            this.pictureBox2.Location = new System.Drawing.Point(447, 578);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(298, 376);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(382, 135);
+            this.pictureBox2.Size = new System.Drawing.Size(255, 88);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
@@ -74,18 +73,21 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Location = new System.Drawing.Point(0, 63);
+            this.groupBox1.Location = new System.Drawing.Point(0, 41);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(906, 180);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(604, 117);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Справочники";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(514, 95);
+            this.button5.Location = new System.Drawing.Point(343, 40);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(254, 38);
+            this.button5.Size = new System.Drawing.Size(169, 25);
             this.button5.TabIndex = 12;
             this.button5.TabStop = false;
             this.button5.Text = "Продажи";
@@ -94,9 +96,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(514, 51);
+            this.button3.Location = new System.Drawing.Point(343, 69);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(254, 38);
+            this.button3.Size = new System.Drawing.Size(169, 25);
             this.button3.TabIndex = 11;
             this.button3.TabStop = false;
             this.button3.Text = "Гарантийное обслуживание";
@@ -105,9 +108,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(120, 77);
+            this.button2.Location = new System.Drawing.Point(80, 50);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(254, 38);
+            this.button2.Size = new System.Drawing.Size(169, 25);
             this.button2.TabIndex = 10;
             this.button2.TabStop = false;
             this.button2.Text = "Карты клиентов";
@@ -116,9 +120,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(120, 31);
+            this.button1.Location = new System.Drawing.Point(80, 20);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(254, 38);
+            this.button1.Size = new System.Drawing.Size(169, 25);
             this.button1.TabIndex = 9;
             this.button1.TabStop = false;
             this.button1.Text = "Дисконты";
@@ -127,9 +132,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(120, 123);
+            this.button4.Location = new System.Drawing.Point(80, 80);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(254, 38);
+            this.button4.Size = new System.Drawing.Size(169, 25);
             this.button4.TabIndex = 7;
             this.button4.TabStop = false;
             this.button4.Text = "Сервисные центры";
@@ -140,10 +146,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox1.Image = global::Store.Properties.Resources.Бытовая_техника;
-            this.pictureBox1.Location = new System.Drawing.Point(58, 578);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(39, 376);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(388, 135);
+            this.pictureBox1.Size = new System.Drawing.Size(259, 88);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -152,8 +157,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(179, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(119, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 20);
             this.label1.TabIndex = 16;
@@ -168,9 +172,11 @@
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Location = new System.Drawing.Point(0, 249);
+            this.groupBox2.Location = new System.Drawing.Point(0, 162);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(906, 195);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(604, 127);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Отчеты (с учетом временного диапазона)";
@@ -178,18 +184,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(465, 65);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(310, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 20);
+            this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 15;
             this.label2.Text = "по";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(514, 118);
+            this.button7.Location = new System.Drawing.Point(343, 77);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(315, 38);
+            this.button7.Size = new System.Drawing.Size(210, 25);
             this.button7.TabIndex = 10;
             this.button7.TabStop = false;
             this.button7.Text = "Диаграмма по потреблению товаров";
@@ -198,18 +204,18 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(512, 62);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker2.Location = new System.Drawing.Point(341, 40);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(298, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 14;
             this.dateTimePicker2.TabStop = false;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(58, 118);
+            this.button6.Location = new System.Drawing.Point(39, 77);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(315, 38);
+            this.button6.Size = new System.Drawing.Size(210, 25);
             this.button6.TabIndex = 9;
             this.button6.TabStop = false;
             this.button6.Text = "Финансовый отчет работы магазина";
@@ -219,19 +225,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(116, 65);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(77, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 20);
+            this.label3.Size = new System.Drawing.Size(13, 13);
             this.label3.TabIndex = 13;
             this.label3.Text = "с";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(148, 62);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dateTimePicker1.Location = new System.Drawing.Point(99, 40);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(298, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 12;
             this.dateTimePicker1.TabStop = false;
             // 
@@ -239,18 +243,21 @@
             // 
             this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.button8);
-            this.groupBox3.Location = new System.Drawing.Point(0, 451);
+            this.groupBox3.Location = new System.Drawing.Point(0, 293);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(906, 103);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(604, 67);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Общие отчеты (без учета временного диапазона)";
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(496, 40);
+            this.button9.Location = new System.Drawing.Point(331, 26);
+            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(342, 38);
+            this.button9.Size = new System.Drawing.Size(228, 25);
             this.button9.TabIndex = 10;
             this.button9.TabStop = false;
             this.button9.Text = "Статистика работы сервисных центров";
@@ -259,9 +266,10 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(58, 40);
+            this.button8.Location = new System.Drawing.Point(39, 26);
+            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(315, 38);
+            this.button8.Size = new System.Drawing.Size(210, 25);
             this.button8.TabIndex = 9;
             this.button8.TabStop = false;
             this.button8.Text = "Список популярных товаров";
@@ -270,9 +278,9 @@
             // 
             // SellerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 742);
+            this.ClientSize = new System.Drawing.Size(604, 482);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox2);
@@ -280,7 +288,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "SellerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

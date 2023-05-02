@@ -33,7 +33,7 @@ namespace Store
                 string sql = "SELECT IDENT_CURRENT('dbo.Sale')+1";
                 SqlCommand cmd = new SqlCommand(sql, myConnection);
                 ID = cmd.ExecuteScalar().ToString();
-                if (ID == "")
+                if ((ID == "") || (ID == "1"))
                 {
                     ID = "1";
                     firstFlag = true;
@@ -65,8 +65,8 @@ namespace Store
 
         private void receiptDataGridView_Enter(object sender, EventArgs e)
         {
-            if (comboBox2.Text.Length == 0) { MessageBox.Show("Укажите клиента"); comboBox2.Focus(); return; }
-            if (comboBox1.Text.Length == 0) { MessageBox.Show("Укажите сотрудника"); comboBox1.Focus(); return; }
+            //if (comboBox2.Text.Length == 0) { MessageBox.Show("Укажите клиента"); comboBox2.Focus(); return; }
+            //if (comboBox1.Text.Length == 0) { MessageBox.Show("Укажите сотрудника"); comboBox1.Focus(); return; }
             saleTableAdapter.Update(MEGABYTDataSet.Sale);
         }
 
@@ -86,7 +86,6 @@ namespace Store
                 saleBindingSource.EndEdit();
                 saleBindingSource.EndEdit();
                 saleTableAdapter.Update(MEGABYTDataSet.Sale);
-
                 Validate();
                 receiptBindingSource.EndEdit();
                 receiptTableAdapter.Update(MEGABYTDataSet.Receipt);
