@@ -264,7 +264,7 @@
             this.supplyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.supplyDataGridView.Location = new System.Drawing.Point(0, 25);
             this.supplyDataGridView.Name = "supplyDataGridView";
-            this.supplyDataGridView.Size = new System.Drawing.Size(800, 530);
+            this.supplyDataGridView.Size = new System.Drawing.Size(800, 220);
             this.supplyDataGridView.TabIndex = 1;
             this.supplyDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.supplyDataGridView_CellClick);
             // 
@@ -423,8 +423,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 555);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.supplyDataGridView);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.supplyBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Supply";
