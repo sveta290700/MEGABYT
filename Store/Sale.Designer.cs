@@ -366,7 +366,7 @@
             this.catalogDataGridView.Location = new System.Drawing.Point(0, 33);
             this.catalogDataGridView.MultiSelect = false;
             this.catalogDataGridView.Name = "catalogDataGridView";
-            this.catalogDataGridView.Size = new System.Drawing.Size(727, 417);
+            this.catalogDataGridView.Size = new System.Drawing.Size(727, 268);
             this.catalogDataGridView.TabIndex = 10;
             this.catalogDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.catalogDataGridView_CellClick);
             // 
@@ -446,8 +446,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 450);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.catalogDataGridView);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sale";
