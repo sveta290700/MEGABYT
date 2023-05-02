@@ -29,10 +29,10 @@
     <Shape ID="DesignTable:suppliers_raiting" ZOrder="8" X="9646" Y="-25" Height="182" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="115" />
     <Shape ID="DesignTable:service_centers_stat" ZOrder="6" X="406" Y="132" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:employees_sales" ZOrder="3" X="192" Y="130" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="24" OldDataTableHeight="0" SplitterPosition="0" />
-    <Shape ID="DesignTable:kategories_report" ZOrder="2" X="604" Y="72" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:employees_salary" ZOrder="5" X="408" Y="-6" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:catalog_sales" ZOrder="31" X="8750" Y="-25" Height="172" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:financial_report" ZOrder="1" X="129" Y="18" Height="75" Width="235" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="102" SplitterPosition="24" />
+    <Shape ID="DesignTable:financial_report" ZOrder="2" X="129" Y="18" Height="75" Width="235" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="102" SplitterPosition="24" />
+    <Shape ID="DesignTable:kategories_report" ZOrder="1" X="610" Y="46" Height="115" Width="247" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:Receipt_GiveRightOn_WarrantyService" ZOrder="26" LineWidth="11">
